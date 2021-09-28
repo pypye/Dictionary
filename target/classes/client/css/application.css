@@ -1,11 +1,15 @@
 .pane {
     -fx-background-color: #1D1D1F;
 }
-
+.root {
+    -fx-background-color: #1D1D1F;
+}
 .container {
     -fx-background-color: #3D3C3F;
     -fx-background-radius: 10;
-    
+}
+.container-scroll{
+    -fx-background-color: #3D3C3F;
 }
 .menu-bar {
     -fx-background-color: #3D3C3F;
@@ -34,4 +38,23 @@
     -fx-background-color: #6462FC;
     -fx-text-fill: white;
     -fx-padding: 10;
+}
+.text-label {
+    -fx-text-fill: white;
+}
+.scroll-pane {
+    -fx-background-radius: 10;
+    -fx-background-color: #3D3C3F;
+}
+.scroll-pane .viewport {
+    -fx-background-color: #3D3C3F;
+}
+.scroll-pane .scroll-bar:vertical .thumb{
+    -fx-background-color: #92909A;
+
+}
+.scroll-pane .scroll-bar:vertical{
+    -fx-background-color: #313133;
+    -fx-background-radius: 10;
+    -fx-background-insets: 2, 0, 0;
 }
