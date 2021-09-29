@@ -11,69 +11,69 @@ import java.util.Scanner;
 
 public class DictionaryManagement {
 
-  ArrayList<Wordd> arrayDictionary = new ArrayList<>();
+    ArrayList<Word> arrayDictionary = new ArrayList<>();
 
-  public void insertFromCommandline() {
-    Scanner sc = new Scanner(System.in);
-    int n = sc.nextInt();
-    String remove = sc.nextLine();
-    for (int i = 0; i < n; i++) {
-      String target = sc.nextLine();
-      String explain = sc.nextLine();
-      Wordd wordd = new Wordd(target, explain);
-      arrayDictionary.add(wordd);
+    public void insertFromCommandline() {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        String remove = sc.nextLine();
+        for (int i = 0; i < n; i++) {
+            String target = sc.nextLine();
+            String explain = sc.nextLine();
+            Word wordInput = new Word(target, explain);
+            arrayDictionary.add(wordInput);
+        }
     }
-  }
 
-  public void insertFromFile() throws FileNotFoundException {
-    String url = "E:\\Tudien\\src\\Dis\\dictionaries.txt";
-    FileInputStream fileInputStream = new FileInputStream(url);
-    Scanner sc = new Scanner(fileInputStream);
-    while (sc.hasNextLine()) {
-      String Wordd = sc.nextLine();
-      String target = Wordd.split("\t")[0];
-      String explain = Wordd.split("\t")[1];
-      Wordd wordd = new Wordd(target, explain);
-      arrayDictionary.add(wordd);
+    public void insertFromFile() throws FileNotFoundException {
+        String url = "src/main/java/base/dictionaries.txt";
+        FileInputStream fileInputStream = new FileInputStream(url);
+        Scanner sc = new Scanner(fileInputStream);
+        while (sc.hasNextLine()) {
+            String WordInput = sc.nextLine();
+            String target = WordInput.split("\t")[0];
+            String explain = WordInput.split("\t")[1];
+            Word wordInput = new Word(target, explain);
+            arrayDictionary.add(wordInput);
+        }
     }
-  }
 
-  public void dictionaryLookup() {
-    Scanner sc = new Scanner(System.in);
-    String find = sc.nextLine();
-    for (Wordd wordd : arrayDictionary) {
-      String key = wordd.getWord_target();
-      if (key.equals(find)) {
-        wordd.writeWordd();
-        break;
-      }
+    public void dictionaryLookup() {
+        Scanner sc = new Scanner(System.in);
+        String find = sc.nextLine();
+        for (Word wordInput : arrayDictionary) {
+            String key = wordInput.getWord_target();
+            if (key.equals(find)) {
+                wordInput.writeWordd();
+                break;
+            }
+        }
     }
-  }
 
-  public void dictionaryDelete() {
-    Scanner sc = new Scanner(System.in);
-    String find = sc.nextLine();
-    for (int i = 0; i < arrayDictionary.size(); i++) {
-      String key = arrayDictionary.get(i).getWord_target();
-      if (key.equals(find)) {
-        arrayDictionary.remove(i);
-        break;
-      }
+    public void dictionaryDelete() {
+        Scanner sc = new Scanner(System.in);
+        String find = sc.nextLine();
+        for (int i = 0; i < arrayDictionary.size(); i++) {
+            String key = arrayDictionary.get(i).getWord_target();
+            if (key.equals(find)) {
+                arrayDictionary.remove(i);
+                break;
+            }
+        }
     }
-  }
 
 
-  public void dictionaryExportToFile() throws IOException {
-    String url = "E:\\Tudien\\src\\Dis\\dictionaries.txt";
-    File file = new File(url);
-    FileOutputStream outputStream = new FileOutputStream(file);
-    OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
-    for(int i = 0; i < arrayDictionary.size(); i++) {
-      String target = arrayDictionary.get(i).getWord_target();
-      String explain = arrayDictionary.get(i).getWord_explain();
-      String fullkey = target + "\t" + explain + "\n";
-      outputStreamWriter.write(fullkey);
+    public void dictionaryExportToFile() throws IOException {
+        String url = "src/main/java/base/dictionaries.txt";
+        File file = new File(url);
+        FileOutputStream outputStream = new FileOutputStream(file);
+        OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
+        for (int i = 0; i < arrayDictionary.size(); i++) {
+            String target = arrayDictionary.get(i).getWord_target();
+            String explain = arrayDictionary.get(i).getWord_explain();
+            String fullKey = target + "\t" + explain + "\n";
+            outputStreamWriter.write(fullKey);
+        }
+        outputStreamWriter.flush();
     }
-    outputStreamWriter.flush();
-  }
 }
