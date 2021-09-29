@@ -53,7 +53,9 @@
     -fx-text-fill: white;
     -fx-padding: 10;
 }
-
+.btn:hover {
+    -fx-cursor: hand;
+}
 .scroll-pane {
     -fx-background-radius: 10;
     -fx-background-color: #3D3C3F;
