@@ -6,3 +6,4 @@ five	nam
 six	sau
 seven	bay
 eight	tam
+nine	chin
