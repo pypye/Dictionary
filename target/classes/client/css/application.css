@@ -88,3 +88,14 @@
     -fx-background-color: #313133;
     -fx-background-insets: 2, 0, 0;
 }
+.text-area {
+    -fx-background-color: transparent;
+    -fx-control-inner-background: #3D3C3F;
+    -fx-background-radius: 10;
+}
+.text-area:focused{
+    -fx-faint-focus-color: transparent;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-radius: 10;
+}

@@ -9,32 +9,21 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" styleClass="pane" stylesheets="@../css/application.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" styleClass="pane" stylesheets="@../css/application.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.dictionary.controllers.OfflineController">
    <children>
       <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="800.0" styleClass="menu-bar" stylesheets="@../css/application.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <Button mnemonicParsing="false" styleClass="menu-btn" text="Từ điển Online" textOverrun="WORD_ELLIPSIS">
-               <HBox.margin>
-                  <Insets right="20.0" />
-               </HBox.margin>
-            </Button>
-            <Button mnemonicParsing="false" styleClass="menu-btn" text="Từ điển Offline" textOverrun="WORD_ELLIPSIS">
-               <HBox.margin>
-                  <Insets right="20.0" />
-               </HBox.margin>
-            </Button>
-            <Button mnemonicParsing="false" styleClass="menu-btn" text="Cài đặt" textOverrun="CLIP">
-               <HBox.margin>
-                  <Insets right="20.0" />
-               </HBox.margin>
-            </Button>
-         </children>
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
          <padding>
             <Insets left="20.0" />
          </padding>
+         <children>
+            <Button fx:id="offlineButton" mnemonicParsing="false" onAction="#onOfflineButtonClick" styleClass="menu-btn" text="Từ điển Offline" textOverrun="WORD_ELLIPSIS" />
+            <Button fx:id="onlineButton" mnemonicParsing="false" onAction="#onOnlineButtonClick" styleClass="menu-btn" text="Từ điển Online" textOverrun="WORD_ELLIPSIS" />
+            <Button mnemonicParsing="false" styleClass="menu-btn" text="Từ đồng nghĩa" textOverrun="WORD_ELLIPSIS" />
+            <Button mnemonicParsing="false" styleClass="menu-btn" text="Cài đặt" textOverrun="CLIP" />
+         </children>
       </HBox>
       <VBox layoutX="40.0" layoutY="84.0" styleClass="container" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="80.0">
          <children>

@@ -1,4 +1,4 @@
-package GoogleApiTranslate;
+package api;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,20 +7,12 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 
-public class TestApiInJava {
+public class GoogleAPI {
 
-    public static void main(String[] args) throws IOException {
-        String text = "Hello World!";
-        //Translated text: Hallo Welt!
-        System.out.println("Translated text: " + translate("", "vi", text));
-    }
-
-    private static String translate(String langFrom, String langTo, String text)
-            throws IOException {
-        // INSERT YOU URL HERE
+    public static String translate(String langFrom, String langTo, String text) throws IOException {
+        String APIKEY = "AKfycbzxtNpZD2Ogs4oeUnj8nTaCmPlKwgwsLWPasyIsLQPB_WXvKdKU";
         String urlStr =
-                "https://script.google.com/macros/s/AKfycbzxtNpZD2Ogs4oeUnj8nTaCmPlKwgwsLWPasyIsLQPB_WXvKdKU/exec"
-                        +
+                        "https://script.google.com/macros/s/" + APIKEY + "/exec" +
                         "?q=" + URLEncoder.encode(text, "UTF-8") +
                         "&target=" + langTo +
                         "&source=" + langFrom;
@@ -36,5 +28,8 @@ public class TestApiInJava {
         in.close();
         return response.toString();
     }
-
+    public static void main(String[] args) throws IOException {
+        String text = "Hello world";
+        System.out.println("Translated text: " + translate("", "vi", text));
+    }
 }

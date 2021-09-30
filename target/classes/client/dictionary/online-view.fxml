@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" styleClass="pane" stylesheets="@../css/application.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.dictionary.controllers.OnlineController">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="800.0" styleClass="menu-bar" stylesheets="@../css/application.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button fx:id="offlineButton" mnemonicParsing="false" onAction="#onOfflineButtonClick" styleClass="menu-btn" text="Từ điển Offline" textOverrun="WORD_ELLIPSIS">
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="onlineButton" mnemonicParsing="false" onAction="#onOnlineButtonClick" styleClass="menu-btn" text="Từ điển Online" textOverrun="WORD_ELLIPSIS">
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" styleClass="menu-btn" text="Từ đồng nghĩa" textOverrun="WORD_ELLIPSIS" />
+            <Button mnemonicParsing="false" styleClass="menu-btn" text="Cài đặt" textOverrun="CLIP">
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+      </HBox>
+      <SplitPane dividerPositions="0.5" prefHeight="160.0" prefWidth="200.0" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="80.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <TextArea fx:id="inputTextArea" layoutX="26.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" promptText="Type Here..." stylesheets="@../css/application.css" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <TextArea fx:id="outputTextArea" editable="false" layoutX="7.0" prefHeight="200.0" prefWidth="200.0" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding></TextArea>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <VBox alignment="CENTER" prefHeight="70.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Button fx:id="translateButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onTranslateButtonClick" prefWidth="68.0" styleClass="btn" text="Dịch" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
