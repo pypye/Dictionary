@@ -50,6 +50,7 @@
 
 .btn {
     -fx-background-color: #6462FC;
+    -fx-border-radius: 10;
     -fx-text-fill: white;
     -fx-padding: 10;
 }
@@ -76,6 +77,11 @@
     -fx-background-radius: 10;
     -fx-background-insets: 2, 0, 0;
 }
+.scroll-pane .scroll-bar:horizontal {
+    -fx-background-color: #313133;
+    -fx-background-radius: 10;
+    -fx-background-insets: 2, 0, 0;
+}
 .split-pane {
     -fx-background-radius: 10;
     -fx-background-color: #3D3C3F;
@@ -97,5 +103,12 @@
     -fx-faint-focus-color: transparent;
     -fx-border-color: transparent;
     -fx-border-width: 0;
+    -fx-background-radius: 10;
+}
+.choice-box{
+    -fx-background-color: #313133;
+}
+.choice-box .context-menu {
+    -fx-background-color: #3D3C3F;
     -fx-background-radius: 10;
 }
