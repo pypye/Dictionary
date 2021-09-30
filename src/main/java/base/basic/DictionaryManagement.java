@@ -33,7 +33,7 @@ public class DictionaryManagement {
     }
 
     public void insertFromFile() throws FileNotFoundException {
-        String url = "src/main/java/base/dictionaries.txt";
+        String url = "src/main/java/base/basic/dictionaries.txt";
         FileInputStream fileInputStream = new FileInputStream(url);
         Scanner sc = new Scanner(fileInputStream);
         while (sc.hasNextLine()) {
@@ -74,7 +74,7 @@ public class DictionaryManagement {
 
 
     public void dictionaryExportToFile() throws IOException {
-        String url = "src/main/java/base/dictionaries.txt";
+        String url = "src/main/java/base/basic/dictionaries.txt";
         File file = new File(url);
         FileOutputStream outputStream = new FileOutputStream(file);
         OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
