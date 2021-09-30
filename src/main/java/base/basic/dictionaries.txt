@@ -1,0 +1,9 @@
+one	mot
+two	hai
+three	ba
+four	bon
+five	nam
+six	sau
+seven	bay
+eight	tam
+nine	chin
