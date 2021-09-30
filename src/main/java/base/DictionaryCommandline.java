@@ -6,24 +6,28 @@ import java.util.Scanner;
 
 public class DictionaryCommandline {
 
-  void showAllWords(DictionaryManagement dictionaryManagement) {
+  public ArrayList<String> showAllWords(DictionaryManagement dictionaryManagement) {
     ArrayList<word> arrayList = dictionaryManagement.arrayDictionary;
-    System.out.println("No      | English               | Vietnamese");
+    ArrayList<String> dictionary = new ArrayList<>();
+    dictionary.add("No      | English                      | Vietnamese");
     for (int i = 0; i < arrayList.size(); i++) {
-      System.out.print(i + 1);
+      String template = (Integer.toString(i+1));
       int cnt = Math.max(0, (int) Math.log10(i));
-      for (int j = 1; j < 8 - cnt; j++) {
-        System.out.print(" ");
+      for (int j = 1; j < 15 - cnt; j++) {
+        template = template.concat(" ");
       }
-      System.out.print("| ");
+      template = template.concat("| ");
+
       String target = arrayList.get(i).getWord_target();
       String explain = arrayList.get(i).getWord_explain();
-      System.out.print(target);
+      template = template.concat(target);
       for (int j = 1; j <= 22 - target.length(); j++) {
-        System.out.print(" ");
+        template = template.concat(" ");
       }
-      System.out.println("| " + explain);
+      template = template.concat("| " + explain);
+      dictionary.add(template);
     }
+    return dictionary;
   }
 
   void dictionarySearcher(DictionaryManagement dictionaryManagement) {
@@ -43,9 +47,10 @@ public class DictionaryCommandline {
     DictionaryManagement array = new DictionaryManagement();
     DictionaryCommandline writee = new DictionaryCommandline();
     array.insertFromFile();
-    writee.showAllWords(array);
-    array.insertFromCommandline();
-    writee.showAllWords(array);
-    array.dictionaryExportToFile();
+    ArrayList<String> x = writee.showAllWords(array);
+    for(int i = 0; i < x.size(); i++) System.out.println(x.get(i));
+//    array.insertFromCommandline();
+//    writee.showAllWords(array);
+//    array.dictionaryExportToFile();
   }
 }
