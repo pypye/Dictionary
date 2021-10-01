@@ -48,9 +48,9 @@ public class DictionaryManagement {
     public void dictionaryLookup() {
         System.out.printf("Type word to translate: ");
         Scanner sc = new Scanner(System.in);
-        String find = sc.nextLine();
+        String find = sc.nextLine().trim();
         for (Word wordInput : dictionaryManagement.getDictionaryArray()) {
-            String key = wordInput.getWord_target();
+            String key = wordInput.getWord_target().trim();
             if (key.equals(find)) {
                 wordInput.writeWord();
                 return;

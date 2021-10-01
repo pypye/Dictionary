@@ -1,0 +1,1206 @@
+Abraham’s cones	Khuôn hình chóp cụt để đo độ sụt bê tông
+absorption test	sự thử lực hấp thu 
+Abutment	tường chống, chân vòm; mố cầu
+Acceberated weathering	sự phong hóa tăng nhanh
+accelerated load test	sự thử chịu tải gia tăng 
+accelerated test	sự thử gia tăng
+Acceleration 	Đẩy nhanh tiến độ
+acceleration test	sự thử nghiệm gia tốc 
+Accelerator, Earlystrength admixture	Phụ gia tăng nhanh hóa cứng bê tông
+acceptance test	sự thử nghiệm thu 
+Acess to the site 	ra vào công trường
+acid-resisting concrete 	bê tông chịu axit 
+Action effect	hiệu quả hoạt động
+Action	tác động, tác dụng; sự hoạt động
+Activity schedule 	Biểu khối lượng công việc
+actual load 	tải trọng thực, tải trọng có ích 
+actual test	sự thử nghiệm khai thác, sự thử nghiệm thực 
+additional load 	tải trọng phụ thêm, tải trọng tăng thêm 
+additive test	sự xác định hàm lượng chất phụ gia 
+adhesion test	sự thử lực bám 
+Adjustable prop	[cột, thanh chống] điều chỉnh được
+Advance payment 	Tạm ứng
+aerated concrete 	bê tông xốp/ tổ ong 
+A-frame (construction)	khung chữ A (kết cấu)
+After anchoring	Sau khi neo xong cốt thép dự ứng lực
+ageing test	sự thử lão hóa 
+agglomerate-foam conc. 	bê tông bọt thiêu kết/bọt kết tụ
+Air supported structure	kết cấu đỡ bằng khí cầu
+air test	sự thử độ kín; sự thử bằng không khí nén 
+air-entrained concrete 	bê tông có phụ gia tạo bọt 
+air-placed concrete 	bê tông phun 
+allowable load 	tải trọng cho phép 
+alloy steel	thép hợp kim
+Alloy(ed) steel	Thép hợp kim
+alternate load 	tải trọng đổi dấu 
+alternate-stress test	sự thử ứng suất đổi đầu 
+altitude test	sự thử nghiệm trên cao; sự thử nghiệm độ cao 
+Anchor bolt	bulông neo
+Anchor plate	bản neo
+Anchor sliding	Độ trượt trong mấu neo của đầu cốt thép
+Anchor	cái neo
+Anchorage length	Chiều dài đoạn neo giữ của cốt thép
+angle bar	thép góc
+angle beam 	xà góc; thanh giằng góc 
+angle brace/angle tie in the scaffold 	thanh giằng góc ở giàn giáo
+angular test	sự thử kiểm tra, sự kiểm nghiệm ( 
+antisymmetrical load 	tải trọng phản đối xứng 
+apex load 	tải trọng ở nút (giàn)
+Approval of the Contractor's temporary works	Phê duyệt các công trình tạm của Nhà thầu
+arbitration test	sự thử nghiệm trọng tải (sự thử nghiệm để phân xử)
+Arch bridge	cầu vòm
+Arch	cuốn, vòm; cửa cuốn
+architectural concrete 	bê tông trang trí
+Area of reinforcement	Diện tích cốt thép
+armoured concrete 	bê tông cốt thép 
+Arrangement of longitudinales renforcement cut-out	Bố trí các điểm cắt đứt cốt thép dọc của dầm
+Arrangement of reinforcement	Bố trí cốt thép
+articulated girder 	dầm ghép 
+asphaltic concrete 	bê tông atphan 
+assumed load 	tải trọng giả định, tải trọng tính toán 
+Atmospheric corrosion resistant steel	Thép chống rỉ do khí quyển
+atrition test	sự thử mài mòn 
+Attached pier	cột chống; cột giả
+average load 	tải trọng trung bình 
+axial load 	tải trọng hướng trục 
+axle load 	tải trọng lên trục 
+Backpropping	sự chống xiên; thanh chống xiên
+Back-shore	[thanh, cọc] chống xiên
+Bag of cement 	Bao xi măng
+Bag	Bao tải (để dưỡng hộ bê tông)
+balance beam 	đòn cân; đòn thăng bằng 
+balanced load 	tải trọng đối xứng 
+balancing load 	tải trọng cân bằng 
+ballast concrete 	bê tông đá dăm 
+Balloon-frame construction	kết cấu khung nhà gỗ nhẹ
+band-over test	sự thử bẻ cong 
+Bar (reinforcing bar)	Thanh cốt thép
+Base structure	kết cấu nền móng
+Base	nền; móng; bệ
+basement of tamped (rammed) concrete 	móng (tầng ngầm) làm bằng cách đổ bê tông
+Baseplate		tấm đệm, tấm lót
+basic load 	tải trọng cơ bản 
+Batter	sườn dốc, mái dốc; độ nghiêng mặt ngoài
+Beam of constant depth	Dầm có chiều cao không đổi
+Beam reinforced in tension and compression	Dầm có cả cốt thép chịu kéo và chịu nén
+Beam reinforced in tension only	Dầm chỉ có cốt thép chịu kéo
+bearable load 	tải trọng cho phép 
+bed load 	trầm tích đáy 
+Bedding	Móng cống
+Before anchoring	Trước khi neo cốt thép dự ứng lực
+bend(ing) test	sự thử uốn 
+bending load 	tải trọng uốn 
+Bending strength 	Độ bền uốn
+Bent-up bar	Cốt thép uốn nghiêng lên
+best load 	công suất khi hiệu suất lớn nhất (tuabin) 
+bituminous concrete 	bê tông atphan 
+blank test	sự thử bất kỳ, mẫu thử ngẫu nhiên 
+blow test	sự thử sức chịu va đập; sự thử độ bền va đập 
+blow-bending test	sự thử uốn va đập 
+bond beam 	dầm nối 
+Bonded tendon	Cốt thép dự ứng lực có dính bám với bê tông
+Bonded tendon	Cốt thép dự ứng lực có dính bám với bê tông
+Bored pile	Cọc khoan nhồi
+boring test	sự thử bằng khoan
+Bottom lateral	Thanh giằng chéo ở mọc hạ của dàn
+Bottom reinforcement	Cốt thép bên dưới (của mặt cắt)
+bow girder 	dầm cong 
+bowstring girder 	giàn biên cong 
+box beam 	dầm hình hộp 
+box girder 	dầm hộp 
+braced girder 	giàn có giằng tăng cứng 
+Braced member	Thanh giằng ngang
+bracing beam 	dầm tăng cứng 
+Bracing	Giằng gió
+bracket load 	tải trọng lên dầm chìa, tải trọng lên công xôn 
+brake beam 	đòn hãm, cần hãm 
+brake load 	tải trọng hãm 
+break-down test	sự thử đứt; sự thử gãy 
+breaking load 	tải trọng phá hủy 
+Breaking strength 	Giới hạn bền, sức chống phá huỷ
+breaking test	sự thử đứt; sự thử gãy 
+breast beam 	tấm tì ngực; (đường sắt) thanh chống va, 
+breeze concrete 	bê tông bụi than cốc 
+brick 	Gạch
+brick girder 	dầm gạch cốt thép 
+brick wall 	Tường gạch
+bricklayer /brickmason 	Thợ nề
+bricklayer's hammer (brick hammer) 	búa thợ nề
+bricklayer's labourer/builder's labourer 	Phụ nề, thợ phụ nề
+bricklayer's tools 	Các dụng cụ của thợ nề
+bridge beam 	dầm cầu 
+bridge test	sự xác định bằng cầu điện trở 
+Brinell hardness test	sự thử độ cứng Brinell 
+brittleness test	sự thử độ giòn 
+Broad flange beam 	dầm có cánh bản rộng (Dầm I, T) 
+broken concrete 	bê tông dăm, bê tông vỡ 
+buckling load 	tải trọng uốn dọc tới hạn, tải trọng mất ổn định dọc 
+Buckling strength 	Cường độ uốn dọc
+buffer beam 	thanh chống va, thanh giảm chấn (tàu hỏa) 
+buiding site 	Công trường xây dựng
+Builder's hoist 	Máy nâng dùng trong xây dựng
+building site latrine 	Nhà vệ sinh tại công trường xây dựng
+build-up girder 	dầm ghép 
+built up section	thép hình tổ hợp
+bump test	sự thử uốn 
+bumper beam 	thanh chống va, thanh giảm chấn (tàu hỏa), dầm đệm 
+bunched beam 	chùm nhóm 
+buried concrete 	bê tông bị phủ đất 
+Bursting concrete stress	ứng suất vỡ tung của bê tông
+bush-hammered concrete 	bê tông được đàn bằng búa
+Cable disposition	Bố trí cốt thép dự ứng lực
+calibration test	sự thử định chuẩn 
+calorimeter test	sự thử bằng nhiệt lượng kế; sự đo nhiệt lượng 
+camber beam 	dầm cong, dầm vồng 
+cantilever arched girder 	dầm vòm đỡ; giàn vòm công xôn 
+cantilever beam 	dầm công xôn, dầm chìa 
+capacitive load 	tải dung tính (điện) 
+capping beam 	dầm mũ dọc 
+carbon penetration test	sự thử độ thấm cacbon 
+Carbon steel	Thép các bon (thép than)
+carbon test	sự thử hàm lượng cacbon 
+carbonization test	sự thử cacbon hóa; sự thử tính oxi hóa 
+carcase (cacass, farbric) [ house construction, carcassing]]	khung sườn (kết cấu nhà)
+cased beam 	dầm thép bọc bê tông 
+cast concrete 	bê tông đúc 
+Cast in many stage phrases	Đổ bê tông theo nhiều giai đoạn
+Cast in place	Đúc bê tông tại chỗ
+Cast in situ place concrete	Bê tông đúc tại chỗ
+Cast in situ structure (slab, beam, column)	Kết cấu đúc bê tông tại chỗ (dầm, bản, cột)
+Cast steel	Thép đúc
+Cast,(casting)	Đổ bê tông (sự đổ bê tông)
+Castellated beam 	dầm thủng 
+castelled section	thép hình bụng rỗng
+Casting schedule	Thời gian biểu của việc đổ bê tông
+Cast-in-place bored pile	Cọc khoan nhồi đúc tại chỗ
+Cast-in-place concrete caisson	Giếng chìm bê tông đúc tại chỗ
+Cast-in-place concrete pile	Cọc đúc bê tông tại chỗ
+Cast-in-place, posttensioned bridge	Cầu dự ứng lực kéo sau đúc bê tông tại chỗ
+Cast-in-situ flat place slab	Bản mặt cầu đúc bê tông tại chỗ
+Catenary arch	cuốn có dạng xích treo
+cathode beam 	chùm tia catôt, chum tia điện tử 
+Caupling	Nối cốt thép dự ứng lực
+cellar window (basement window)	các bậc cầu thang bên ngoài tầng hầm
+cellular concrete 	bê tông tổ ong 
+cellular girder 	dầm rỗng lòng 
+cement 	Xi măng
+cement concrete 	bê tông xi măng 
+Center spiral	Lõi hình xoắn ốc trong bó sợi thép
+centre point load 	tải trọng tập trung 
+centric load 	tải trọng chính tâm, tải trọng dọc trục 
+centrifugal load 	tải trọng ly tâm 
+centrifuge test	sự thử ly tâm; sự thử bằng máy ly tâm 
+Changes in Activity Schedule 	Thay đổi lịch tiến độ
+changing load 	tải trọng thay đổi 
+channel section	thép hình chữ U
+Characteristic strength 	Độ bền đặc trưng
+check test	sự thử kiểm tra 
+Checking concrete quality	Kiểm tra chất lượng bê tông
+Chillid steel	Thép đã tôi
+chimney 	ống khói (lò sưởi)
+chimney bond 	cách xây ống khói 
+chopped beam 	tia đứt đoạn 
+chuting concrete 	bê tông lỏng 
+cinder concrete 	bê tông xỉ 
+circulating load 	tải trọng tuần hoàn 
+clarke beam 	dầm ghép bằng gỗ 
+Closure joint	Mối nối hợp long (đoạn hợp long)
+closure test	sự thử nén hết cỡ (lò xo)
+Coating	Vật liệu phủ để bảo vệ cốt thép DưL khỏi rỉ hoặc giảm ma sát khi căng 
+cobble concrete 	bê tông cuội sỏi 
+cold rolled steel	thép cán nguội
+cold temperature test	sự thử ở nhiệt độ thấp 
+cold test	sự thử lanh; sự thử ở nhiệt độ thấp 
+cold weather test	sự thử trong thời tiết lạnh 
+cold-and-hot test	sự thử nóng-lạnh, sự thử bằng nung nóng-làm lạnh 
+collapse load 	tải trọng phá hỏng, tải trọng
+collapsible beam 	dầm tháo lắp được 
+collar beam 	dầm ngang, xà ngang; thanh giằng (vì kèo) 
+combination beam 	dầm tổ hợp, dầm ghép 
+combined load 	tải trọng phối hợp 
+commercial concrete 	bê tông trộn sẵn 
+Communications 	Các biện pháp thông tin liên lạc
+Compensation events 	Các trường hợp bồi thường
+compession test	sự thử nén 
+Completion date 	Ngày hoàn thành
+Completion of contract 	Hoàn thành hợp đồng
+composit beam 	dầm hợp thể, dầm vật liệu hỗn hợp 
+composite load 	tải trọng phức hợp 
+Composite steel and concrete structure	Kết cấu liên hợp thép – bê tông cốt thép
+Composite steel and concrete structure	Kết cấu liên hợp thép – bê tông cốt thép
+compound beam 	dầm hỗn hợp
+compound girder 	dầm ghép 
+comprehensive test	sự thử toàn diện 
+Compremed concrete zone	Vùng bê tông chịu nén
+compression reinforcement 	cốt (thép); cốt, sườn 
+Compression reinforcement	Cốt thép chịu nén
+compressive load 	tải trọng nén 
+Compressive strength 	Ứng suất chịu nén
+concentrated load 	tải trọng tập trung 
+Concrete age at prestressing time	Tuổi của bê tông lúc tạo dự ứng lực
+Concrete aggregate (sand and gravel) 	cốt liệu bê tông (cát và sỏi)
+concrete base course 	cửa sổ tầng hầm
+Concrete composition	Thành phần bê tông
+Concrete cover	Bê tông bảo hộ (bên ngoài cốt thép)
+concrete floor 	Sàn bê tông
+Concrete hinge	Chốt bê tông
+concrete mixer/gravity mixer 	Máy trộn bê tông
+Concrete proportioning	Công thức pha trộn bê tông
+Concrete stress at tendon level	ứng suất bê tông ở thớ đặt cáp dự ứng lực
+Concrete surface treatement	Xử lý bề mặt bê tông
+Concrete test hammer	Súng bật nảy để thử cường độ bê tông
+Concrete thermal treatement	Xử lý nhiệt cho bê tông
+Concrete unit weight, density of concrete	Trọng lượng riêng bê tông
+Concrete	Bê tông
+Concrete-filled pipe pile	Cọc ống thép nhồi bê tông lấp lòng
+Condition of curing	Điều kiện dưỡng hộ bê tông
+cone test	sự thử nghiệm (độ sụt vữa bê tông) bằng chùy hình nón 
+conjugate beam 	dầm trang trí, dầm giả 
+Connect by hinge	Nối khớp
+connected load 	tải trọng liên kết 
+Connection strand by strand	Nối các đoạn cáp dự ứng lực Kéo sau
+Connection	Ghép nối
+Connector	Neo (của dầm thép liên hợp bản BTCT)
+consistency test of concrete	sự thử nghiệm độ sụt của vữa bê tông 
+constant load 	tải trọng không đổi, tải trọng tĩnh 
+Construction successive stage(s)	(Các) Giai đoạn thi công nối tiếp nhau
+continuity test	sự thử tính liên tục 
+continuous beam 	dầm liên tục
+continuous concrete 	bê tông liền khối 
+continuous girder 	dầm liên tục 
+continuous load 	tải trọng liên tục; tải trọng phân bố đều 
+Contract data	Dữ liệu Hợp đồng
+Contract price 	Giá Hợp đồng
+Contractor to construct the Works 	Nhà thầu phải thi công Công trình
+contractor's name plate 	Biển ghi tên Nhà thầu
+Contractor's risks 	Rủi ro của Nhà thầu
+controlling beam 	tia điều khiển 
+convergent beam 	chùm hội tụ
+copper clad steel	thép mạ đồng
+Corner connector	Neo kiểu thép góc
+Correction of defects 	Sửa chữa sai sót
+Corroded reinforcement	Cốt thép đã bị rỉ
+Cost control 	Kiểm soát chi phí
+Cost of repairs 	Chi phí sửa chữa
+Coupler (coupling)	Mối nối cáp dự ứng lực Kéo sau
+Coupler	Đầu nối để nối các cốt thép dự ứng lực
+Coupleur	Bộ nối các đoạn cáp dự ứng lực kéo sau
+cover ( boards) for the staircase 	Tấm che lồng cầu thang
+Cover plate	Bản thép phủ (ở phần bản cánh dầm thép )
+Cover-meter, Rebar locator	Máy đo lớp bê tông bảo hộ cốt thép
+Cover-meter, Rebar locator	Máy đo lớp bê tông bảo hộ cốt thép
+Cover-plate	Bản nối ốp, bản má
+crane beam 	dầm cần trục 
+crane girder 	giá cần trục; giàn cần trục 
+crane load 	sức nâng của cần trục, trọng tải của cần trục 
+Creep strength 	Độ bền từ biến
+creep test	sự thử độ rão; sự thử độ lưu biến 
+creep-rupture test	sự thử độ rão-gãy 
+crippling load 	tải trọng phá hủy 
+crippling test	sự thử uốn dọc; sự thử uốn đi uốn lại 
+critical load 	tải trọng tới hạn 
+cross beam 	dầm ngang, xà ngang 
+cross girder 	dầm ngang 
+crushing load 	tải trọng nghiền, tải trọng nén vỡ 
+Crushing machine	Máy nén mẫu thử bê tông
+Crushing strength 	Độ bền nén vỡ
+crushing test	sự thử nén vỡ 
+cube strength 	Độ bền nén ba phương
+curb girder 	đá vỉa; dầm cạp bờ
+Cure to cure, curing	Dưỡng hộ bê tông mới đổ xong
+Curing temperature	Nhiệt độ dưỡng hộ bê tông
+Curing	Bảo dưỡng bê tông trong lúc hóa cứng
+Currencies 	Các loại tiền tệ
+Cutting machine	Máy cắt cốt thép
+Cutting strength 	Ứng lực cắt
+cyclic load 	tải trọng tuần hoàn 
+cyclopean concrete 	bê tông đá hộc 
+Cylinder, Test cylinder	Mẫu thử bê tông hình trụ
+damping test	sự thử giảm xóc, sự thử giảm âm; sự thử thấm 
+Dayworks	Công việc công nhật
+dead load 	tĩnh tải 
+dead weight load 	tĩnh tải 
+de-aerated concrete 	bê tông (đúc trong) chân không 
+deck girder 	giàn cầu 
+Deck plate girder	Dầm bản thép có đường xe chạy trên
+Deep foundation	Móng sâu
+Defect notice period 	Thời gian thông báo về sai sót (tương đương với nghĩa là thời gian bảo hành)
+Defects 	Sai sót (kỹ thuật)
+definitions 	Các định nghĩa
+deflection test	sự thử uốn 
+deformation test	sự thử biến dạng 
+Deformed bar, deformed reinforcement	Cốt thép có gờ (cốt thép gai)
+Deformed reinforcement	Cốt thép có độ dính bám cao (có gờ)
+Deformed reinforcement	Cốt thép có độ dính bám cao (có gờ)
+Degign action effect	hiệu quả hoạt động thiết kế
+Delegation 	Đại diện
+demand load 	tải trọng yêu cầu 
+dense concrete 	bê tông nặng
+Depth of beam	Chiều cao dầm
+Depth	Chiều cao
+design load 	tải trọng tính toán, tải trọng thiết kế 
+destructive test	sự thử phá hủy 
+diagnostic test	sự thử chẩn đoán
+diagonal reinforcement 	cốt (thép) xiên, cốt (thép) đặt chéo 
+Dile splicing	Nối dài cọc
+direct-acting load 	tải trọng tác động trực tiếp 
+discontinuous load 	tải trọng không liên tục 
+Discoveries 	Những thứ phát hiện được (khi thi công)
+disposable load 	tải trọng có ích 
+Disputes	tranh chấp
+distributed load 	tải trọng phân bố 
+distributing reinforcement 	cốt (thép) phân bố 
+Distribution reinforcement	Cốt thép phân bố
+divergent beam 	chùm phân kỳ 
+double angle	thép góc ghép thành hình T
+double strut trussed beam 	dầm tăng cứng hai trụ chống 
+draw beam 	dầm nâng, cần nâng 
+drawbar load 	lực kéo ở móc 
+drawbar test	sự thử thanh kéo 
+drill test	sự thử khoan 
+drop test	sự thử va dập; sự thử thả rơi; sự thử sụt điện áp 
+drum test	sự thử gõ đập 
+dry concrete 	bê tông trộn khô, vữa bê tông cứng 
+Dry guniting	Phun bê tông khô
+Duct	ống chứa cốt thép dự ứng lực
+dummy load 	tải trọng giả 
+dummy test	sự thử mô hình; sự thử hình mẫu 
+duplicate test	sự thử lặp lại 
+During stressing operation	Trong quá trình Kéo căng cốt thép
+Dynamic strength 	Độ bền động, độ bền va chạm
+dynamic test	sự thử động lực 
+dynamic(al) load 	tải trọng động lực học 
+early strenght concrete 	bê tông mau cứng 
+Early strength concrete	Bê tông hóa cứng nhanh
+Early warning 	Cảnh báo trước
+earthquake test	sự thử sức bền động đất, sự thử sức chịu động đất 
+eccentric load 	tải trọng lệch tâm 
+Effective depth at the section	Chiều cao có hiệu
+effiency test	sự thử công suất, sự thử năng suất; sự thử hiệu suất 
+Efflorescence	ố mầu trên bề mặt bê tông
+elastic limit load 	tải trọng giới hạn đàn hồi 
+Elastic strength 	Độ bền đàn hồi
+Elastomatric bearing	Gối cao su
+Elliptical arch	cuốn hình elip
+elongation test	sự thử kéo dài; sự thử độ kéo dài 
+Employer's risks	Rủi ro của Chủ đầu tư
+end bearing capacity 	Sức chống mũi
+end girder 	dầm gối tường 
+endưquench test	sự thử độ thấm tôi 
+endurance test	sự thử độ bền; sự thử sức chịu đựng 
+endurance-tension test	sự thử độ bền kéo, sự thử sức chịu kéo 
+enduranceưtorsion test	sự thử độ bền xoắn, sự thử sức chịu xoắn 
+English bond 	Xếp mạch kiểu Anh
+English cross bond/Saint Andrew's cross bond 	cách xây chéo kiểu Anh
+Epingle Pin	Cốt thép găm (để truyền lực cắt trượt như neo)
+equalizing beam 	đòn cân bằng 
+Equipment for the distribution of concrete	Thiết bị phân phối bê tông
+equivalent load 	tải trọng tương đương
+Erection reinforcement	Cốt thép thi công
+even load 	tải trọng đều, tải trọng phân bố đều 
+excess concrete 	vữa bê tông phân lớp 
+expanded slag concrete 	bê tông xỉ nở 
+exposed concrete 	bê tông mặt ngoài(công trình) 
+Exposed reinforcement	Cốt thép lộ ra ngoài
+exposure test	sự thử phơi sáng
+Extension of intended completion date 	Gia hạn ngày hoàn thành dự kiến
+External prestressed concrete	Bê tông cốt thép dự ứng lực ngoài
+fabric reinforcement 	cốt (thép) lưới 
+face-bend test	sự thử uốn bề mặt (thử mối hàn) 
+failing load 	tải trọng phá hủy 
+failure-rate test	sự thử tốc độ phá hủy 
+fan beam 	chum tia hình quạt 
+fascia beam 	dầm có cánh 
+fascia girder 	dầm biên 
+Fatigue strength 	Giới hạn mỏi
+fatigue test	sự thử độ mỏi
+feeder skip 	Thùng tiếp liệu
+fence 	bờ rào, tường rào
+fender beam 	dầm chắn 
+fibrous concrete 	bê tông sợi 
+fictitious load 	tải trọng ảo 
+Field connection use high strength bolt	Mối nối ở hiện trường bằng bu lông cường độ cao
+Field connection use high strength bolt	Mối nối ở hiện trường bằng bu lông cường độ cao
+Field connection	Mối nối ở hiện trường
+field test	sự thử ở hiện trường
+Final account 	Quyết toán
+fine concrete 	bê tông mịn 
+first course 	hàng /lớp gạch đầu tiên
+First floor ( second floor nếu là tiếng Anh Mỹ ) 	Lầu một (tiếng Nam), tầng hai (tiếng Bắc)
+fish-bellied beam 	dầm phình giữa, dầm bụng cá (để có sức bền đều) 
+Fix the ends of reinforcement	Giữ cố định đầu cốt thép
+Fixation on the form	Giữ cho cố định vào ván khuôn
+fixed beam 	dầm ngàm hai đầu, dầm cố định 
+fixed load 	tải trọng cố định, tải trọng không đổi 
+Flange reinforcement	Cốt thép bản cánh
+flanged beam 	dầm có bản cánh, dầm có gờ; dầm chữ I 
+flat bar	thép dẹt
+Flat Pratt girder 	dầm flat phẳng
+Flexible sheath	ống mềm (chứa cáp, thép DƯL)
+Flexural strength 	Giới hạn bền uốn
+float 	bàn xoa
+floated concrete 	(vữa) bê tông nhão/bê tông chảy lỏng 
+floor beam 	dầm sàn 
+flow test of concete	sự thử độ sụt (hình nón) của vữa bê tông 
+flow test	sự thử tính lưu động của vật liệu (sơn, vữa...) 
+fluctuating load 	tải trọng dao động 
+fly-ash concrete 	bê tông bụi tro
+foam concrete 	bê tông bọt 
+Footing	Bệ móng
+Forces on parapets	Lực lên lan can
+Form exterior face 	Bề mặt ván khuôn
+Form removal	Dỡ ván khuôn
+Form vibrator	Đầm cạnh (rung ván khuôn)
+Form	Ván khuôn
+Fouilk, bouchon	Bê tông bịt đáy (của móng Cáp cọc, của giếng, của hố)
+Foundation beam	dầm móng
+foundation girder 	dầm móng 
+Foundation material	Vật liệu của móng
+Foundation soil	Đất nền bên dưới móng
+Foundation	Móng
+Fractural strength 	Sức cản đứt
+fracture test	sự thử đứt gãy 
+frame girder 	giàn khung 
+frame reinforcement 	cốt (thép) giàn 
+free beam 	dầm tự do 
+free-bend test	sự thử uốn tự do 
+free-fall test	sự thử rơi tự do 
+freezing test	sự thử đông lạnh; sự thử tính chịu đông lạnh 
+fresh concrete 	bê tông mới đổ 
+Fresh concrete	Bê tông tươi (mới trộn xong)
+friability test	sự thử độ giòn 
+Frictional strength 	Độ bền ma sát
+front beam 	dầm trước 
+fuel consumption test	sự thử nghiệm tiêu hao nhiên liệu 
+full load 	tải trọng toàn phần 
+full-scale test	sự thử nguyên cỡ; sự thử mô hình nguyên cỡ 
+galvanised steel	thép mạ kẽm
+gas concrete 	bê tông xốp 
+gate 	Cửa
+General conditions of Contract 	Các điều kiện chung của Hợp đồng
+glass concrete 	bê tông thủy tinh 
+glass-reinforced conc. 	bê tông cốt thủy tinh
+glavel concrete 	bê tông (cốt liệu) sỏi 
+glazed concrete 	bê tông trong 
+Gluing of steel plate	Dán bản thép
+Grade of concrete	Cấp của bê tông
+Grade of reinforcement	Cấp của cốt thép
+Grade	Cấp (của bê tông, của …)
+gradually applied load 	sự chất tải tăng dần 
+granolithic concrete 	bê tông granit
+grating beam 	dầm ghi lò 
+gravity load 	tải trọng bản thân, tự trọng 
+green concrete 	bê tông mới đổ 
+green test	sự thử chạy rà 
+grillage reinforcement 	cốt (thép) lưới sợi 
+grinding test	sự thử khả năng gia công bằng mài, sự thử bằng mài 
+gross load 	tải trọng tổng, tải trọng toàn phần 
+Ground anchor	neo (vào) đất 
+ground floor (hoặc first floor nếu là tiếng Anh Mỹ) 	tầng trệt (tiếng Nam), tầng một (tiếng Bắc)
+Grouting	Phun vữa lấp lòng ống chứa cốt thép dự ứng lực
+guard board 	tấm chắn, tấm bảo vệ
+gunned concrete 	bê tông phun 
+Gusset plate	Bản nút, bản tiết điểm
+gust load 	(hàng không) tải trọng khi gió giật 
+gypsum concrete 	bê tông thạch cao 
+H- beam 	dầm chữ H 
+half- beam 	dầm nửa 
+half-latticed girder 	giàn nửa mắt cáo 
+hammer beam 	dầm hẫng, dầm chìa, dầm công xôn 
+Hand rail	Lan can
+hanging beam 	dầm treo 
+hanging test	sự thử kéo đứt bằng treo 
+hard rock concrete 	bê tông (cốt liệu) đá cứng 
+hard steel	thép cứng
+hardenet concrete 	bê tông đã đông cứng 
+hardness test	sự thử độ cứng 
+haydite concrete 	bê tông keramit 
+HDPE sheath	Vỏ bọc polyetylen mật độ cao của cáp dự 
+head beam 	dầm mũ cọc 
+heading bond 	cách xây hàng ngang (gạch xây ngang)
+heading course 	hàng, lớp xây ngang
+heaped concrete 	bê tông chưa đầm
+heat load 	tải trọng do nhiệt 
+heat test	sự thử bằng nung nóng 
+heat-resistant concrete 	bê tông chịu nhiệt 
+heavy concrete 	bê tông nặng 
+Heavy weight concrete	Bê tông nặng
+helical reinforcement 	cốt (thép) xoắn 
+high beam 	đèn rọi xa, chùm sáng rọi xa 
+high slump concrete 	bê tông chảy 
+High strength concrete	Bê tông cường độ cao
+High strength steel	Thép cường độ cao
+High strength steel	Thép cường độ cao
+High tech work technique	Công trình kỹ thuật cao
+high tensile steel	thép cường độ cao
+high yield steel	thép đàn hồi cao
+Highest flood level	Mức nước lũ cao nhất
+High-strength material	Vật liệu cường độ cao
+Hight density	ống bằng polyetylen mật độ cao
+hinged beam 	dầm đòn gánh, dầm quay quanh bản lề ở giữa 
+hinged cantilever girder 	dầm đỡ - ghép bản lề 
+hinged girder 	dầm ghép bản lề 
+hold beam 	dầm khô (dầm tàu ở chỗ khô) 
+Hole	Lỗ thủng, lỗ khoan
+hollow block wall 	Tường xây bằng gạch lỗ (gạch rỗng)
+hollow section	thép hình rỗng
+Hook	Móc câu (ở đầu cốt thép)
+Hoop reinforcement	Cốt thép đặt theo vòng tròn
+hooped concrete 	bê tông cốt thép vòng 
+hose (hosepipe) 	ống nước - Chú thích ở đây là loại ống mềm như dạng ống nhựa dùng để rửa xe ấy
+hot rolled steel	thép cán nóng
+hot test	sự thử bằng nung nóng 
+Hot-bending test	sự thử uốn nóng 
+hot-laid asphaltic conc.	bê tông atphan đúc nóng 
+Hot-load test	sự thử tải nhiệt (sự thử độ chịu nhiệt khi có tải) 
+hot-mixed asphaltic conc	bê tông atphan trộn nóng 
+Hydraulic concrete	Bê tông thủy công
+hydraulic test	sự thử thủy lực 
+hydrostatic test	sự thử thủy tĩnh 
+I- beam 	dầm chữ I 
+I- girder 	dầm chữ I 
+Identifying defects 	Phát hiện sai sót
+impact bend test	sự thử uốn va đập 
+impact compression test	sự thử nén va đập 
+impact endurance test	sự thử độ bền va đập 
+impact hardness test	sự thử độ cứng va đập 
+impact load 	tải trọng va đập 
+Impact strength 	Lực chống va đập
+impact test	sự thử va đập, sự thử dát 
+imposed load 	tải trọng đặt vào 
+impulse test	sự thử bằng xung 
+impulsive load 	tải trọng va đập, tải trọng xung 
+Inclined bar	Cốt thép nghiêng
+incompletely compacted c	bê tông đầm chưa đủ
+increment load 	tải trọng phụ 
+Indemnities 	Bồi thường
+independent girder 	dầm phụ, dầm rồi 
+indivisible load 	tải trọng không chia nhỏ được 
+inductive load 	tải trọng cảm ứng 
+initial load 	tải trọng ban đầu 
+In-situ concrete 	bê tông đổ tại chỗ
+in-situ material test	sự thử nghiệm vật liệu tại hiện trường 
+instantaneous load 	tải trọng tức thời 
+insulating concrete 	bê tông cách nhiệt 
+Insurance	Bảo hiểm
+intermittent load 	tải trọng gián đoạn 
+Internal prestressed concrete	Bê tông cốt thép dự ứng lực trong
+Internal prestressed concrete	Bê tông cốt thép dự ứng lực trong
+Internal vibrator	Đầm trong (vùi vào hỗn hợp bê tông)
+Interpretation 	Diễn giải
+intrinsic fatigue-limit test	sự thử giới hạn mỏi nội tại
+ion beam 	chùm ion 
+irregularly distributed load	tải trọng phân bố không đều 
+isteg reinforcement 	cốt (thép) có gờ 
+Jacking end	Điểm đầu cốt thép được kéo căng bằng kích
+Jacking force	Lực kích (để Kéo căng cốt thép)
+jamb 	Đố dọc cửa, thanh đứng khuôn cửa
+job-placed concrete 	bê tông đổ tại chỗ 
+joggle beam 	dầm ghép mộng 
+joint beam 	thanh giằng, thanh liên kết 
+junior beam 	dầm bản nhẹ 
+king post girder 	dầm tăng cứng một trụ 
+laboratory simulation test	sự thử bằng phương pháp mô phỏng trong phòng thí nghiệm 
+laboratory test	sự thử trong phòng thí nghiệm 
+ladder 	cái thang
+laminated beam 	dầm thanh 
+Laminated steel	Thép cán
+landing beam 	chùm sáng dẫn hướng hạ cánh 
+Language and law 	Ngôn ngữ và luật (áp dụng cho hợp đồng) 
+Lap	Mối nối chồng lên nhau của cốt thép
+laser beam 	chùm tia laze 
+Lateral bracing	Hệ giằng liên kết của dàn
+lateral load 	tải trọng ngang 
+lateral reinforcement 	cốt (thép) ngang 
+Lateral strength 	Độ bền chống lực ngang
+latrine 	nhà vệ sinh
+lattice beam 	dầm lưới, dầm mắt cáo 
+lattice girder 	giàn mắt cáo 
+laying - on - trowel 	bàn san vữa
+leak (age) test	sự thử độ rò 
+lean concrete 	bê tông nghèo, bê tông chất lượng thấp 
+Lean concrete (low grade concrete)	Bê tông nghèo
+ledger 	thanh ngang, gióng ngang (ở giàn giáo)
+Letter of acceptance 	Thư chấp thuận
+Leveling	Cao đạc
+Levelling instrument	Máy cao đạc (máy thủy bình)
+Levelling point	Điểm cần đo cao độ
+life test	sự thử tuổi thọ, sự thử thời gian sử dụng 
+lifting beam 	dầm nâng tải 
+Ligature, Tie	Dây thép buộc
+light beam 	chùm tia sáng 
+light load 	tải trọng nhẹ 
+Light weight concrete	Bê tông nhẹ
+light-weight concrete 	bê tông nhẹ 
+lime concrete 	bê tông vôi 
+limit load 	tải trọng giới hạn 
+Limit strength 	Độ bền giới hạn
+linearly varying load 	tải trọng biến đổi tuyến tính 
+lintel (window head) 	Lanh tô cửa sổ
+liquid concrete 	bê tông lỏng 
+Liquidated damages	Bồi thuờng thiệt hại
+live load 	tải trọng động; hoạt tải 
+live test	sự thử nghiệm có người (trong khoang tàu thí nghiệm) 
+load due to own weight 	tải trọng do khối lượng bản thân; 
+load due to wind 	tải trọng do gió; 
+load in bulk 	chất thành đống; 
+load on axle 	tải trọng lên trục; 
+load out 	giảm tải, dỡ tải; 
+load per unit length 	tải trọng trên một đơn vị chiều dài 
+load test	sự thử có tải trọng 
+load up 	chất tải 
+loading test	sự thử bằng tải trọng 
+Location of the concrete compressive resultant	Điểm đặt hợp lực nén bê tông
+long-duration test	sự thử dài hạn, sự thử thời gian sử dụng dài 
+longitudinal beam 	dầm dọc, xà dọc 
+longitudinal girder 	dầm dọc, xà dọc 
+longitudinal reinforcement 	cốt (thép) dọc 
+Longitudinal reinforcement	Cốt thép dọc
+long-run test	sự thử vận hành dài hạn, sự thử vận hành lâu, sự thử làm việc lâu 
+loosely spread concrete 	bê tông chưa đầm, bê tông đổ dối 
+Loss due to concrete instant deformation due to non-simultaneous prestressing of several strands	Mất mát dự ứng suất do biến dạng tức thời của bê tông khi Kéo căng các cáp
+Loss due to concrete shrinkage	Mất mát do co ngót bê tông
+Lost due to relaxation of prestressing steel	Mất mát do từ biến bê tông
+Lost due to relaxation of prestressing steel	Mất mát do tự chùng cốt thép dự ứng lực
+Low alloy steel	Thép hợp kim thấp
+Low relaxation steel	Thép có độ tự chùng rất thấp
+low slump concrete 	vữa bê tông có độ sụt hình nón thấp, vữa bê tông khô 
+Lower reinforcement layer	Lớp cốt thép bên dưới
+Low-grade concrete resistance	Bê tông mác thấp
+lump load 	sự chất tải đã kết tảng; tải vón cục; tải trọng tập trung 
+machinability test	sự thử khả năng máy 
+machine-placed concrete 	bê tông đổ bằng máy
+machining test	sự thử tính gia công trên máy 
+main beam 	dầm chính; chùm (tia) chính 
+main girder 	dầm chính, dầm cái; xà chính, xà cái 
+Main reinforcement parallel to traffic	Cốt thép chủ song song hướng xe chạy
+Main reinforcement perpendicular to traffic	Cốt thép chủ vuông góc hướng xe chạy
+mallet 	Cái vồ (thợ nề)
+Management meeting 	Họp quản lý, họp điều độ
+masonry bonds 	Các cách xây
+mass concrete 	bê tông liền khối, bê tông không cốt thép 
+matched load 	tải trọng được thích ứng 
+matured concrete 	bê tông đã cứng 
+Medium relaxation steel	Cốt thép có độ tự chùng bình thường
+Member with minimum reinforcement	Cấu kiện có hàm lượng cốt thép tối thiểu
+mesh reinforcement 	cốt (thép) lưới 
+Metal shell	Vỏ thép
+Method of concrete curing	Phương pháp dưỡng hộ bê tông
+middle girder 	dầm giữa, xà giữa 
+midship beam 	dầm giữa tàu 
+Mild steel 	Thép non (thép than thấp)
+minor load 	tải trọng sơ bộ (trong máy thử độ cứng) 
+miscellaneous load 	tải trọng hỗn hợp 
+Mix proportion	Tỷ lệ pha trộn hỗn hợp bê tông
+mixer operator 	công nhân đứng máy trộn vữa bê tông
+mixing drum 	Trống trộn bê tông
+mobile load 	tải trọng di động 
+model test	sự thử trên mô hình 
+Modular ratio	Tỷ số của các mô dun đàn hồi thép-bê tông
+Modular ratio	Tỷ số của các mô dun đàn hồi thép-bê tông
+Modulus of Elasticity 	Môđun đàn hồi
+momentary load 	tải trọng trong thời gian ngắn, tải trọng tạm thời
+monitoring test	sự thử kiểm tra 
+monolayer reinforcement 	cốt (thép) một lớp 
+monolithic concrete 	bê tông liền khối 
+mortar 	vữa
+mortar pan (mortar trough, mortar tub) 	thùng vữa
+most efficient load 	công suất khi hiệu suất lớn nhất (tuabin) 
+motar trough 	Chậu vữa
+Movable casting	Thiết bị di động đổ bê tông
+Movable form, Travling form	Ván khuôn di động
+movable load 	tải trọng di động 
+movable rest beam 	dầm có gối tựa di động 
+moving load 	tải trọng động 
+multilayer reinforcement 	cốt (thép) nhiều lớp 
+multispan beam 	dầm nhiều nhịp 
+nailable concrete 	bê tông đóng đinh được 
+natural condition test	sự thử trong điều kiện tự nhiên 
+needle beam 	dầm kim
+negative moment reinforcement	cốt (thép) chịu mômen âm 
+net load 	tải trọng có ích, trọng lượng có ích 
+nodulation test	sự thử khả năng hình thành nốt sần 
+nomal load 	tải trọng bình thường 
+non reactive load 	tải trọng không gây phản lực, tải thuần trở (điện) 
+non-central load 	tải trọng lệch tâm 
+Non-destructive test	sự thử không phá hủy (mẫu thử) 
+non-fines concrete 	bê tông hạt thô
+Non-prestressed reinforcement	Cốt thép thường (không dự ứng lực)
+non-uniform beam 	dầm tiết diện không đều 
+Normal relaxation steel	Thép có độ tự chùng thông thường
+Normal weight concrete, Ordinary structural concrete	Bê tông trọng lượng thông thường
+no-slump concrete 	bê tông cứng (bê tông có độ sụt=0) 
+notched bar bending test	sự thử uốn mẫu bị cắt 
+notched bar test	sự thử mẫu bị cắt 
+Notice 	Thông báo
+oblique angled load 	tải trọng xiên, tải trọng lệch 
+Of laminated steel	Bằng thép cán
+off-form concrete 	bê tông trong ván khuôn
+online test	sự thử trên đường dây 
+On-load test	sự thử trên đường 
+operating load 	tải trọng làm việc 
+operation test	sự thử trong vận hành, sự thử trong thao tác, sự thử trong điều kiện sử dụng 
+optimum load 	tải trọng tối ưu 
+oscillating beam 	đòn dao động, đòn lắc 
+oscillating load 	tải (trọng) dao động 
+Other contractors 	Các nhà thầu khác
+outside cellar steps 	cửa sổ buồng công trình phụ
+Overall depth of member	Chiều cao toàn bộ của cấu kiện
+overall factor of safety 	Hệ số an toàn tổng thể
+Overlap	Nối chồng
+overload test	sự thử quá tải 
+Over-reinforced concrete	Bê tông có quá nhiều cốt thép
+oxidation test	sự thử oxi hóa 
+panel girder 	dầm tấm, dầm panen 
+parabolic girder 	dầm dạng parabôn 
+parallel girder 	dầm song song 
+Parapet	Thanh nằm ngang song song của rào chắn bảo vệ trên cầu (tay vịn lan can cầu)
+Parobolic arch	cuốn parabôn
+partial load 	tải trọng từng phần 
+Partial prestressing 	Kéo căng cốt thép từng phần
+pay(ing) load 	tải trọng có ích 
+Payment certificate 	Chứng nhận thanh toán
+Payment upon termination 	Thanh toán khi chấm dứt hợp đồng
+peak load 	tải trọng cao điểm 
+penetration test	sự thử độ thấm; sự thử độ xuyên (hàn) 
+percussion test	sự thử va đập 
+perfomance test	sự thử vận hành 
+Perforated cylindrical anchor head	Đầu neo hình trụ có khoan lỗ
+perfume concrete 	tinh dầu hương liệu 
+Perimeter of bar	Chu vi thanh cốt thép 
+periodic load 	tải trọng tuần hoàn 
+permanent load 	tải trọng không đổi; tải trọng thường xuyên 
+permeable concrete 	bê tông không thấm 
+permissible load 	tải trọng cho phép 
+Personnel 	Nhân sự 
+phantom load 	tải trọng giả 
+Pile bottom level	Cao độ chân cọc
+Pile cross sectional area 	Tiết diện ngang cọc
+Pile foundation	Móng cọc
+pile shaft area 	Diện tích xung quanh cọc
+Pile shoe	Phần bọc thép gia cố mũi cọc
+plain bar	thép trơn
+plain concrete 	bê tông không cốt thép, bê tông thường 
+Plain concrete, Unreinforced concrete	Bê tông không cốt thép
+plain girder 	dầm khối 
+Plain round bar	Cốt thép tròn trơn
+plane girder 	dầm phẳng 
+plank platform (board platform) 	sàn lát ván
+plaster concrete 	bê tông thạch cao 
+Plaster	Thạch cao
+plastic concrete 	bê tông dẻo
+Plate bearing	Gối bản thép
+plate girder 	dầm phẳng, dầm tấm 
+plate load 	tải anôt 
+plate steel	thép bản
+Plate	Thép bản
+platform railing 	lan can/tay vịn sàn (bảo hộ lao động)
+plumb bob (plummet) 	dây dọi, quả dọi (bằng chì)
+Plywood	Gỗ dán (ván khuôn)
+point load 	tải trọng tập trung 
+pony girder 	dầm phụ 
+poor concrete 	bê tông nghèo, bê tông gày 
+Porosity	Độ xốp rỗng (của bê tông)
+portland cement concrete	bê tông xi măng pooclan 
+Portland-cement, Portland concrete	Bê tông ximăng
+Possession of the site 	Sở hữu công trường
+post stressed reinforcement 	cốt (thép) ứng lực sau 
+post-stressed concrete 	bê tông ứng lực sau 
+post-tensioned concrete 	bê tông ứng lực sau 
+Posttensioning (apres betonage)	Phương pháp Kéo căng sau khi đổ bê tông
+precast concrete 	bê tông đúc sẵn 
+Precast concrete pile	Cọc bê tông đúc sẵn
+Precast concrete	Bê tông đúc sẵn
+Precasting Yard	Xưởng đúc sẵn kết cấu bê tông
+prefabricated concrete 	bê tông đúc sẵn 
+preliminary test	sự thử sơ bộ 
+pre-operational test	sự thử trước vận hành 
+prepact concrete 	bê tông đúc từng khối riêng 
+pre-production test	sự thử trước sản xuất, sự thử trước khi đưa vào sản xuất 
+pressure load 	tải trọng nén 
+prestressed concrete 	bê tông ứng lực trước 
+Prestressed concrete pile	Cọc bê tông cốt thép dự ứng lực
+Prestressed concrete	Bê tông cốt thép dự ứng lực
+prestressed girder 	dầm dự ứng lực 
+pre-stressed reinforcement 	cốt (thép) ứng lực trước 
+Prestressing bed	Bệ kéo căng cốt thép dự ứng lực
+Prestressing by stages	Kéo căng cốt thép theo từng giai đoạn
+Prestressing steel	Thép dự ứng suất
+Prestressing steel, cable	Cốt thép dự ứng lực
+Prestressing teel strand	Cáp thép dự ứng lực
+Prestressing time	Thời điểm Kéo căng cốt thép
+Pretensioning (avant betonage)	Phương pháp Kéo căng trước khi đổ bê tông
+Price adjustment 	Điều chỉnh giá
+printing beam 	(máy tính) chùm tia in 
+production test	sự thử trong sản xuất; sự thử tại nhà máy 
+Programme	Lịch tiến độ
+proof load 	tải trọng thử 
+Property 	(Sở hữu) tài sản
+Protection against corrosion	Bảo vệ cốt thép chống rỉ
+Protective concrete cover	Lớp bê tông bảo hộ
+pulling test	sự thử kéo 
+Pull-out bond test	sự thử độ dính của bê tông với cốt thép bằng cách kéo cốt thép 
+pulsating load 	tải trọng mạch động 
+pumice concrete 	bê tông đá bọt 
+pump concrete 	bê tông bơm 
+Pumping concrete	Bê tông bơm
+punching test	sự thử đột lỗ 
+Push-pull test	sự thử kéo-đẩy 
+Put in the reinforcement case	Đặt vào trong khung cốt thép
+putlog (putlock) 	thanh giàn giáo, thanh gióng
+quaking concrete 	bê tông dẻo 
+quality concrete 	bê tông chất lượng cao 
+Quality control 	Kiểm soát chất lượng
+quenching test	sự thử bằng cách tôi; mẫu thử độ thấm tôi
+quick test	sự thử nhanh 
+quiescent load 	tải trọng tĩnh 
+racking (raking) back 	đầu chờ xây
+racking load 	tải trọng dao động 
+radial load 	tải trọng hướng kính 
+radio (-frequency) beam 	chùm tần số vô tuyến điện 
+Railing load	Tải trọng lan can
+Railing	Lan can trên cầu
+rammed concrete 	bê tông đầm 
+rapid test	sự thử nhanh 
+rated load 	tải trọng danh nghĩa 
+Ratio of non- prestressing tension reinforcement	Tỷ lệ hàm lượng cốt thép thường trong mặt cắt
+Ratio of prestressing steel	Tỷ lệ hàm lượng cốt thép dự ứng lực
+reactivity test	sự thử hoạt tính 
+ready-mixed concrete 	bê tông trộn sẵn
+reasonableness test	sự kiểm tra tính hợp lý 
+Rebound number	Số bật nảy trên súng thử bê tông
+reception test	sự thử nghiểm thu 
+Record drawings 	Bản vẽ hoàn công (như as-built drawings)
+Reedle vibrator	Đầm dùi (để đầm bê tông)
+refractory concrete 	bê tông chịu nhiệt 
+reinforced concrete 	bê tông cốt thép 
+reinforced concrete beam 	dầm bê tông cốt thép 
+Reinforced concrete beam	Dầm bê tông cốt thép
+Reinforced concrete beam	Dầm bê tông cốt thép
+reinforced concrete lintel 	Lanh tô bê tông cốt thép
+Reinforced concrete	Bê tông cốt thép thường
+Reinforcement group	Nhóm cốt thép
+relaxation test	sự thí nghiệm tính chùng (của vật liệu) 
+removable gate 	Cửa tháo rời được
+Removal of the concrete cover	Bóc lớp bê tông bảo hộ
+Renforced concrete bridge	Cầu bê tông cột thép thường
+repeated load test	sự thử bằng tải trọng lặp lại 
+resistive load 	tải thuần trở, tải ômic 
+resonance test	sự thử bằng cộng hưởng 
+resonant fatigue test	sự thử độ mỏi bằng cộng hưởng 
+restrained beam 	dầm ngàm hai đầu 
+Retarder	Phụ gia chậm hóa cứng bê tông
+retempered concrete 	bê tông trộn lại 
+Retension (money)	Tiền giữ lại (ở mỗi kỳ thanh toán, thường để giữ bảo hành) 
+reversal load 	tải trọng đổi dấu 
+Ribbed plate	Thép bản có gân
+rich concrete 	bê tông giàu, bê tông chất lượng cao 
+ridge beam 	đòn nóc 
+Rigid arch	vòm cứng; vòm không khớp
+rigid reinforcement 	cốt (thép) cứng 
+riveted girder 	dầm ghép tán đinh 
+rod test	sự thử bằng thanh thăm dò 
+rolled steel	thép cán
+roof beam 	dầm mái 
+round hollow section	thép hình tròn rỗng
+Round steel tube	ống thép hình tròn
+routine test	sự thử theo thủ tục; sự thử thường xuyên
+rubbed concrete 	bê tông mài mặt 
+Rubber bearing, neoprene bearing	Gối cao su
+rubble concrete 	bê tông đá hộc 
+running-in test	sự thử chạy rà 
+Rupture limit of the prestressed steel	Giới hạn phá hủy của cốt thép dự ứng lực
+Rupture strength 	Giới hạn độ bền đứt
+rupture test	sự thử đứt gãy 
+rush-hour load 	tải trọng trong giờ cao điểm 
+safe load 	tải trọng an toàn, tải trọng cho phép 
+Safety 	An toàn
+sample test	sự thử chọn mẫu (để xác định phần trăm chính phẩm)
+Sand concrete	Bê tông cát
+sand-blasted concrete 	bê tôngmài bóng bề mặt
+Sandlight weight concrete	Bê tông nhẹ có cát
+scaffold pole (scaffold standard)	cọc giàn giáo
+scaffolding joint with chain (lashing, whip, bond)	mối nối giàn giáo bằng xích (dây chằng buộc, dây cáp)
+scale beam 	đòn cân 
+scale model test	sự thử mô hình đồng dạng, sự thử mẫu đồng dạng 
+scanning beam 	chùm tia quét 
+scattered beam 	chùm tán xạ 
+scleroscope hardness test	sự thử độ cứng kiểu xung 
+scratch hardness test	sự thử độ cứng kiểu vạch 
+screen test	sự kiểm tra bằng sàng 
+secondary beam 	dầm trung gian 
+secondary girder 	dầm phụ 
+Securities	Các khoản bảo lãnh
+segmental girder 	dầm cánh biên trên cong 
+segregating concrete 	vữa bê tông phân lớp 
+Segregation	Phân tầng khi đổ bê tông
+Semi-balloon-frame construction	kết cấu khung nhà gỗ nhẹ vừa
+semi-destructive test	sự thử bán hủy 
+semi-fixed girder 	dầm cố định một đầu 
+sensitivity test	sự thử tính nhạy cảm; sự thử độ mẫn cảm 
+service load 	tải trọng sử dụng, tải trọng có ích 
+service test	sự thử vận hành; sự thử khai thác sử dụng 
+setting load 	tải trọng khi lắp ráp 
+shaft frictional capacity 	Ma sát xung quanh cọc
+shallow beam 	dầm thấp 
+Shape steel	Thép hình
+shatter test	sự thử đập vỡ 
+Shear carried by concrete	Lực cắt do phần bê tông chịu
+shear load 	lực cắt 
+Shear reinforcement	Cốt thép chịu cắt
+Shearing strength 	Độ bền trượt
+shearing test	sự thử bằng cách cắt 
+Sheet pile	Cọc ván, cọc ván thép
+Sheet pile	Cọc ván, cọc ván thép
+shock load 	tải trọng va chạm 
+shock test	sự thử va đập 
+short-circuit test	sự thử ngắn mạch 
+shutter 	cốp pha 
+signboard (billboard) 	Bảng báo hiệu
+silicon steel	thép silic
+simulation test	sự thử bằng phương pháp mô phỏng 
+single non central load 	tải trọng tập trung không đúng tâm 
+single test	sự thử đơn chiếc, sự thử từng cái 
+Single wine, Individual wire	Sợi đơn lẻ (cốt thép sợi)
+site fence 	tường rào công trường
+site hut (site office ) 	Lán (công trường)
+Site investigation report 	Báo cáo khảo sát hiện trường
+Skin reinforcement	Cốt thép phụ đặt gần sát bề mặt
+Slab reinforced in both directions	Bản đặt cốt thép hai hướng
+Slab reinforcement	Cốt thép bản mặt cầu
+slag concrete 	bê tông xỉ 
+slender beam 	dầm mảnh
+Sliding agent	Chất bôi trơn cốt thép dự ứng lực
+Sliding form	Ván khuôn trượt
+sludge test	sự xác định hàm lượng cặn 
+slump test	sự thử nghiệm độ sụt của vữa bê tông 
+Slump	Độ sụt (hình nón) của bê tông
+small girder 	dầm con; xà con 
+snow load 	tải trọng (do) tuyết 
+socle beam 	dầm hẫng; dầm công xôn 
+socle girder 	dầm công xôn 
+soil bearing test	sự thử khả năng chịu tải của đất
+soil test	sự thử đất trồng 
+solid web girder 	dầm khối 
+solubility test	sự thử độ hòa tan
+Spacing of prestressing steel	Khoảng cách giữa các cốt thép dự ứng lực
+Spalled concrete	Bê tông đã bị tách lớp (bị bóc lớp)
+Span/depth ratio	Tỷ lệ chiều dài nhịp trên chiều cao dầm
+specified rated load 	tải trọng danh nghĩa 
+specimen test	sự thử vật mẫu 
+Spiral reinforced column	Cột có cốt thép xoắn ốc
+Spiral reinforcement	Cốt thép xoắn ốc
+spirit level 	ống ni vô của thợ xây
+Splice plat, scab	Bản nối phủ
+Splice	Nối ghép, nối dài ra
+Splicing method	Phương pháp nối cọc
+split beam 	dầm ghép, dầm tổ hợp 
+sprayed concrete 	bê tông phun 
+Sprayed concrete, Shotcrete,	Bê tông phun
+spring beam 	dầm đàn hồi 
+square hollow section	thép hình vuông rỗng
+stack of bricks 	đống gạch, chồng gạch
+stacked shutter boards (lining boards)	Đống van gỗ cốp pha, chồng ván gỗ cốp pha
+stainless steel	thép không gỉ
+stamped concrete 	bê tông đầm 
+standard brick 	gạch tiêu chuẩn
+Start date 	Ngày khởi công
+static hardness test	sự thử độ cứng tĩnh 
+static load 	tĩnh tải 
+static test	sự thử tĩnh; sự thử bằng tải trọng tĩnh 
+static torsion test	sự thử độ xoắn tĩnh 
+steady load 	tải trọng ổn định 
+steadyưload test	sự thử bằng tải trọng không đổi
+steamed concrete 	bê tông đã bốc hơi nước 
+steamưpressure test	sự thử bằng áp lực hơi nước 
+steel concrete 	bê tông cốt thép 
+Steel elongation	Độ dãn dài của cốt thép
+Steel H pile	Cọc thép hình H 
+Steel percentage	Hàm lượng thép trong bê tông cốt thép
+Steel percentage	Hàm lượng thép trong bê tông cốt thép
+Steel pipe filled with	ống thép nhồi bê tông
+Steel pipe filled with	ống thép nhồi bê tông
+Steel pipe pile, tubular steel pile	Cọc ống thép
+Steel stress at jacking end	ứng suất thép ở đầu kích Kéo căng
+Steel with particular properties	Thép có tính chất đặc biệt
+steel	thép
+stiff concrete 	vữa bê tông cứng, vữa bê tông đặc 
+stiff reinforcement 	cốt (thép) cứng 
+Stiffened angles	Neo bằng thép góc có sườn tăng cường
+stiffening girder 	dầm cứng 
+Stirrup,link,lateral tie	Cốt thép đai (dạng thanh)
+stone concrete 	bê tông đá dăm 
+Straight reinforcement	Cốt thép thẳng
+straining beam 	thanh giằng, thanh kéo 
+Strenghening steel	Thép tăng cường
+strength test	sự thử độ bền 
+Strengthening reinforcement	Cốt thép tăng cường thêm
+Stress at anchorages after seating	ứng suất cốt thép dự ứng lực ở sát neo sau khi tháo kích
+stretching bond 	cách xây hàng dài (gạch xây dọc)
+stretching course 	hàng, lớp xây dọc
+structral hollow section	thép hình rỗng làm kết cấu
+Structural engineering	kết cấu
+structural section	thép hình xây dựng
+Structural steel	Thép kết cấu
+structural test	sự thử cấu trúc 
+strutting beam 	dầm ngang, xà ngang; thanh giằng (vì kèo) 
+Stud shear connector	Neo kiểu đinh (của dầm thép liên hợp bê tông)
+Stud shear connector	Neo kiểu đinh (của dầm thép liên hợp bê tông)
+Subcontracting 	Thầu phụ
+Subcontractor 	Nhà thầu phụ
+Successive	Nối tiếp nhau
+sudden load 	tải trọng đột ngột, sự chất tải đột ngột, sự chất tải đột biến 
+suddenly applied load 	tải trọng tác dụng đột biến 
+sum of skin friction 	Tổng ma sát (vỏ)
+Superelevation	Siêu cao
+superimposed load 	tải trọng phụ thêm 
+supersonic test	sự thử bằng siêu âm 
+supporting beam 	dầm đỡ, xà đỡ 
+surcharge load 	sự quá tải 
+surface load 	tải trọng bề mặt 
+suspension girder 	dầm treo 
+Suspension of Work	Tạm ngừng thi công
+sustained load 	tải trọng tác động lâu dài 
+symmetrical load 	tải trọng đối xứng, sự chất tải đối xứng 
+T- beam 	dầm chữ T 
+T- girder 	dầm chữ T 
+tail load 	tải trọng lên đuôi (máy bay) 
+Taking over 	bàn giao
+tamped concrete 	bê tông đầm 
+Tamping	Đầm bê tông cho chặt
+tangetial load 	tải trọng tiếp tuyến 
+tar concrete 	bê tông nhựa đường 
+Tax 	thuế
+tee girder 	dầm chữ T 
+Temporary works	Các công trình tạm (của nhà thầu)
+tenacity test	sự thử độ dai; sự thử độ bền đứt 
+tensile load 	tải trọng kéo đứt 
+Tensile strength 	Giới hạn bền kéo
+Tensile strength at days age	Cường độ chịu kéo của bê tông ở ngày
+tensile test	sự thử sức căng; sự thử kéo 
+tension reinforcement 	cốt (thép) chịu kéo 
+Tension reinforcement	Cốt thép chịu kéo
+tension test	sự thử sức căng; sự thử kéo 
+Tension zone in concrete	Khu vực chịu Kéo của bê tông
+Tensioning (tensioning operation)	Công tác kéo căng cốt thép
+terminating load 	tải trọng đặt ở đầu mút (dầm) 
+Termination 	Ngừng, chấm dứt (hợp đồng)
+Test cube, cube	Mẫu thử khối vuông bê tông
+test load 	tải trọng thử 
+Tests 	Kiểm tra, thử nghiệm
+The Works to be completed by the Intended Completion Date 	Công trình phải được hoàn thành vào Ngày hoàn thành dự kiến
+thermal test	sự thử bằng nhiệt 
+thick lead pencil 	bút chì đầu đậm (dùng để đánh dấu)
+Three-hinged arch	vòm ba khớp
+through beam 	dầm liên tục, dầm suốt 
+thrust reinforcement 	cốt (thép) chống cắt 
+tilting load 	tải trọng lật đổ 
+Time control 	kiểm soát tiến độ
+To extend reinforcement	Kéo dài cốt thép
+tool steel	thép công cụ
+top beam 	dầm sàn; dầm đỉnh 
+Top lateral strut	Thanh giằng ngang ở mọc thượng của dàn
+Top lateral	Thanh giằng chéo ở mọc thượng của dàn
+Top reinforcement	Cốt thép bên trên (của mặt cắt)
+torque load 	tải trọng xoắn 
+torsion test	sự thử xoắn 
+Tosbou	Khoan
+Total angular change of tendon profile from anchor to point X	Tổng các góc uốn nghiêng của cốt thép dự ứng lực ở Khoảng cách x kể từ mἯfont>
+Total angular change of tendon profile from jaching end to point x	Tổng các góc uốn của đường trục cốt thép dự ứng lực từ đầu kích đến
+total load 	tải trọng toàn phần, tải trọng tổng 
+toughness test	sự thử độ dai (va đập) 
+traction load 	tải trọng kéo 
+traction test	sự thử sức kéo 
+traffic load 	tải trọng chuyên chở 
+transient load 	tải trọng ngắn hạn, tải trọng nhất thời 
+transit-mix concrete 	bê tông trộn trên xe 
+transonic test	sự thử bằng xuyên âm 
+transverse beam 	dầm ngang, đà ngang 
+Transverse reinforcement	Cốt thép ngang
+Transverse strength 	Độ bền uốn ngang
+transverse test	sự thử uốn ngang 
+transversely loaded beam 	dầm chịu tải trọng ngang 
+trass concrete 	bê tông puzolan 
+trellis girder 	giàn mắt cáo 
+tremie concrete 	bê tông đổ dưới nước 
+trial load 	tải trọng thử 
+trial test	phép thử sơ bộ 
+trough girder 	dầm chữ U, dầm lòng máng 
+trowel 	cái bay thợ nề
+Trussed arch	vòm giàn
+trussed beam 	dầm giàn, dầm mắt cáo 
+trussed girder 	dầm vượt suốt; giàn vượt suốt 
+tubular girder 	dầm ống 
+tuned plate load 	tải điều hướng (trong mạch anôt) 
+Twist step of a cable	Bước xoắn của sợi thép trong bó xoắn
+twisting test	sự thử xoắn
+Two-hinged arch	vòm hai khớp
+two-way reinforcement 	cốt (thép) hai hướng
+Ultimate bending strength 	Giới hạn bền uốn
+Ultimate compressive strength 	Giới hạn bền nén
+ultimate load 	tải trọng giới hạn 
+Ultimate strength 	Giới hạn bền
+ultrasonic test	sự thử bằng siêu âm 
+Un*****ed concrete section	Mặt cắt bê tông chưa bị nứt
+unbalanced load 	tải trọng không cân bằng 
+Unbonded tendon	Cốt thép dự ứng lực không dính bám với bê tông
+Unbonded tendon	Cốt thép dự ứng lực không dính bám với bê tông
+Uncorrected defects 	Các sai sót không được sửa chữa
+Unfilled tubular steel pile	Cọc ống thép không lấp lòng
+uniform beam 	dầm tiết diện không đổi, dầm (có) mặt cắt đều 
+uniform load 	tải trọng đều 
+unit load 	tải trọng riêng, tải trọng trên đơn vị diện tích 
+up load 	tải trọng thẳng đứng lên trên (lực nâng) 
+upper floor	Tầng trên
+upsetting test	sự thử co, sự thử chồn 
+useful load 	tải trọng có ích 
+utility room door	cửa buồng công trình phụ
+utility room window 	cửa sổ buồng công trình phụ
+vacuum concrete 	bê tông chân không 
+variable load 	tải trọng biến đổi 
+Variations 	Các thay đổi ( Chủ đầu tư yêu cầu Nhà thầu thực hiện một công việc nào đó khác đi so với hợp đồng ban đầu)
+varying load 	tải trọng biến đổi 
+Vertical clearance	Chiều cao tịnh không
+Vertical-tie	Neo dạng thanh thẳng đứng để nối phần bê tông cốt thép khác nhau
+Vertical-tie	Neo dạng thanh thẳng đứng để nối phần bê tông cốt thép khác nhau
+Vertical-tie	Neo dạng thanh thẳng đứng để nối phần bê tông cốt thép khác nhau
+Viaduct	Cầu có trụ cao
+vibrated concrete 	bê tông đầm rung 
+vibration test	sự thử độ rung 
+Vierendeel girder 	giàn Vierenddeel (giàn Bỉ)
+Wall anchor	neo (vào) tường
+wall beam 	dầm tường 
+warranty test	sự thử nghiệm thu 
+Warren girder 	giàn biên //mạng tam giác
+water cured concrete 	bê tông dưỡng hộ trong nước 
+water test	sự thử thủy lực 
+wearing test 	sự thử mài mòn 
+Weathering steel (need not be painted)	Thép chịu thời tiết (không cần sơn)
+web girder 	giàn lưới thép, dầm đặc
+Web reinforcement	Cốt thép trong sườn dầm
+weldability test	sự thử tính hàn 
+Welded plate girder	Dầm bản thép hàn
+Welded wire fabric, Welded wire mesh	Lưới cốt thép sợi hàn
+welding test	sự thử bằng hàn 
+wet concrete 	vữa bê tông dẻo 
+Wet guniting	Phun bê tông ướt
+wheel load 	áp lực lên bánh xe 
+wheelbarrow 	Xe cút kít, xe đẩy tay
+whole beam 	dầm gỗ 
+wind beam 	xà chống gió 
+Wind bracing	Giằng gió
+wind load 	tải trọng (do) gió 
+window ledge 	Ngưỡng (bậu) cửa sổ 
+Wind-tunnel test	sự thử bằng ống khí động học
+wooden beam 	xà gồ, dầm gỗ 
+work platform (working platform) 	Bục kê để xây
+workable concrete 	bê tông dễ đổ 
+working beam 	đòn cân bằng; xà vồ (để đập quặng) 
+working load 	tải trọng làm việc
+writing beam 	tia viết 
+Yeild point stress of prestressing steel	ứng suất đàn hồi của cốt thép dự ứng lực
+Yield strength 	Giới hạn chảy, ứng suất chảy
+Yield strength of rein forcement in compression	Cường độ đàn hồi của thép lúc nén
+Yield strength of reinforcement in tension	Cường độ đàn hồi của thép lúc kéo
+Z- beam 	dầm chữ Z
+zonolite concrete 	bê tông zônôlit (bê tông ko thấm nước)
