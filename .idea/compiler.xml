@@ -15,7 +15,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="Dictionary" options="--add-exports javafx.controls/com.sun.javafx.scene.control.skin=client.dictionary" />
+      <module name="Dictionary" options="--add-exports org.controlsfx.controls/impl.org.controlsfx.skin=client.dictionary" />
     </option>
   </component>
 </project>

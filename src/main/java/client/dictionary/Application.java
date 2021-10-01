@@ -12,6 +12,7 @@ public class Application extends javafx.application.Application {
     public void start(Stage stage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/client/dictionary/offline-view.fxml"));
         SceneController.initializeApplication(stage, root);
+
     }
 
     public static void main(String[] args) {

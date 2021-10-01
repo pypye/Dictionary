@@ -12,10 +12,14 @@ public class SceneController {
     private static Scene scene;
     private static Parent root;
 
+    public static Stage getStage() {
+        return stage;
+    }
+
     public static void initializeApplication(Stage _stage, Parent _root) {
         stage = _stage;
         root = _root;
-        scene = new Scene(root);
+        scene = new Scene(root, 1280, 720);
         renderScene("Dictionary - Offline");
     }
 
@@ -27,6 +31,16 @@ public class SceneController {
     public static void switchToOnline() throws IOException {
         root = FXMLLoader.load(SceneController.class.getResource("/client/dictionary/online-view.fxml"));
         renderScene("Dictionary - Online");
+    }
+
+    public static void switchToSynonym() throws IOException {
+        root = FXMLLoader.load(SceneController.class.getResource("/client/dictionary/synonym-view.fxml"));
+        renderScene("Dictionary - Synonym");
+    }
+
+    public static void switchToSettings() throws IOException {
+        root = FXMLLoader.load(SceneController.class.getResource("/client/dictionary/settings-view.fxml"));
+        renderScene("Dictionary - Settings");
     }
 
     private static void renderScene(String title) {
