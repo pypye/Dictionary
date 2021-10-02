@@ -1,4 +1,4 @@
-package verreturn;
+package base.advanced;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -8,6 +8,9 @@ public class DictionaryCommandLine {
 
   private DictionaryManagement dictionaryCommandLine = new DictionaryManagement();
 
+  public DictionaryManagement getDictionaryCommandLine() {
+    return dictionaryCommandLine;
+  }
   void showAllWords() {
     ArrayList<Word> arrayList = dictionaryCommandLine.getDictionaryManagement()
         .getDictionaryArray();
@@ -29,19 +32,15 @@ public class DictionaryCommandLine {
     }
   }
 
-  public String dictionarySearcher(String find) {
-    String ans = "";
+  public ArrayList<String> dictionarySearcher(String find) {
+    ArrayList<String> ans = new ArrayList<>();
     ArrayList<Word> arrayList = dictionaryCommandLine.getDictionaryManagement().getDictionaryArray();
     for (Word word : arrayList) {
       String key = word.getWord_target();
       int found = key.indexOf(find);
       if (found == 0) {
-        if (!ans.equals("")) ans = ans.concat("\n");
-        ans = ans.concat(key) ;
+        ans.add(key.trim());
       }
-    }
-    if (ans.equals("")) {
-      return "Can not find";
     }
     return ans;
   }
@@ -63,9 +62,14 @@ public class DictionaryCommandLine {
         dictionaryCommandLine.insertFromCommandline(target, explain);
       }
       if (cmd.equals("-delete")) {
-        System.out.printf("Type word to delete");
+        System.out.printf("Type word to delete: ");
         String find = sc.nextLine();
-        dictionaryCommandLine.dictionaryDelete(find);
+        boolean check = dictionaryCommandLine.dictionaryDelete(find);
+        if(check) {
+          System.out.printf("Delete '%s' success", find);
+        } else {
+          System.out.println("Could not find that word");
+        }
       }
       if (cmd.equals("-translate")) {
         System.out.printf("Type word to translate: ");
@@ -83,8 +87,8 @@ public class DictionaryCommandLine {
       if (cmd.equals("-search")) {
         System.out.printf("Type word to Search: ");
         String find = sc.nextLine();
-        String ans = this.dictionarySearcher(find);
-        System.out.println(ans);
+        ArrayList<String> ans = this.dictionarySearcher(find);
+        for (String v : ans) System.out.println(v);
       }
       if (cmd.equals("-exit")) {
         break;

@@ -14,7 +14,7 @@
 
 <AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" styleClass="pane" stylesheets="@../css/application.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.dictionary.controllers.OnlineController">
     <children>
-        <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="800.0" styleClass="menu-bar" stylesheets="@../css/application.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="800.0" styleClass="menu-bar" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
                 <Button fx:id="offlineButton" mnemonicParsing="false" onAction="#onOfflineButtonClick" styleClass="menu-btn" text="Từ điển Offline" textOverrun="WORD_ELLIPSIS">
                     <HBox.margin>
@@ -58,7 +58,7 @@
                                 <ChoiceBox fx:id="inputLangChoiceBox" onAction="#onSwitchInputLanguage" prefWidth="150.0" />
                             </children>
                         </HBox>
-                        <TextArea fx:id="inputTextArea" layoutX="26.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" promptText="Type Here..." stylesheets="@../css/application.css" wrapText="true" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0" />
+                        <TextArea fx:id="inputTextArea" layoutX="26.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" promptText="Type Here..." wrapText="true" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0" />
                         <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                             <children>
                                 <Button mnemonicParsing="false" styleClass="btn">
@@ -151,7 +151,7 @@
         </SplitPane>
         <VBox alignment="CENTER" layoutY="380.0" prefHeight="70.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
             <children>
-                <Button fx:id="translateButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onTranslateButtonClick" prefWidth="68.0" styleClass="btn" stylesheets="@../css/application.css" text="Dịch" />
+                <Button fx:id="translateButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onTranslateButtonClick" prefWidth="68.0" styleClass="btn" text="Dịch" />
             </children>
         </VBox>
     </children>

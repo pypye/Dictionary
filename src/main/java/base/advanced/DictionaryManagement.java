@@ -1,4 +1,4 @@
-package verreturn;
+package base.advanced;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -44,14 +44,15 @@ public class DictionaryManagement {
     return "Cant find any words with %s\n";
   }
 
-  public void dictionaryDelete(String find) {
+  public boolean dictionaryDelete(String find) {
     for (int i = 0; i < dictionaryManagement.size(); i++) {
       String key = dictionaryManagement.get(i).getWord_target();
       if (key.equals(find)) {
         dictionaryManagement.remove(i);
-        break;
+        return true;
       }
     }
+    return false;
   }
 
   public void dictionaryExportToFile() throws IOException {
