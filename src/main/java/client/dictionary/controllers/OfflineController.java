@@ -1,17 +1,15 @@
 package client.dictionary.controllers;
 
-import base.advanced.DictionaryCommandLine;
+import base.basic.DictionaryCommandLine;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class OfflineController extends MenuController{

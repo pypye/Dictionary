@@ -78,7 +78,7 @@ Bar (reinforcing bar)	Thanh cốt thép
 Base structure	kết cấu nền móng
 Base	nền; móng; bệ
 basement of tamped (rammed) concrete 	móng (tầng ngầm) làm bằng cách đổ bê tông
-Baseplate		tấm đệm, tấm lót
+Baseplate	tấm đệm, tấm lót
 basic load 	tải trọng cơ bản 
 Batter	sườn dốc, mái dốc; độ nghiêng mặt ngoài
 Beam of constant depth	Dầm có chiều cao không đổi

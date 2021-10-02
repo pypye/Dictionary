@@ -10,6 +10,7 @@ module client.dictionary {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
+    requires org.json;
 
     opens client.dictionary to javafx.fxml;
     exports client.dictionary;

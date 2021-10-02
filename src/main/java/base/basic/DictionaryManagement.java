@@ -9,27 +9,16 @@ import java.io.OutputStreamWriter;
 import java.util.Scanner;
 
 public class DictionaryManagement {
+
     private Dictionary dictionaryManagement = new Dictionary();
 
     public Dictionary getDictionaryManagement() {
         return dictionaryManagement;
     }
 
-    public void insertFromCommandline() {
-        System.out.printf("Type word amount: ");
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        sc.nextLine();
-        for (int i = 0; i < n; i++) {
-            System.out.printf("Type target: ");
-            String target = sc.nextLine();
-            System.out.printf("Type explain: ");
-            String explain = sc.nextLine();
-            Word wordInput = new Word(target, explain);
-            dictionaryManagement.add(wordInput);
-            System.out.printf("added %s %s\n", target, explain);
-        }
-
+    public void insertFromCommandline(String target, String explain) {
+        Word wordInput = new Word(target, explain);
+        dictionaryManagement.add(wordInput);
     }
 
     public void insertFromFile() throws FileNotFoundException {
@@ -45,33 +34,26 @@ public class DictionaryManagement {
         }
     }
 
-    public void dictionaryLookup() {
-        System.out.printf("Type word to translate: ");
-        Scanner sc = new Scanner(System.in);
-        String find = sc.nextLine().trim();
+    public String dictionaryLookup(String find) {
         for (Word wordInput : dictionaryManagement.getDictionaryArray()) {
             String key = wordInput.getWord_target().trim();
             if (key.equals(find)) {
-                wordInput.writeWord();
-                return;
+                return wordInput.getWord_explain();
             }
         }
-        System.out.printf("Cant find any words with %s\n", find);
+        return "Cant find any words with %s\n";
     }
 
-    public void dictionaryDelete() {
-        System.out.printf("Type word to delete");
-        Scanner sc = new Scanner(System.in);
-        String find = sc.nextLine();
+    public boolean dictionaryDelete(String find) {
         for (int i = 0; i < dictionaryManagement.size(); i++) {
             String key = dictionaryManagement.get(i).getWord_target();
             if (key.equals(find)) {
                 dictionaryManagement.remove(i);
-                break;
+                return true;
             }
         }
+        return false;
     }
-
 
     public void dictionaryExportToFile() throws IOException {
         String url = "src/main/java/base/basic/dictionaries.txt";
@@ -85,6 +67,5 @@ public class DictionaryManagement {
             outputStreamWriter.write(fullKey);
         }
         outputStreamWriter.flush();
-        System.out.println("Exported to file");
     }
 }
