@@ -12,6 +12,7 @@ module client.dictionary {
     requires org.kordamp.bootstrapfx.core;
     requires org.kordamp.ikonli.javafx;
     requires validatorfx;
+    requires jaws.bin;
 
     opens client.dictionary to javafx.fxml;
     exports client.dictionary;
