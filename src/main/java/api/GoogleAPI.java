@@ -1,11 +1,14 @@
 package api;
 
+import org.apache.commons.text.StringEscapeUtils;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 
 public class GoogleAPI {
 
@@ -13,7 +16,7 @@ public class GoogleAPI {
         String APIKEY = "AKfycbzxtNpZD2Ogs4oeUnj8nTaCmPlKwgwsLWPasyIsLQPB_WXvKdKU";
         String urlStr =
                         "https://script.google.com/macros/s/" + APIKEY + "/exec" +
-                        "?q=" + URLEncoder.encode(text, "UTF-8") +
+                        "?q=" + URLEncoder.encode(text, StandardCharsets.UTF_8) +
                         "&target=" + langTo +
                         "&source=" + langFrom;
         URL url = new URL(urlStr);
@@ -26,7 +29,7 @@ public class GoogleAPI {
             response.append(inputLine);
         }
         in.close();
-        return response.toString();
+        return StringEscapeUtils.unescapeHtml4(response.toString());
     }
     public static void main(String[] args) throws IOException {
         String text = "Hello world";

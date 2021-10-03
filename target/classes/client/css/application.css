@@ -112,3 +112,6 @@
     -fx-background-color: #3D3C3F;
     -fx-background-radius: 10;
 }
+.tree-cell .label {
+    -fx-wrap-text: true;
+}
