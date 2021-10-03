@@ -13,7 +13,7 @@ public class Synonym {
         //  Get the synsets containing the word form=capicity
 
         File f = new File(
-                ".\\src\\main\\java\\api\\WordNet\\2.1\\dict");
+                ".\\src\\main\\java\\data\\WordNet\\2.1\\dict");
         System.setProperty("wordnet.database.dir", f.toString());
         //setting path for the WordNet Directory
 

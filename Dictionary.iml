@@ -40,5 +40,7 @@
     <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.7" level="project" />
     <orderEntry type="library" name="jackson-core-2.13.0-rc1" level="project" />
     <orderEntry type="library" name="jaws-bin" level="project" />
+    <orderEntry type="library" name="jsapi" level="project" />
+    <orderEntry type="library" name="cmu_us_kal" level="project" />
   </component>
 </module>
