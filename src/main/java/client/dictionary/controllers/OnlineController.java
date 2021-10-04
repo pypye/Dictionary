@@ -77,7 +77,7 @@ public class OnlineController extends MenuController {
         final ClipboardContent content = new ClipboardContent();
         content.putString(inputTextArea.getText());
         clipboard.setContent(content);
-        Notifications.create().title("Notification").text("Copied To Clipboard").owner(rootPane).darkStyle().hideAfter(Duration.seconds(3)).show();
+        Notifications.create().title("Notification").text("Copied To Clipboard").owner(rootPane).hideAfter(Duration.seconds(3)).show();
     }
 
     @FXML
@@ -86,6 +86,6 @@ public class OnlineController extends MenuController {
         final ClipboardContent content = new ClipboardContent();
         content.putString(outputTextArea.getText());
         clipboard.setContent(content);
-        Notifications.create().title("Notification").text("Copied To Clipboard").owner(rootPane).darkStyle().hideAfter(Duration.seconds(3)).show();
+        Notifications.create().title("Notification").text("Copied To Clipboard").owner(rootPane).hideAfter(Duration.seconds(3)).show();
     }
 }

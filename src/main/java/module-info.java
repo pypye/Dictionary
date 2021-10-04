@@ -3,7 +3,6 @@ module client.dictionary {
     requires javafx.fxml;
     requires javafx.web;
     requires javafx.graphics;
-
     requires com.dlsc.formsfx;
     requires eu.hansolo.tilesfx;
     requires org.apache.commons.text;
@@ -12,7 +11,6 @@ module client.dictionary {
     requires org.kordamp.bootstrapfx.core;
     requires org.kordamp.ikonli.javafx;
     requires validatorfx;
-    requires jaws;
     requires freetts;
 
     opens client.dictionary to javafx.fxml;
