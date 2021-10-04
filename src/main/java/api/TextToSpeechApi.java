@@ -4,29 +4,19 @@ import java.util.Locale;
 import javax.speech.Central;
 import javax.speech.synthesis.Synthesizer;
 import javax.speech.synthesis.SynthesizerModeDesc;
-import javax.speech.Engine;
 
 public class TextToSpeechApi {
 
-    public static void main(String[] args)
-    {
-
+    public static void main(String[] args) {
         try {
             // Set property as Kevin Dictionary
-            System.setProperty(
-                    "freetts.voices",
-                    "com.sun.speech.freetts.en.us"
-                            + ".cmu_us_kal.KevinVoiceDirectory");
+            System.setProperty("freetts.voices", "com.sun.speech.freetts.en.us.cmu_us_kal.KevinVoiceDirectory");
 
             // Register Engine
-            Central.registerEngineCentral(
-                    "com.sun.speech.freetts"
-                            + ".jsapi.FreeTTSEngineCentral");
+            Central.registerEngineCentral("com.sun.speech.freetts.jsapi.FreeTTSEngineCentral");
 
             // Create a Synthesizer
-            Synthesizer synthesizer
-                    = Central.createSynthesizer(
-                    new SynthesizerModeDesc(Locale.US));
+            Synthesizer synthesizer = Central.createSynthesizer(new SynthesizerModeDesc(Locale.US));
 
             // Allocate synthesizer
             synthesizer.allocate();
@@ -36,16 +26,12 @@ public class TextToSpeechApi {
 
             // Speaks the given text
             // until the queue is empty.
-            synthesizer.speakPlainText(
-                    "eating", null);
-            synthesizer.waitEngineState(
-                    Synthesizer.QUEUE_EMPTY);
+            synthesizer.speakPlainText("hello my friends", null);
+            synthesizer.waitEngineState(Synthesizer.QUEUE_EMPTY);
 
             // Deallocate the Synthesizer.
             synthesizer.deallocate();
-        }
-
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

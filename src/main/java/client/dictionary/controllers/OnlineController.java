@@ -1,6 +1,8 @@
 package client.dictionary.controllers;
 
 import api.GoogleAPI;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -21,13 +23,21 @@ public class OnlineController extends MenuController {
     private TextArea inputTextArea, outputTextArea;
     @FXML
     private ChoiceBox inputLangChoiceBox, outputLangChoiceBox;
-
+    @FXML
+    private SplitPane translatePane;
     @FXML
     private void initialize() {
         inputLangChoiceBox.setItems(FXCollections.observableArrayList("English", "Vietnam"));
         outputLangChoiceBox.setItems(FXCollections.observableArrayList("English", "Vietnam"));
         inputLangChoiceBox.setValue("English");
         outputLangChoiceBox.setValue("Vietnam");
+        //disable divider in split pane
+        translatePane.getDividers().get(0).positionProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                translatePane.getDividers().get(0).setPosition(0.5);
+            }
+        });
     }
 
 

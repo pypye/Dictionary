@@ -2,6 +2,7 @@ package api;
 
 import edu.smu.tspell.wordnet.Synset;
 import edu.smu.tspell.wordnet.WordNetDatabase;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -12,8 +13,7 @@ public class Synonym {
         String wordForm = "sleep";
         //  Get the synsets containing the word form=capicity
 
-        File f = new File(
-                ".\\src\\main\\java\\data\\WordNet\\2.1\\dict");
+        File f = new File("src/main/java/data/WordNet-3.0/dict");
         System.setProperty("wordnet.database.dir", f.toString());
         //setting path for the WordNet Directory
 

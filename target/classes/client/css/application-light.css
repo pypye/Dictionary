@@ -1,0 +1,155 @@
+.pane {
+    -fx-background-color: #FFFFFF;
+}
+
+.root {
+    -fx-background-color: #F3F3F7;
+    -fx-font-size: 16;
+}
+
+.container {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 10;
+
+}
+
+
+
+.container-scroll {
+    -fx-background-color: #3D3C3F;
+}
+
+.menu-bar {
+    -fx-background-color: #FFFFFF;
+}
+
+.menu-btn {
+    -fx-background-color: transparent;
+    -fx-background-radius: 10;
+    -fx-padding: 10;
+    -fx-text-fill: black;
+}
+
+.menu-btn:hover {
+    -fx-background-color: #F1F0F5;
+    -fx-cursor: hand;
+}
+
+.text-input {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E0DFE2;
+    -fx-text-fill: black;
+    -fx-prompt-text-fill: #908F9C;
+    -fx-border-radius: 8;
+}
+
+.text-input:focused {
+    -fx-border-color: #6662FC;
+    -fx-border-radius: 8;
+}
+
+.label {
+    -fx-text-fill: black;
+}
+
+.btn {
+    -fx-background-color: #562BF7;
+    -fx-border-radius: 10;
+    -fx-text-fill: white;
+    -fx-padding: 10;
+}
+
+.btn:hover {
+    -fx-cursor: hand;
+}
+
+.scroll-pane {
+    -fx-background-radius: 10;
+    -fx-background-color: #FFFFFF;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.scroll-pane .scroll-bar:vertical .thumb {
+    -fx-background-color: #C5C5C5;
+
+}
+
+.scroll-pane .scroll-bar:vertical {
+    -fx-background-color: #F6F5FA;
+    -fx-background-radius: 10;
+    -fx-background-insets: 2, 0, 0;
+}
+
+.scroll-pane .scroll-bar:horizontal {
+    -fx-background-color: #F6F5FA;
+    -fx-background-radius: 10;
+    -fx-background-insets: 2, 0, 0;
+}
+
+.split-pane {
+    -fx-background-radius: 10;
+    -fx-background-color: #FFFFFF;
+}
+
+.split-pane .viewport {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.split-pane .split-pane-divider {
+    -fx-background-color: #F3F3F3;
+    -fx-background-insets: -1, 0, 0;
+}
+
+.text-area {
+    -fx-background-color: transparent;
+    -fx-control-inner-background: #FFFFFF;
+    -fx-border-color: transparent;
+    -fx-background-radius: 10;
+}
+
+.text-area:focused {
+    -fx-faint-focus-color: transparent;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-radius: 10;
+}
+
+.choice-box {
+    -fx-background-color: #F6F5FA;
+}
+
+.choice-box:hover {
+    -fx-cursor: hand;
+}
+
+.choice-box .context-menu {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 10;
+    -fx-focused-mark-color: black;
+}
+.choice-box .menu-item:focused{
+    -fx-background-color: #F1F0F5;
+}
+.word-type-label {
+    -fx-font-weight: bold;
+}
+
+.word-explain-label {
+    -fx-font-style: italic;
+}
+
+.word-example-label {
+}
+
+.word-definition-label {
+    -fx-font-weight: bold;
+}
+
+.word-pronoun-label {
+
+}

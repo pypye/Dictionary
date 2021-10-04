@@ -16,8 +16,9 @@ public class Dictionary {
         String content = new String(Files.readAllBytes(Path.of(file)));
         dictionary = new JSONObject(content);
     }
+
     public ArrayList<String> dictionarySearcher(String input) {
-        ArrayList <String> ans = new ArrayList<>();
+        ArrayList<String> ans = new ArrayList<>();
         dictionary.keys().forEachRemaining(key -> {
             int found = key.indexOf(input);
             if (found == 0) {
@@ -27,9 +28,11 @@ public class Dictionary {
         sort(ans);
         return ans;
     }
+
     public JSONObject dictionaryLookup(String input) {
         return dictionary.getJSONObject(input);
     }
+
     public static void main(String[] args) throws IOException {
         Dictionary arr = new Dictionary("src/main/java/data/output/english-vietnamese.json");
         System.out.println(arr.dictionaryLookup("transact"));

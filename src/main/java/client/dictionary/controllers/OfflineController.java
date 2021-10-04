@@ -7,7 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.layout.Region;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -24,11 +24,14 @@ public class OfflineController extends MenuController {
     @FXML
     private VBox outputVbox, explainVbox;
     @FXML
+    private HBox definitionHBox;
+    @FXML
     private ScrollPane listWordScroll;
+    @FXML
+    private Label wordLabel, pronounLabel;
 
     @FXML
     public void initialize() {
-        explainVbox.getChildren().clear();
         //add thread help program run continuously.
         Platform.runLater(() -> {
             try {
@@ -46,6 +49,7 @@ public class OfflineController extends MenuController {
                 addListWordButton();
             }
         });
+        definitionHBox.setVisible(false);
     }
 
     @FXML
@@ -59,16 +63,23 @@ public class OfflineController extends MenuController {
             addListWordButton();
         });
     }
-    private void addListWordButton(){
+
+    private void addListWordButton() {
         for (int i = countLazy; i < Math.min(outputDictionary.size(), countLazy + 50); i++) {
             String result = outputDictionary.get(i);
             Button resultButton = new Button(result);
             EventHandler<ActionEvent> event = e -> {
                 explainVbox.getChildren().clear();
-                JSONObject explain = dictionary.dictionaryLookup(result);
-                Label wordLabel = new Label(result);
-                explainVbox.getChildren().add(wordLabel);
-                addTreeView(explain);
+                JSONObject word = dictionary.dictionaryLookup(result);
+                wordLabel.setText(result);
+                if (!word.getString("pronoun").equals("")) {
+                    pronounLabel.setText("[" + word.getString("pronoun") + "]");
+                } else {
+                    pronounLabel.setText("");
+                }
+                definitionHBox.setVisible(true);
+                JSONArray type = word.getJSONArray("type");
+                createTree(type, 0);
             };
             resultButton.getStyleClass().add("menu-btn");
             resultButton.setWrapText(true);
@@ -76,31 +87,40 @@ public class OfflineController extends MenuController {
             outputVbox.getChildren().add(resultButton);
         }
     }
-    private void addTreeView(JSONObject object){
-        JSONArray type = object.getJSONArray("type");
-        TreeView treeView = new TreeView();
-        TreeItem rootItem = new TreeItem("Explanation");
-        createTree(type, rootItem);
-        rootItem.setExpanded(true);
-        treeView.setShowRoot(false);
-        treeView.setRoot(rootItem);
 
-        explainVbox.getChildren().add(treeView);
-    }
     //run a recursion to create a tree view
-    private void createTree(JSONArray array, TreeItem tree){
+    private void createTree(JSONArray array, int depth) {
         for (int i = 0; i < array.length(); i++) {
             JSONObject child = array.getJSONObject(i);
             String childName = child.keys().next();
-            TreeItem childTree = new TreeItem(childName);
-            if(child.get(childName) instanceof JSONArray) {
+            if (child.get(childName) instanceof JSONArray) {
+                Label childLabel = new Label(duplicateStr("\t", depth) + childName);
+                explainVbox.getChildren().add(setStyleLabelByDepth(childLabel, depth));
                 JSONArray childArray = child.getJSONArray(childName);
-                createTree(childArray, childTree);
+                createTree(childArray, depth + 1);
             } else {
-                childTree = new TreeItem(child);
+                Label childLabel = new Label(duplicateStr("\t", depth) + childName + ": " + child.getString(childName));
+                explainVbox.getChildren().add(setStyleLabelByDepth(childLabel, depth));
             }
-            childTree.setExpanded(true);
-            tree.getChildren().add(childTree);
+
         }
+    }
+
+    private Label setStyleLabelByDepth(Label label, int depth) {
+        if (depth == 0) {
+            label.getStyleClass().add("word-type-label");
+        } else if (depth == 1) {
+            label.getStyleClass().add("word-explain-label");
+        } else if (depth == 2) {
+            label.getStyleClass().add("word-example-label");
+        }
+        label.setWrapText(true);
+        return label;
+    }
+
+    private String duplicateStr(String source, int times) {
+        String ans = "";
+        for (int i = 0; i < times; i++) ans += source;
+        return ans;
     }
 }

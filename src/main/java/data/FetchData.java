@@ -137,7 +137,7 @@ public class FetchData {
                     continue;
                 }
                 if(checkStr.charAt(0) == '-' && lastStr.charAt(0) == '@') {
-                    outputStreamWriter.write("* word\n");
+                    outputStreamWriter.write("* others\n");
                     outputStreamWriter.write(checkStr + '\n');
                 } else {
                     outputStreamWriter.write(checkStr + '\n');
@@ -151,8 +151,8 @@ public class FetchData {
         //v-e word counts: 23430
         //e-v word counts: 103871
         FetchData convertToJson = new FetchData();
-        //convertToJson.convert("src/main/java/data/input/english-vietnamese.txt", "src/main/java/data/input_processed/english-vietnamese.txt");
-        //convertToJson.convert("src/main/java/data/input/vietnamese-english.txt", "src/main/java/data/input_processed/vietnamese-english.txt" );
+        convertToJson.convert("src/main/java/data/input/english-vietnamese.txt", "src/main/java/data/input_processed/english-vietnamese.txt");
+        convertToJson.convert("src/main/java/data/input/vietnamese-english.txt", "src/main/java/data/input_processed/vietnamese-english.txt" );
         convertToJson.fetchData("src/main/java/data/input_processed/english-vietnamese.txt", "src/main/java/data/output/english-vietnamese.json");
         convertToJson.fetchData("src/main/java/data/input_processed/vietnamese-english.txt", "src/main/java/data/output/vietnamese-english.json");
     }

@@ -20,7 +20,7 @@ public class SceneController {
         stage = _stage;
         root = _root;
         scene = new Scene(root, 1280, 720);
-        scene.getStylesheets().add(SceneController.class.getResource("/client/css/application.css").toExternalForm());
+        scene.getStylesheets().add(SceneController.class.getResource("/client/css/application-light.css").toExternalForm());
         renderScene("Dictionary - Offline");
     }
 
