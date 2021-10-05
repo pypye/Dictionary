@@ -1,8 +1,11 @@
 package client.dictionary.controllers;
 
+import api.TextToSpeechAPI;
 import base.advanced.Dictionary;
 import javafx.application.Platform;
 import javafx.beans.value.ObservableValue;
+import javafx.concurrent.Service;
+import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -14,6 +17,9 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class OfflineController extends MenuController {
     private Dictionary dictionary;
@@ -32,16 +38,15 @@ public class OfflineController extends MenuController {
 
     @FXML
     public void initialize() {
-        //add thread help program run continuously.
-        Platform.runLater(() -> {
-            try {
-                dictionary = new Dictionary("src/main/java/data/output/english-vietnamese.json");
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        //add thread make program run continuously.
+        new Thread(() -> {
+            dictionary = new Dictionary("src/main/java/data/output/english-vietnamese.json");
             outputDictionary = dictionary.dictionarySearcher("");
-            addListWordButton();
-        });
+            Platform.runLater(() -> {
+                addListWordButton();
+            });
+        }).start();
+
         //lazy load on scroll
         listWordScroll.vvalueProperty().addListener((ObservableValue<? extends Number> observable, Number oldValue, Number newValue) -> {
             if (listWordScroll.getVvalue() >= 0.75) {
@@ -53,18 +58,29 @@ public class OfflineController extends MenuController {
     }
 
     @FXML
+    public void onPlayAudioButton() {
+        //add thread make program run continuously.
+        new Thread(() -> {
+            TextToSpeechAPI.getTextToSpeech(wordLabel.getText());
+        }).start();
+    }
+
+    @FXML
     public void onTypeSearchInput() {
         String input = searchInput.getText();
-        //add thread help program run continuously.
-        Platform.runLater(() -> {
+        //add thread make program run continuously.
+        new Thread(() -> {
             outputDictionary = dictionary.dictionarySearcher(input);
-            outputVbox.getChildren().clear();
-            countLazy = 0;
-            addListWordButton();
-        });
+            Platform.runLater(() -> {
+                outputVbox.getChildren().clear();
+                countLazy = 0;
+                addListWordButton();
+            });
+        }).start();
     }
 
     private void addListWordButton() {
+
         for (int i = countLazy; i < Math.min(outputDictionary.size(), countLazy + 50); i++) {
             String result = outputDictionary.get(i);
             Button resultButton = new Button(result);

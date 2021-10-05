@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" styleClass="pane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.dictionary.controllers.OnlineController">
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" styleClass="pane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.dictionary.controllers.OnlineController">
     <children>
         <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="800.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
@@ -23,10 +23,14 @@
                         <Insets />
                     </HBox.margin>
                 </Button>
-                <Button fx:id="onlineButton" mnemonicParsing="false" onAction="#onOnlineButtonClick" styleClass="menu-btn" text="Từ điển Online" textOverrun="WORD_ELLIPSIS">
+                <Button fx:id="onlineButton" mnemonicParsing="false" onAction="#onOnlineButtonClick" text="Từ điển Online" textOverrun="WORD_ELLIPSIS">
                     <HBox.margin>
                         <Insets />
                     </HBox.margin>
+               <styleClass>
+                  <String fx:value="menu-btn" />
+                  <String fx:value="btn-selected" />
+               </styleClass>
                 </Button>
                 <Button fx:id="synonymButton" mnemonicParsing="false" onAction="#onSynonymButtonClick" styleClass="menu-btn" text="Từ đồng nghĩa" textOverrun="WORD_ELLIPSIS">
                     <HBox.margin>
@@ -79,7 +83,7 @@
                                         </ImageView>
                                     </graphic>
                                 </Button>
-                                <Button mnemonicParsing="false" styleClass="btn">
+                                <Button mnemonicParsing="false" onAction="#onPlayAudioInputBtn" styleClass="btn">
                                     <HBox.margin>
                                         <Insets right="10.0" />
                                     </HBox.margin>
@@ -125,7 +129,7 @@
                         <TextArea fx:id="outputTextArea" editable="false" layoutX="7.0" prefHeight="200.0" prefWidth="200.0" wrapText="true" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0" />
                         <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                             <children>
-                                <Button mnemonicParsing="false" styleClass="btn">
+                                <Button mnemonicParsing="false" onAction="#onPlayAudioOutputBtn" styleClass="btn">
                                     <HBox.margin>
                                         <Insets right="10.0" />
                                     </HBox.margin>

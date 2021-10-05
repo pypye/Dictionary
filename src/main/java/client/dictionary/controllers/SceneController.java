@@ -3,6 +3,7 @@ package client.dictionary.controllers;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.SceneAntialiasing;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -19,8 +20,8 @@ public class SceneController {
     public static void initializeApplication(Stage _stage, Parent _root) {
         stage = _stage;
         root = _root;
-        scene = new Scene(root, 1280, 720);
-        scene.getStylesheets().add(SceneController.class.getResource("/client/css/application-light.css").toExternalForm());
+        scene = new Scene(root, 1280, 720, false, SceneAntialiasing.BALANCED);
+        scene.getStylesheets().add(SceneController.class.getResource("/client/css/application-dark.css").toExternalForm());
         renderScene("Dictionary - Offline");
     }
 

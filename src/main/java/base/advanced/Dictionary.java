@@ -12,9 +12,14 @@ import static java.util.Collections.sort;
 public class Dictionary {
     private JSONObject dictionary;
 
-    public Dictionary(String file) throws IOException {
-        String content = new String(Files.readAllBytes(Path.of(file)));
-        dictionary = new JSONObject(content);
+    public Dictionary(String file) {
+        try {
+            String content = new String(Files.readAllBytes(Path.of(file)));
+            dictionary = new JSONObject(content);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     public ArrayList<String> dictionarySearcher(String input) {

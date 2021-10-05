@@ -1,6 +1,7 @@
 package client.dictionary.controllers;
 
 import api.GoogleAPI;
+import api.TextToSpeechAPI;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -17,8 +18,6 @@ import java.io.IOException;
 public class OnlineController extends MenuController {
     @FXML
     private AnchorPane rootPane;
-    @FXML
-    private Button translateButton, inputCopyButton, outputCopyButton;
     @FXML
     private TextArea inputTextArea, outputTextArea;
     @FXML
@@ -87,5 +86,20 @@ public class OnlineController extends MenuController {
         content.putString(outputTextArea.getText());
         clipboard.setContent(content);
         Notifications.create().title("Notification").text("Copied To Clipboard").owner(rootPane).hideAfter(Duration.seconds(3)).show();
+    }
+
+    @FXML
+    public void onPlayAudioInputBtn(){
+        //add thread make program run continuously.
+        new Thread(() -> {
+            TextToSpeechAPI.getTextToSpeech(inputTextArea.getText());
+        }).start();
+    }
+    @FXML
+    public void onPlayAudioOutputBtn(){
+        //add thread make program run continuously.
+        new Thread(() -> {
+            TextToSpeechAPI.getTextToSpeech(outputTextArea.getText());
+        }).start();
     }
 }

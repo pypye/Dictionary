@@ -59,6 +59,19 @@
     -fx-cursor: hand;
 }
 
+.btn-selected {
+    -fx-background-color: #EAE0FF;
+    -fx-text-fill: #562BF7;
+    -fx-border-radius: 10;
+    -fx-padding: 10;
+}
+
+.btn-margin-wrap-content {
+    -fx-padding: 15;
+    -fx-border-insets: 5;
+    -fx-background-insets: 5;
+}
+
 .scroll-pane {
     -fx-background-radius: 10;
     -fx-background-color: #3D3C3F;
@@ -116,6 +129,10 @@
 
 .choice-box {
     -fx-background-color: #313133;
+}
+
+.choice-box:hover {
+    -fx-cursor: hand;
 }
 
 .choice-box .context-menu {
