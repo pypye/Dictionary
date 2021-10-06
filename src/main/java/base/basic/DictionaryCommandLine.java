@@ -33,16 +33,14 @@ public class DictionaryCommandLine {
     }
 
     public ArrayList<String> dictionarySearcher(String find) {
-        ArrayList<String> ans = new ArrayList<>();
+
         ArrayList<Word> arrayList = dictionaryCommandLine.getDictionaryManagement().getDictionaryArray();
+        Trie findTrie = new Trie();
         for (Word word : arrayList) {
             String key = word.getWord_target();
-            int found = key.indexOf(find);
-            if (found == 0) {
-                ans.add(key.trim());
-            }
+            findTrie.add(key);
         }
-        return ans;
+        return findTrie.findAllWord(find);
     }
 
     public void dictionaryAdvanced() throws IOException {

@@ -1,5 +1,6 @@
 package base.advanced;
 
+import base.basic.Trie;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -24,14 +25,9 @@ public class Dictionary {
 
     public static ArrayList<String> dictionarySearcher(String input) {
         ArrayList<String> ans = new ArrayList<>();
-        dictionary.keys().forEachRemaining(key -> {
-            int found = key.indexOf(input);
-            if (found == 0) {
-                ans.add(key.trim());
-            }
-        });
-        sort(ans);
-        return ans;
+        Trie findTrie = new Trie();
+        dictionary.keys().forEachRemaining(findTrie::add);
+        return findTrie.findAllWord(input);
     }
 
     public static JSONObject dictionaryLookup(String input) {
