@@ -2,6 +2,7 @@ package client.dictionary.controllers;
 
 import api.GoogleAPI;
 import api.TextToSpeechAPI;
+import client.dictionary.configs.CssConfig;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -21,9 +22,12 @@ public class OnlineController extends MenuController {
     @FXML
     private TextArea inputTextArea, outputTextArea;
     @FXML
-    private ChoiceBox inputLangChoiceBox, outputLangChoiceBox;
+    private ChoiceBox<String> inputLangChoiceBox;
+    @FXML
+    private ChoiceBox<String> outputLangChoiceBox;
     @FXML
     private SplitPane translatePane;
+
     @FXML
     private void initialize() {
         inputLangChoiceBox.setItems(FXCollections.observableArrayList("English", "Vietnam"));
@@ -72,31 +76,36 @@ public class OnlineController extends MenuController {
 
     @FXML
     public void onInputCopyToClipboard() {
-        final Clipboard clipboard = Clipboard.getSystemClipboard();
-        final ClipboardContent content = new ClipboardContent();
-        content.putString(inputTextArea.getText());
-        clipboard.setContent(content);
-        Notifications.create().title("Notification").text("Copied To Clipboard").owner(rootPane).hideAfter(Duration.seconds(3)).show();
+        copyToClipBoard(inputTextArea);
     }
 
     @FXML
     public void onOutputCopyToClipboard() {
+        copyToClipBoard(outputTextArea);
+    }
+
+    private void copyToClipBoard(TextArea text) {
         final Clipboard clipboard = Clipboard.getSystemClipboard();
         final ClipboardContent content = new ClipboardContent();
-        content.putString(outputTextArea.getText());
+        content.putString(text.getText());
         clipboard.setContent(content);
-        Notifications.create().title("Notification").text("Copied To Clipboard").owner(rootPane).hideAfter(Duration.seconds(3)).show();
+        Notifications notifications = Notifications.create().title("Notification").text("Copied To Clipboard").owner(rootPane).hideAfter(Duration.seconds(3));
+        if (CssConfig.getConfig()) {
+            notifications.darkStyle();
+        }
+        notifications.show();
     }
 
     @FXML
-    public void onPlayAudioInputBtn(){
+    public void onPlayAudioInputBtn() {
         //add thread make program run continuously.
         new Thread(() -> {
             TextToSpeechAPI.getTextToSpeech(inputTextArea.getText());
         }).start();
     }
+
     @FXML
-    public void onPlayAudioOutputBtn(){
+    public void onPlayAudioOutputBtn() {
         //add thread make program run continuously.
         new Thread(() -> {
             TextToSpeechAPI.getTextToSpeech(outputTextArea.getText());

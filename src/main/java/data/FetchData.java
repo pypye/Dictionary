@@ -35,12 +35,12 @@ public class FetchData {
 
     private void addWord() {
         if (!lastWord.equals("")) {
-            if(dict.isNull(lastWord)){
+            if (dict.isNull(lastWord)) {
                 word.put("pronoun", lastPronoun);
                 word.put("type", type);
                 dict.put(lastWord, word);
             } else {
-                for(int i = 0; i < type.length(); i++){
+                for (int i = 0; i < type.length(); i++) {
                     JSONObject newType = type.getJSONObject(i);
                     dict.getJSONObject(lastWord).getJSONArray("type").put(newType);
                 }
@@ -49,18 +49,21 @@ public class FetchData {
 
         }
     }
-    private void reset(boolean _example, boolean _explain, boolean _type, boolean _word){
-        if(_example) example = new JSONArray();
-        if(_explain) explain = new JSONArray();
-        if(_type) type = new JSONArray();
-        if(_word) word = new JSONObject();
+
+    private void reset(boolean _example, boolean _explain, boolean _type, boolean _word) {
+        if (_example) example = new JSONArray();
+        if (_explain) explain = new JSONArray();
+        if (_type) type = new JSONArray();
+        if (_word) word = new JSONObject();
     }
+
     private void resetLast(boolean _explain, boolean _type, boolean _word, boolean _pronoun) {
-        if(_explain) lastExplain = "";
-        if(_type) lastType = "";
-        if(_word) lastWord = "";
-        if(_pronoun) lastPronoun = "";
+        if (_explain) lastExplain = "";
+        if (_type) lastType = "";
+        if (_word) lastWord = "";
+        if (_pronoun) lastPronoun = "";
     }
+
     public void fetchData(String inFile, String outFile) throws IOException {
         dict = new JSONObject();
         FileInputStream fileInputStream = new FileInputStream(inFile);
@@ -119,6 +122,7 @@ public class FetchData {
         file.write(String.valueOf(dict));
         file.flush();
     }
+
     public void convert(String inFile, String outFile) throws IOException {
         FileInputStream fileInputStream = new FileInputStream(inFile);
         Scanner sc = new Scanner(fileInputStream);
@@ -128,15 +132,15 @@ public class FetchData {
 
         while (sc.hasNextLine()) {
             String checkStr = sc.nextLine();
-            if(lastStr.equals("")) {
+            if (lastStr.equals("")) {
                 lastStr = checkStr;
                 outputStreamWriter.write(checkStr + '\n');
             } else {
-                if(checkStr.equals("") || lastStr.equals("")){
+                if (checkStr.equals("") || lastStr.equals("")) {
                     outputStreamWriter.write(checkStr + '\n');
                     continue;
                 }
-                if(checkStr.charAt(0) == '-' && lastStr.charAt(0) == '@') {
+                if (checkStr.charAt(0) == '-' && lastStr.charAt(0) == '@') {
                     outputStreamWriter.write("* others\n");
                     outputStreamWriter.write(checkStr + '\n');
                 } else {
@@ -147,12 +151,13 @@ public class FetchData {
         }
         outputStreamWriter.flush();
     }
+
     public static void main(String[] args) throws IOException {
         //v-e word counts: 23430
         //e-v word counts: 103871
         FetchData convertToJson = new FetchData();
         convertToJson.convert("src/main/java/data/input/english-vietnamese.txt", "src/main/java/data/input_processed/english-vietnamese.txt");
-        convertToJson.convert("src/main/java/data/input/vietnamese-english.txt", "src/main/java/data/input_processed/vietnamese-english.txt" );
+        convertToJson.convert("src/main/java/data/input/vietnamese-english.txt", "src/main/java/data/input_processed/vietnamese-english.txt");
         convertToJson.fetchData("src/main/java/data/input_processed/english-vietnamese.txt", "src/main/java/data/output/english-vietnamese.json");
         convertToJson.fetchData("src/main/java/data/input_processed/vietnamese-english.txt", "src/main/java/data/output/vietnamese-english.json");
     }

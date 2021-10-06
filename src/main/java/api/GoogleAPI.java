@@ -26,6 +26,7 @@ public class GoogleAPI {
         inputStream.close();
         return StringEscapeUtils.unescapeHtml4(response.toString());
     }
+
     public static void main(String[] args) throws IOException {
         String text = "Hello world";
         System.out.println("Translated text: " + translate("", "vi", text));

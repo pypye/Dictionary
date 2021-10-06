@@ -4,25 +4,19 @@ import api.TextToSpeechAPI;
 import base.advanced.Dictionary;
 import javafx.application.Platform;
 import javafx.beans.value.ObservableValue;
-import javafx.concurrent.Service;
-import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+
+import java.util.ArrayList;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
 public class OfflineController extends MenuController {
-    private Dictionary dictionary;
     private ArrayList<String> outputDictionary;
     private int countLazy = 0;
     @FXML
@@ -39,14 +33,10 @@ public class OfflineController extends MenuController {
     @FXML
     public void initialize() {
         //add thread make program run continuously.
-        new Thread(() -> {
-            dictionary = new Dictionary("src/main/java/data/output/english-vietnamese.json");
-            outputDictionary = dictionary.dictionarySearcher("");
-            Platform.runLater(() -> {
-                addListWordButton();
-            });
-        }).start();
-
+        new Thread(() -> Platform.runLater(() -> {
+            outputDictionary = Dictionary.dictionarySearcher("");
+            addListWordButton();
+        })).start();
         //lazy load on scroll
         listWordScroll.vvalueProperty().addListener((ObservableValue<? extends Number> observable, Number oldValue, Number newValue) -> {
             if (listWordScroll.getVvalue() >= 0.75) {
@@ -59,18 +49,14 @@ public class OfflineController extends MenuController {
 
     @FXML
     public void onPlayAudioButton() {
-        //add thread make program run continuously.
-        new Thread(() -> {
-            TextToSpeechAPI.getTextToSpeech(wordLabel.getText());
-        }).start();
+        new Thread(() -> TextToSpeechAPI.getTextToSpeech(wordLabel.getText())).start();
     }
 
     @FXML
     public void onTypeSearchInput() {
         String input = searchInput.getText();
-        //add thread make program run continuously.
         new Thread(() -> {
-            outputDictionary = dictionary.dictionarySearcher(input);
+            outputDictionary = Dictionary.dictionarySearcher(input);
             Platform.runLater(() -> {
                 outputVbox.getChildren().clear();
                 countLazy = 0;
@@ -86,7 +72,7 @@ public class OfflineController extends MenuController {
             Button resultButton = new Button(result);
             EventHandler<ActionEvent> event = e -> {
                 explainVbox.getChildren().clear();
-                JSONObject word = dictionary.dictionaryLookup(result);
+                JSONObject word = Dictionary.dictionaryLookup(result);
                 wordLabel.setText(result);
                 if (!word.getString("pronoun").equals("")) {
                     pronounLabel.setText("[" + word.getString("pronoun") + "]");

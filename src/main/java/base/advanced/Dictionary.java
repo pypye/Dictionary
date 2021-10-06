@@ -10,11 +10,11 @@ import java.util.ArrayList;
 import static java.util.Collections.sort;
 
 public class Dictionary {
-    private JSONObject dictionary;
+    private static JSONObject dictionary;
 
-    public Dictionary(String file) {
+    public static void initialize() {
         try {
-            String content = new String(Files.readAllBytes(Path.of(file)));
+            String content = new String(Files.readAllBytes(Path.of("src/main/java/data/output/english-vietnamese.json")));
             dictionary = new JSONObject(content);
         } catch (IOException e) {
             e.printStackTrace();
@@ -22,7 +22,7 @@ public class Dictionary {
 
     }
 
-    public ArrayList<String> dictionarySearcher(String input) {
+    public static ArrayList<String> dictionarySearcher(String input) {
         ArrayList<String> ans = new ArrayList<>();
         dictionary.keys().forEachRemaining(key -> {
             int found = key.indexOf(input);
@@ -34,12 +34,11 @@ public class Dictionary {
         return ans;
     }
 
-    public JSONObject dictionaryLookup(String input) {
+    public static JSONObject dictionaryLookup(String input) {
         return dictionary.getJSONObject(input);
     }
 
     public static void main(String[] args) throws IOException {
-        Dictionary arr = new Dictionary("src/main/java/data/output/english-vietnamese.json");
-        System.out.println(arr.dictionaryLookup("transact"));
+        System.out.println(dictionaryLookup("transact"));
     }
 }

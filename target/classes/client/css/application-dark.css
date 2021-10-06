@@ -8,16 +8,16 @@
 }
 
 .container {
-    -fx-background-color: #3D3C3F;
+    -fx-background-color: #3d3c40;
     -fx-background-radius: 10;
 }
 
 .container-scroll {
-    -fx-background-color: #3D3C3F;
+    -fx-background-color: #3d3c40;
 }
 
 .menu-bar {
-    -fx-background-color: #3D3C3F;
+    -fx-background-color: #3d3c40;
 }
 
 .menu-btn {
@@ -34,6 +34,7 @@
 
 .text-input {
     -fx-background-color: #313133;
+    -fx-border-color: transparent;
     -fx-text-fill: white;
     -fx-prompt-text-fill: #908F9C;
     -fx-background-radius: 8;
@@ -60,8 +61,8 @@
 }
 
 .btn-selected {
-    -fx-background-color: #EAE0FF;
-    -fx-text-fill: #562BF7;
+    -fx-background-color: #4d4b52;
+    -fx-text-fill: white;
     -fx-border-radius: 10;
     -fx-padding: 10;
 }
@@ -72,9 +73,13 @@
     -fx-background-insets: 5;
 }
 
+.btn-margin-wrap-content:hover {
+    -fx-cursor: hand;
+}
+
 .scroll-pane {
     -fx-background-radius: 10;
-    -fx-background-color: #3D3C3F;
+    -fx-background-color: #3d3c40;
 }
 
 .scroll-pane .viewport {
@@ -101,7 +106,7 @@
 
 .split-pane {
     -fx-background-radius: 10;
-    -fx-background-color: #3D3C3F;
+    -fx-background-color: #3d3c40;
 }
 
 .split-pane .viewport {
@@ -116,7 +121,7 @@
 
 .text-area {
     -fx-background-color: transparent;
-    -fx-control-inner-background: #3D3C3F;
+    -fx-control-inner-background: #3d3c40;
     -fx-background-radius: 10;
 }
 
@@ -136,8 +141,11 @@
 }
 
 .choice-box .context-menu {
-    -fx-background-color: #3D3C3F;
+    -fx-background-color: #3d3c40;
     -fx-background-radius: 10;
+}
+.choice-box .menu-item:focused {
+    -fx-background-color: #535353;
 }
 
 .word-type-label {
@@ -157,4 +165,14 @@
 
 .word-pronoun-label {
 
+}
+.table-view .column-header-background .label {
+    -fx-text-fill: white;
+}
+
+.table-view .column-header {
+    -fx-background-color: #6462FC;
+}
+.table-view{
+    -fx-background-color: #313133;
 }

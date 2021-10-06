@@ -1,24 +1,17 @@
 package client.dictionary.controllers;
 
 import api.SynonymAPI;
-import api.TextToSpeechAPI;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.geometry.Insets;
-import javafx.scene.Group;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.TextFlow;
 import org.json.JSONArray;
 import org.json.JSONObject;
-
-import java.io.IOException;
 
 public class SynonymController extends MenuController {
     @FXML
@@ -47,6 +40,7 @@ public class SynonymController extends MenuController {
 
     private void fetchData(JSONObject list, String type) {
         JSONArray wordlist = list.getJSONArray(type);
+        if (wordlist.length() < 1) return;
         TextFlow wordlistBox = new TextFlow();
         contentVBox.getChildren().add(new Label(type));
         contentVBox.getChildren().add(wordlistBox);

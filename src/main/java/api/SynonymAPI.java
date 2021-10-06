@@ -7,13 +7,12 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 
 public class SynonymAPI {
-    public static JSONObject getSynonymList(String wordForm){
+    public static JSONObject getSynonymList(String wordForm) {
         try {
             URL url = new URL("https://languagetools.p.rapidapi.com/all/" + URLEncoder.encode(wordForm, StandardCharsets.UTF_8).replace("+", "%20"));
             HttpURLConnection request = (HttpURLConnection) url.openConnection();
@@ -29,9 +28,8 @@ public class SynonymAPI {
             inputStream.close();
             return new JSONObject(StringEscapeUtils.unescapeHtml4(response.toString()));
         } catch (IOException e) {
-            e.printStackTrace();
+            return new JSONObject("{\"hypernyms\":[],\"synonyms\":[],\"antonyms\":[],\"hyponyms\":[]}");
         }
-        return null;
     }
 
     public static void main(String[] args) throws IOException {
