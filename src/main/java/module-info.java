@@ -12,7 +12,7 @@ module client.dictionary {
     requires org.kordamp.ikonli.javafx;
     requires validatorfx;
     requires freetts;
-
+    opens base.advanced to javafx.base;
     opens client.dictionary to javafx.fxml;
     exports client.dictionary;
     exports client.dictionary.controllers;

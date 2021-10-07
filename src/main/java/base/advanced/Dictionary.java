@@ -1,6 +1,6 @@
 package base.advanced;
 
-import base.basic.Trie;
+import base.algorithms.Trie;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -8,15 +8,15 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 
-import static java.util.Collections.sort;
-
 public class Dictionary {
     private static JSONObject dictionary;
+    private static Trie findTrie = new Trie();
 
     public static void initialize() {
         try {
             String content = new String(Files.readAllBytes(Path.of("src/main/java/data/output/english-vietnamese.json")));
             dictionary = new JSONObject(content);
+            dictionary.keys().forEachRemaining(findTrie::add);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -24,9 +24,6 @@ public class Dictionary {
     }
 
     public static ArrayList<String> dictionarySearcher(String input) {
-        ArrayList<String> ans = new ArrayList<>();
-        Trie findTrie = new Trie();
-        dictionary.keys().forEachRemaining(findTrie::add);
         return findTrie.findAllWord(input);
     }
 

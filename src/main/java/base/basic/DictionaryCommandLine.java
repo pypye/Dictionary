@@ -1,5 +1,7 @@
 package base.basic;
 
+import base.algorithms.Trie;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -33,7 +35,6 @@ public class DictionaryCommandLine {
     }
 
     public ArrayList<String> dictionarySearcher(String find) {
-
         ArrayList<Word> arrayList = dictionaryCommandLine.getDictionaryManagement().getDictionaryArray();
         Trie findTrie = new Trie();
         for (Word word : arrayList) {

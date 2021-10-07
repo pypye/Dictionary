@@ -7,6 +7,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -66,7 +67,16 @@ public class OfflineController extends MenuController {
     }
 
     private void addListWordButton() {
-
+        if (outputDictionary.size() <= 1 && outputDictionary.get(0) == "") {
+            Label notExist = new Label("Từ này không tồn tại");
+            Button addWord = new Button("Thêm từ...");
+            notExist.setWrapText(true);
+            notExist.setPadding(new Insets(0, 0, 10, 0));
+            addWord.getStyleClass().add("btn");
+            outputVbox.getChildren().add(notExist);
+            outputVbox.getChildren().add(addWord);
+            return;
+        }
         for (int i = countLazy; i < Math.min(outputDictionary.size(), countLazy + 50); i++) {
             String result = outputDictionary.get(i);
             Button resultButton = new Button(result);

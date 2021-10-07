@@ -1,4 +1,4 @@
-package base.basic;
+package base.algorithms;
 
 public class TrieNode {
 
