@@ -1,4 +1,4 @@
-package client.dictionary;
+package client.dictionary.stages;
 
 import client.dictionary.configs.CssConfig;
 import client.dictionary.controllers.SceneController;

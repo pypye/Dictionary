@@ -1,12 +1,13 @@
 package data;
 
+import org.bson.Document;
 import org.json.JSONArray;
 import org.json.JSONObject;
-
 import java.io.*;
 import java.util.Scanner;
 
 public class FetchData {
+    private MongoDB db = new MongoDB();
     private JSONObject dict = new JSONObject();
     private JSONObject word = new JSONObject();
     private JSONArray type = new JSONArray();
@@ -33,20 +34,22 @@ public class FetchData {
         }
     }
 
-    private void addWord() {
+    private void addWord(boolean ev) {
         if (!lastWord.equals("")) {
             if (dict.isNull(lastWord)) {
                 word.put("pronoun", lastPronoun);
                 word.put("type", type);
+                Document doc = new Document().append("word", lastWord).append("pronoun", lastPronoun).append("type", type.toString());
+                //if (ev) db.getEnglish_Vietnamese().insertOne(doc);
+                //else db.getVietnamese_English().insertOne(doc);
+                System.out.println(doc.toJson());
                 dict.put(lastWord, word);
             } else {
                 for (int i = 0; i < type.length(); i++) {
                     JSONObject newType = type.getJSONObject(i);
                     dict.getJSONObject(lastWord).getJSONArray("type").put(newType);
                 }
-
             }
-
         }
     }
 
@@ -64,7 +67,7 @@ public class FetchData {
         if (_pronoun) lastPronoun = "";
     }
 
-    public void fetchData(String inFile, String outFile) throws IOException {
+    public void fetchData(String inFile, String outFile, boolean ev) throws IOException {
         dict = new JSONObject();
         FileInputStream fileInputStream = new FileInputStream(inFile);
         Scanner sc = new Scanner(fileInputStream);
@@ -76,7 +79,7 @@ public class FetchData {
             if (WordInput.charAt(0) == '\uFEFF' || WordInput.charAt(0) == '@') {
                 addExplain();
                 addType();
-                addWord();
+                addWord(ev);
                 reset(true, true, true, true);
                 resetLast(true, true, true, true);
                 String[] data = WordInput.split("/");
@@ -115,7 +118,7 @@ public class FetchData {
         }
         addExplain();
         addType();
-        addWord();
+        addWord(ev);
         reset(true, true, true, true);
         resetLast(true, true, true, true);
         FileWriter file = new FileWriter(outFile);
@@ -156,9 +159,9 @@ public class FetchData {
         //v-e word counts: 23430
         //e-v word counts: 103871
         FetchData convertToJson = new FetchData();
-        convertToJson.convert("src/main/java/data/input/english-vietnamese.txt", "src/main/java/data/input_processed/english-vietnamese.txt");
-        convertToJson.convert("src/main/java/data/input/vietnamese-english.txt", "src/main/java/data/input_processed/vietnamese-english.txt");
-        convertToJson.fetchData("src/main/java/data/input_processed/english-vietnamese.txt", "src/main/java/data/output/english-vietnamese.json");
-        convertToJson.fetchData("src/main/java/data/input_processed/vietnamese-english.txt", "src/main/java/data/output/vietnamese-english.json");
+        //convertToJson.convert("src/main/java/data/input/english-vietnamese.txt", "src/main/java/data/input_processed/english-vietnamese.txt");
+        //convertToJson.convert("src/main/java/data/input/vietnamese-english.txt", "src/main/java/data/input_processed/vietnamese-english.txt");
+        convertToJson.fetchData("src/main/java/data/input_processed/english-vietnamese.txt", "src/main/java/data/output/english-vietnamese.json", true);
+        convertToJson.fetchData("src/main/java/data/input_processed/vietnamese-english.txt", "src/main/java/data/output/vietnamese-english.json", false);
     }
 }

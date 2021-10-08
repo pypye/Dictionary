@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" styleClass="pane" stylesheets="@../css/application-light.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.dictionary.controllers.OfflineController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" styleClass="pane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.dictionary.controllers.OfflineController">
     <children>
         <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="800.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <opaqueInsets>
@@ -129,8 +129,8 @@
                                                 </ImageView>
                                             </graphic>
                                         </Button>
-                              <Button fx:id="playAudioButton1" mnemonicParsing="false" onAction="#onPlayAudioButton" styleClass="btn" text="Sửa từ..." />
-                              <Button fx:id="playAudioButton11" mnemonicParsing="false" onAction="#onPlayAudioButton" styleClass="btn" text="Xoá từ..." />
+                              <Button mnemonicParsing="false" onAction="#onEditWordButton" styleClass="btn" text="Sửa từ..." />
+                              <Button mnemonicParsing="false" onAction="#onDeleteWordButton" styleClass="btn" text="Xoá từ..." />
                                     </children>
                                     <VBox.margin>
                                         <Insets />

@@ -13,7 +13,6 @@ import javafx.scene.input.ClipboardContent;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
 import org.controlsfx.control.Notifications;
-
 import java.io.IOException;
 
 public class OnlineController extends MenuController {
@@ -42,7 +41,6 @@ public class OnlineController extends MenuController {
             }
         });
     }
-
 
     @FXML
     public void onTranslateButtonClick() throws IOException {

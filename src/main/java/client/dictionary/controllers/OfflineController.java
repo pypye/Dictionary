@@ -2,6 +2,7 @@ package client.dictionary.controllers;
 
 import api.TextToSpeechAPI;
 import base.advanced.Dictionary;
+import client.dictionary.stages.Popup;
 import javafx.application.Platform;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -20,6 +21,7 @@ import org.json.JSONObject;
 public class OfflineController extends MenuController {
     private ArrayList<String> outputDictionary;
     private int countLazy = 0;
+    private String currentWord;
     @FXML
     private TextField searchInput;
     @FXML
@@ -70,9 +72,13 @@ public class OfflineController extends MenuController {
         if (outputDictionary.size() <= 1 && outputDictionary.get(0) == "") {
             Label notExist = new Label("Từ này không tồn tại");
             Button addWord = new Button("Thêm từ...");
+            EventHandler<ActionEvent> event = e -> {
+                new Popup("Add", searchInput.getText());
+            };
             notExist.setWrapText(true);
             notExist.setPadding(new Insets(0, 0, 10, 0));
             addWord.getStyleClass().add("btn");
+            addWord.setOnAction(event);
             outputVbox.getChildren().add(notExist);
             outputVbox.getChildren().add(addWord);
             return;
@@ -82,15 +88,16 @@ public class OfflineController extends MenuController {
             Button resultButton = new Button(result);
             EventHandler<ActionEvent> event = e -> {
                 explainVbox.getChildren().clear();
-                JSONObject word = Dictionary.dictionaryLookup(result);
+                JSONObject selectedWord = Dictionary.dictionaryLookup(result);
+                currentWord = result;
                 wordLabel.setText(result);
-                if (!word.getString("pronoun").equals("")) {
-                    pronounLabel.setText("[" + word.getString("pronoun") + "]");
+                if (!selectedWord.getString("pronoun").equals("")) {
+                    pronounLabel.setText("[" + selectedWord.getString("pronoun") + "]");
                 } else {
                     pronounLabel.setText("");
                 }
                 definitionHBox.setVisible(true);
-                JSONArray type = word.getJSONArray("type");
+                JSONArray type = selectedWord.getJSONArray("type");
                 createTree(type, 0);
             };
             resultButton.getStyleClass().add("menu-btn");
@@ -135,4 +142,19 @@ public class OfflineController extends MenuController {
         for (int i = 0; i < times; i++) ans += source;
         return ans;
     }
+
+    @FXML
+    public void onEditWordButton() {
+        new Popup("Edit", currentWord);
+    }
+
+    @FXML
+    public void onDeleteWordButton() {
+        Dialog<String> dialog = new Dialog<>();
+        dialog.setTitle("Delete");
+        ButtonType type = new ButtonType("Ok", ButtonBar.ButtonData.OK_DONE);
+        dialog.getDialogPane().getButtonTypes().add(type);
+        dialog.showAndWait();
+    }
+
 }

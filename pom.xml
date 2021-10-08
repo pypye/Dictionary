@@ -110,6 +110,12 @@
             <artifactId>freetts</artifactId>
             <version>1.2.2</version>
         </dependency>
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongo-java-driver</artifactId>
+            <version>3.12.10</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -132,7 +138,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>client.dictionary/client.dictionary.Application</mainClass>
+                            <mainClass>client.dictionary/client.dictionary.stages.Application</mainClass>
                         </configuration>
                     </execution>
                 </executions>

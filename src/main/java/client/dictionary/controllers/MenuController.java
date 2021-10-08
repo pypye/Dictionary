@@ -1,11 +1,9 @@
 package client.dictionary.controllers;
 
 import javafx.fxml.FXML;
-
 import java.io.IOException;
 
 public class MenuController {
-
     @FXML
     public void onOfflineButtonClick() throws IOException {
         SceneController.switchToOffline();

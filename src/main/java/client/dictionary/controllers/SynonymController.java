@@ -20,11 +20,6 @@ public class SynonymController extends MenuController {
     private VBox contentVBox;
 
     @FXML
-    public void initialize() {
-
-    }
-
-    @FXML
     public void onSubmitSearchBtn() {
         new Thread(() -> {
             JSONObject list = SynonymAPI.getSynonymList(searchTextField.getText());
