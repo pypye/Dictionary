@@ -1,6 +1,7 @@
 package api;
 
 import java.io.OutputStream;
+
 import org.apache.commons.text.StringEscapeUtils;
 import org.json.JSONObject;
 import org.json.JSONString;
@@ -20,25 +21,22 @@ public class SpeechToTextApi {
 
     public static String postSpeechToTextApi(String wordForm) {
         try {
-            URL url = new URL(
-                    "https://api.assemblyai.com/v2/transcript");
+            URL url = new URL("https://api.assemblyai.com/v2/transcript");
             HttpURLConnection request = (HttpURLConnection) url.openConnection();
 
             String authHeaderKey = "16ee3d9d2ee040aa9a63af9ca005a55e";
-            request.setRequestProperty("authorization",
-                    authHeaderKey);
+            request.setRequestProperty("authorization", authHeaderKey);
             request.setRequestProperty("content-type", "application/json; utf-8");
             request.setRequestMethod("POST");
             request.setDoOutput(true);
             String jsonInputString = "{\"audio_url\": \"https://s3-us-west-2.amazonaws.com/blog.assemblyai.com/audio/8-7-2018-post/7510.mp3\"}";
 
-            try(OutputStream os = request.getOutputStream()) {
+            try (OutputStream os = request.getOutputStream()) {
                 byte[] input = jsonInputString.getBytes("utf-8");
                 os.write(input, 0, input.length);
-            } catch(Exception e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
-
 
             int status = request.getResponseCode();
             BufferedReader inputStream = new BufferedReader(
@@ -57,6 +55,7 @@ public class SpeechToTextApi {
             return new String("error: ");
         }
     }
+
     public static String getSpeechToTextApi(String wordForm) {
         try {
             String stringURL = "https://api.assemblyai.com/v2/transcript/" + wordForm;
@@ -64,8 +63,7 @@ public class SpeechToTextApi {
             HttpURLConnection request = (HttpURLConnection) url.openConnection();
 
             String authHeaderKey = "16ee3d9d2ee040aa9a63af9ca005a55e";
-            request.setRequestProperty("authorization",
-                    authHeaderKey);
+            request.setRequestProperty("authorization", authHeaderKey);
             request.setRequestMethod("GET");
 
             BufferedReader inputStream = new BufferedReader(new InputStreamReader(request.getInputStream()));
@@ -82,18 +80,17 @@ public class SpeechToTextApi {
 
             return textTranslated.get("text").toString();
 
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             return new String("error2\n");
         }
     }
 
     public static void main(String[] args) throws IOException {
-        String IdStoredVoice =  postSpeechToTextApi("C:/Users/hoang/Downloads/hello.wav");
+        String IdStoredVoice = postSpeechToTextApi("C:/Users/hoang/Downloads/hello.wav");
         System.out.println(IdStoredVoice);
-        while(true) {
+        while (true) {
             String WordTranslate = getSpeechToTextApi(IdStoredVoice);
-            if(WordTranslate == "error2" || WordTranslate == "null") {
+            if (WordTranslate == "error2" || WordTranslate == "null") {
                 continue;
             }
             break;

@@ -22,6 +22,11 @@ public class Dictionary {
         }
 
     }
+    public static void dictionaryInsert(String word, JSONObject object) {
+        dictionary.put(word, object);
+        findTrie.add(word);
+    }
+
 
     public static ArrayList<String> dictionarySearcher(String input) {
         return findTrie.findAllWord(input);

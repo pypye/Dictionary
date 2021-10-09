@@ -36,32 +36,33 @@ public class SceneController {
         } else {
             scene.getStylesheets().add(LIGHT_CSS);
         }
-        renderScene("Dictionary");
+        renderScene();
     }
 
     public static void switchToOffline() throws IOException {
         root = FXMLLoader.load(SceneController.class.getResource("/client/dictionary/offline-view.fxml"));
-        renderScene("Dictionary");
+        renderScene();
     }
 
     public static void switchToOnline() throws IOException {
         root = FXMLLoader.load(SceneController.class.getResource("/client/dictionary/online-view.fxml"));
-        renderScene("Dictionary");
+        renderScene();
     }
 
     public static void switchToSynonym() throws IOException {
         root = FXMLLoader.load(SceneController.class.getResource("/client/dictionary/synonym-view.fxml"));
-        renderScene("Dictionary");
+        renderScene();
     }
 
     public static void switchToSettings() throws IOException {
         root = FXMLLoader.load(SceneController.class.getResource("/client/dictionary/settings-view.fxml"));
-        renderScene("Dictionary");
+        renderScene();
     }
 
-    private static void renderScene(String title) {
+    private static void renderScene() {
         scene.setRoot(root);
-        stage.setTitle(title);
+        stage.setMaximized(true);
+        stage.setTitle("Dictionary");
         stage.setScene(scene);
         stage.show();
     }

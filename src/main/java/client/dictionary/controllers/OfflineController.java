@@ -87,24 +87,28 @@ public class OfflineController extends MenuController {
             String result = outputDictionary.get(i);
             Button resultButton = new Button(result);
             EventHandler<ActionEvent> event = e -> {
-                explainVbox.getChildren().clear();
-                JSONObject selectedWord = Dictionary.dictionaryLookup(result);
-                currentWord = result;
-                wordLabel.setText(result);
-                if (!selectedWord.getString("pronoun").equals("")) {
-                    pronounLabel.setText("[" + selectedWord.getString("pronoun") + "]");
-                } else {
-                    pronounLabel.setText("");
-                }
-                definitionHBox.setVisible(true);
-                JSONArray type = selectedWord.getJSONArray("type");
-                createTree(type, 0);
+                onClickResultButton(result);
             };
             resultButton.getStyleClass().add("menu-btn");
             resultButton.setWrapText(true);
             resultButton.setOnAction(event);
             outputVbox.getChildren().add(resultButton);
         }
+    }
+
+    public void onClickResultButton(String result) {
+        explainVbox.getChildren().clear();
+        JSONObject selectedWord = Dictionary.dictionaryLookup(result);
+        currentWord = result;
+        wordLabel.setText(result);
+        if (!selectedWord.getString("pronoun").equals("")) {
+            pronounLabel.setText("[" + selectedWord.getString("pronoun") + "]");
+        } else {
+            pronounLabel.setText("");
+        }
+        definitionHBox.setVisible(true);
+        JSONArray type = selectedWord.getJSONArray("type");
+        createTree(type, 0);
     }
 
     //run a recursion to create a tree view
