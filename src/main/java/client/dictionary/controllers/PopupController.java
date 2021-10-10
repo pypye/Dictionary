@@ -1,10 +1,9 @@
 package client.dictionary.controllers;
 
 import base.advanced.Dictionary;
-import com.mongodb.util.JSON;
+import client.dictionary.configs.CssConfig;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
@@ -13,6 +12,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+import javafx.util.Duration;
+import org.controlsfx.control.Notifications;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -29,10 +31,6 @@ public class PopupController {
 
     public void setWordTextField(String word) {
         wordTextField.setText(word);
-    }
-
-    public TextField getWordTextField() {
-        return wordTextField;
     }
 
     public void setPronounTextField(String word) {
@@ -53,6 +51,10 @@ public class PopupController {
 
     public void setExampleText2(String exampleText2) {
         this.exampleText2 = exampleText2;
+    }
+
+    public TextField getWordTextField() {
+        return wordTextField;
     }
 
     public VBox getCurrentTypeParentVBox() {
@@ -214,5 +216,15 @@ public class PopupController {
         wordJSON.put("pronoun", pronounTextField.getText());
         wordJSON.put("type", typeArray);
         Dictionary.dictionaryInsert(wordTextField.getText(), wordJSON);
+        OfflineController offlineController = SceneController.getRoot().getController();
+        offlineController.onTypeSearchInput();
+        offlineController.onClickResultButton(wordTextField.getText());
+        Stage stage = (Stage) editVbox.getScene().getWindow();
+        stage.close();
+        Notifications notifications = Notifications.create().title("Notification").text("Add/Edit word successfully").owner(offlineController.getRootPane()).hideAfter(Duration.seconds(3));
+        if (CssConfig.getConfig()) {
+            notifications.darkStyle();
+        }
+        notifications.show();
     }
 }

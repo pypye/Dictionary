@@ -13,7 +13,8 @@ import java.io.IOException;
 public class SceneController {
     private static Stage stage;
     private static Scene scene;
-    private static Parent root;
+    private static FXMLLoader root;
+    private static Parent parent;
     public static String DARK_CSS = SceneController.class.getResource("/client/css/application-dark.css").toExternalForm();
     public static String LIGHT_CSS = SceneController.class.getResource("/client/css/application-light.css").toExternalForm();
 
@@ -25,10 +26,15 @@ public class SceneController {
         return scene;
     }
 
-    public static void initializeApplication(Stage _stage, Parent _root) {
+    public static FXMLLoader getRoot() {
+        return root;
+    }
+
+    public static void initializeApplication(Stage _stage, FXMLLoader _root) throws IOException {
         stage = _stage;
         root = _root;
-        scene = new Scene(root, 1280, 720, false, SceneAntialiasing.BALANCED);
+        parent = root.load();
+        scene = new Scene(parent, 1280, 720, false, SceneAntialiasing.BALANCED);
         Dictionary.initialize();
         CssConfig.initialize();
         if (CssConfig.getConfig()) {
@@ -40,28 +46,31 @@ public class SceneController {
     }
 
     public static void switchToOffline() throws IOException {
-        root = FXMLLoader.load(SceneController.class.getResource("/client/dictionary/offline-view.fxml"));
+        root = new FXMLLoader(SceneController.class.getResource("/client/dictionary/offline-view.fxml"));
+        parent = root.load();
         renderScene();
     }
 
     public static void switchToOnline() throws IOException {
-        root = FXMLLoader.load(SceneController.class.getResource("/client/dictionary/online-view.fxml"));
+        root = new FXMLLoader(SceneController.class.getResource("/client/dictionary/online-view.fxml"));
+        parent = root.load();
         renderScene();
     }
 
     public static void switchToSynonym() throws IOException {
-        root = FXMLLoader.load(SceneController.class.getResource("/client/dictionary/synonym-view.fxml"));
+        root = new FXMLLoader(SceneController.class.getResource("/client/dictionary/synonym-view.fxml"));
+        parent = root.load();
         renderScene();
     }
 
     public static void switchToSettings() throws IOException {
-        root = FXMLLoader.load(SceneController.class.getResource("/client/dictionary/settings-view.fxml"));
+        root = new FXMLLoader(SceneController.class.getResource("/client/dictionary/settings-view.fxml"));
+        parent = root.load();
         renderScene();
     }
 
     private static void renderScene() {
-        scene.setRoot(root);
-        stage.setMaximized(true);
+        scene.setRoot(parent);
         stage.setTitle("Dictionary");
         stage.setScene(scene);
         stage.show();

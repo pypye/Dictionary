@@ -3,6 +3,7 @@ package data;
 import org.bson.Document;
 import org.json.JSONArray;
 import org.json.JSONObject;
+
 import java.io.*;
 import java.util.Scanner;
 
@@ -42,7 +43,7 @@ public class FetchData {
                 Document doc = new Document().append("word", lastWord).append("pronoun", lastPronoun).append("type", type.toString());
                 //if (ev) db.getEnglish_Vietnamese().insertOne(doc);
                 //else db.getVietnamese_English().insertOne(doc);
-                System.out.println(doc.toJson());
+                //System.out.println(doc.toJson());
                 dict.put(lastWord, word);
             } else {
                 for (int i = 0; i < type.length(); i++) {

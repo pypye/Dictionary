@@ -2,6 +2,7 @@ package client.dictionary.controllers;
 
 import api.TextToSpeechAPI;
 import base.advanced.Dictionary;
+import client.dictionary.configs.CssConfig;
 import client.dictionary.stages.Popup;
 import javafx.application.Platform;
 import javafx.beans.value.ObservableValue;
@@ -10,11 +11,15 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
+import javafx.util.Duration;
+import org.controlsfx.control.Notifications;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -22,6 +27,8 @@ public class OfflineController extends MenuController {
     private ArrayList<String> outputDictionary;
     private int countLazy = 0;
     private String currentWord;
+    @FXML
+    private AnchorPane rootPane;
     @FXML
     private TextField searchInput;
     @FXML
@@ -32,6 +39,10 @@ public class OfflineController extends MenuController {
     private ScrollPane listWordScroll;
     @FXML
     private Label wordLabel, pronounLabel;
+
+    public AnchorPane getRootPane() {
+        return rootPane;
+    }
 
     @FXML
     public void initialize() {
@@ -69,12 +80,10 @@ public class OfflineController extends MenuController {
     }
 
     private void addListWordButton() {
-        if (outputDictionary.size() <= 1 && outputDictionary.get(0) == "") {
+        if (outputDictionary.size() <= 1 && outputDictionary.get(0).equals("")) {
             Label notExist = new Label("Từ này không tồn tại");
             Button addWord = new Button("Thêm từ...");
-            EventHandler<ActionEvent> event = e -> {
-                new Popup("Add", searchInput.getText());
-            };
+            EventHandler<ActionEvent> event = e -> new Popup("Add", searchInput.getText());
             notExist.setWrapText(true);
             notExist.setPadding(new Insets(0, 0, 10, 0));
             addWord.getStyleClass().add("btn");
@@ -86,9 +95,7 @@ public class OfflineController extends MenuController {
         for (int i = countLazy; i < Math.min(outputDictionary.size(), countLazy + 50); i++) {
             String result = outputDictionary.get(i);
             Button resultButton = new Button(result);
-            EventHandler<ActionEvent> event = e -> {
-                onClickResultButton(result);
-            };
+            EventHandler<ActionEvent> event = e -> onClickResultButton(result);
             resultButton.getStyleClass().add("menu-btn");
             resultButton.setWrapText(true);
             resultButton.setOnAction(event);
@@ -154,11 +161,20 @@ public class OfflineController extends MenuController {
 
     @FXML
     public void onDeleteWordButton() {
-        Dialog<String> dialog = new Dialog<>();
-        dialog.setTitle("Delete");
-        ButtonType type = new ButtonType("Ok", ButtonBar.ButtonData.OK_DONE);
-        dialog.getDialogPane().getButtonTypes().add(type);
-        dialog.showAndWait();
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Delete");
+        alert.setResizable(false);
+        alert.setContentText("Are you sure delete this word?");
+        Optional<ButtonType> result = alert.showAndWait();
+        if(result.isPresent() && result.get() == ButtonType.OK){
+            OfflineController offlineController = SceneController.getRoot().getController();
+            Notifications notifications = Notifications.create().title("Notification").text("Delete word successfully").owner(offlineController.getRootPane()).hideAfter(Duration.seconds(3));
+            if (CssConfig.getConfig()) {
+                notifications.darkStyle();
+            }
+            notifications.show();
+        }
+
     }
 
 }
