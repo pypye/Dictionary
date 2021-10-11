@@ -79,9 +79,8 @@ public class SpeechToTextApi {
             return "error2\n";
         }
     }
-
-    public static void main(String[] args) throws IOException {
-        String IdStoredVoice = postSpeechToTextApi("C:/Users/hoang/Downloads/hello.wav");
+    public static String getSpeechToText(){
+        String IdStoredVoice = postSpeechToTextApi("src/main/java/data/audio/temp.wav");
         System.out.println(IdStoredVoice);
         while (true) {
             String WordTranslate = getSpeechToTextApi(IdStoredVoice);
@@ -90,7 +89,10 @@ public class SpeechToTextApi {
             }
             break;
         }
-        System.out.println(getSpeechToTextApi(IdStoredVoice));
+        return getSpeechToTextApi(IdStoredVoice);
+    }
+    public static void main(String[] args) throws Exception {
+        getSpeechToText();
     }
 
 }
