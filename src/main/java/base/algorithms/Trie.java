@@ -2,6 +2,7 @@ package base.algorithms;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Locale;
 
 public class Trie {
 
@@ -9,6 +10,7 @@ public class Trie {
   public static TrieNode root = new TrieNode();
 
   public void add(String key) {
+    key = key.toLowerCase();
     TrieNode trieNode = root;
     for (int i = 0; i < key.length(); i++) {
       char x = key.charAt(i);
@@ -30,6 +32,7 @@ public class Trie {
   }
 
   public TrieNode search(String key) {
+    key = key.toLowerCase();
     TrieNode trieNode = root;
     for (int i = 0; i < key.length(); i++) {
       char x = key.charAt(i);
@@ -64,10 +67,56 @@ public class Trie {
   }
 
   public ArrayList<String> findAllWord(String key) {
+    key = key.toLowerCase();
     TrieNode trieNode = this.search(key);
     String[] ans = this.find(trieNode).split("\n");
     ArrayList<String> ansList = new ArrayList<>(Arrays.asList(ans));
     return ansList;
   }
 
+  static boolean isEmpty(TrieNode trieNode) {
+    for (int i = 0; i < alphabetSize; i++) {
+      if (trieNode.getChildren()[i] != null) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  public void delete(String key) {
+    key = key.toLowerCase();
+    backTrackDelete(root,key,0);
+  }
+
+  public TrieNode backTrackDelete(TrieNode trieNode, String key, int depth) {
+    key = key.toLowerCase();
+    if (trieNode == null) {
+      return null;
+    }
+    if (depth == key.length()) {
+      if (trieNode.isEndOfWord()) {
+        trieNode.setEndOfWord(false);
+      }
+      if (isEmpty(trieNode)) {
+        trieNode = null;
+      }
+      return trieNode;
+    }
+
+    char x = key.charAt(depth);
+    int index = 0;
+    if (x >= 'a' && x <= 'z') {
+      index = (int) (x - 'a');
+    } else if (x >= 'A' && x <= 'Z') {
+      index = (int) (x - 'A');
+    } else if (x >= '0' && x <= '9') {
+      index = (int) (x - '0');
+    }
+
+    trieNode.getChildren()[index] = backTrackDelete(trieNode.getChildren()[index], key, depth + 1);
+    if(isEmpty(trieNode) && !trieNode.isEndOfWord()) {
+      trieNode = null;
+    }
+    return trieNode;
+  }
 }

@@ -35,8 +35,9 @@ public class DictionaryManagement {
     }
 
     public String dictionaryLookup(String find) {
+        find = find.toLowerCase();
         for (Word wordInput : dictionaryManagement.getDictionaryArray()) {
-            String key = wordInput.getWord_target().trim();
+            String key = wordInput.getWord_target().trim().toLowerCase();
             if (key.equals(find)) {
                 return wordInput.getWord_explain();
             }
@@ -45,8 +46,9 @@ public class DictionaryManagement {
     }
 
     public boolean dictionaryDelete(String find) {
+        find = find.toLowerCase();
         for (int i = 0; i < dictionaryManagement.size(); i++) {
-            String key = dictionaryManagement.get(i).getWord_target();
+            String key = dictionaryManagement.get(i).getWord_target().toLowerCase();
             if (key.equals(find)) {
                 dictionaryManagement.remove(i);
                 return true;
