@@ -3,8 +3,7 @@ package client.dictionary.controllers;
 import api.GoogleAPI;
 import api.TextToSpeechAPI;
 import client.dictionary.configs.CssConfig;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -13,6 +12,7 @@ import javafx.scene.input.ClipboardContent;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
 import org.controlsfx.control.Notifications;
+
 import java.io.IOException;
 
 public class OnlineController extends MenuController {
@@ -34,24 +34,26 @@ public class OnlineController extends MenuController {
         inputLangChoiceBox.setValue("English");
         outputLangChoiceBox.setValue("Vietnam");
         //disable divider in split pane
-        translatePane.getDividers().get(0).positionProperty().addListener(new ChangeListener<Number>() {
-            @Override
-            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                translatePane.getDividers().get(0).setPosition(0.5);
-            }
-        });
+        translatePane.getDividers().get(0).positionProperty().addListener((observable, oldValue, newValue) -> translatePane.getDividers().get(0).setPosition(0.5));
     }
 
     @FXML
     public void onTranslateButtonClick() throws IOException {
         String input = inputTextArea.getText();
-        String output;
-        if (inputLangChoiceBox.getValue().equals("English")) {
-            output = GoogleAPI.translate("en", "vi", input);
-        } else {
-            output = GoogleAPI.translate("vi", "en", input);
-        }
-        outputTextArea.setText(output);
+        new Thread(() -> {
+            String output = null;
+            try {
+                if (inputLangChoiceBox.getValue().equals("English")) {
+                    output = GoogleAPI.translate("en", "vi", input);
+                } else {
+                    output = GoogleAPI.translate("vi", "en", input);
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            String finalOutput = output;
+            Platform.runLater(() -> outputTextArea.setText(finalOutput));
+        }).start();
     }
 
     @FXML
@@ -96,17 +98,11 @@ public class OnlineController extends MenuController {
 
     @FXML
     public void onPlayAudioInputBtn() {
-        //add thread make program run continuously.
-        new Thread(() -> {
-            TextToSpeechAPI.getTextToSpeech(inputTextArea.getText());
-        }).start();
+        new Thread(() -> TextToSpeechAPI.getTextToSpeech(inputTextArea.getText())).start();
     }
 
     @FXML
     public void onPlayAudioOutputBtn() {
-        //add thread make program run continuously.
-        new Thread(() -> {
-            TextToSpeechAPI.getTextToSpeech(outputTextArea.getText());
-        }).start();
+        new Thread(() -> TextToSpeechAPI.getTextToSpeech(outputTextArea.getText())).start();
     }
 }

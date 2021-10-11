@@ -4,21 +4,16 @@ import java.io.OutputStream;
 
 import org.apache.commons.text.StringEscapeUtils;
 import org.json.JSONObject;
-import org.json.JSONString;
-import org.json.JSONArray;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
-import java.net.Authenticator;
-
+import java.util.Objects;
 
 public class SpeechToTextApi {
-
     public static String postSpeechToTextApi(String wordForm) {
         try {
             URL url = new URL("https://api.assemblyai.com/v2/transcript");
@@ -32,7 +27,7 @@ public class SpeechToTextApi {
             String jsonInputString = "{\"audio_url\": \"https://s3-us-west-2.amazonaws.com/blog.assemblyai.com/audio/8-7-2018-post/7510.mp3\"}";
 
             try (OutputStream os = request.getOutputStream()) {
-                byte[] input = jsonInputString.getBytes("utf-8");
+                byte[] input = jsonInputString.getBytes(StandardCharsets.UTF_8);
                 os.write(input, 0, input.length);
             } catch (Exception e) {
                 e.printStackTrace();
@@ -40,7 +35,7 @@ public class SpeechToTextApi {
 
             int status = request.getResponseCode();
             BufferedReader inputStream = new BufferedReader(
-                    new InputStreamReader(request.getInputStream(), "utf-8"));
+                    new InputStreamReader(request.getInputStream(), StandardCharsets.UTF_8));
             String inputLine;
             StringBuilder response = new StringBuilder();
             while ((inputLine = inputStream.readLine()) != null) {
@@ -52,7 +47,7 @@ public class SpeechToTextApi {
             JSONObject id = new JSONObject(StringEscapeUtils.unescapeHtml4(response.toString()));
             return id.getString("id");
         } catch (IOException e) {
-            return new String("error: ");
+            return "error: ";
         }
     }
 
@@ -81,7 +76,7 @@ public class SpeechToTextApi {
             return textTranslated.get("text").toString();
 
         } catch (IOException e) {
-            return new String("error2\n");
+            return "error2\n";
         }
     }
 
@@ -90,7 +85,7 @@ public class SpeechToTextApi {
         System.out.println(IdStoredVoice);
         while (true) {
             String WordTranslate = getSpeechToTextApi(IdStoredVoice);
-            if (WordTranslate == "error2" || WordTranslate == "null") {
+            if (Objects.equals(WordTranslate, "error2") || Objects.equals(WordTranslate, "null")) {
                 continue;
             }
             break;

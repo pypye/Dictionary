@@ -4,12 +4,11 @@ import base.algorithms.Trie;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Locale;
 import java.util.Scanner;
 
 public class DictionaryCommandLine {
 
-    private DictionaryManagement dictionaryCommandLine = new DictionaryManagement();
+    private final DictionaryManagement dictionaryCommandLine = new DictionaryManagement();
 
     public DictionaryManagement getDictionaryCommandLine() {
         return dictionaryCommandLine;
@@ -56,19 +55,19 @@ public class DictionaryCommandLine {
                 System.out.println("-insert, -delete, -translate, -export, -show, -search, -exit");
             }
             if (cmd.equals("-insert")) {
-                System.out.printf("Type word amount: ");
-                int amount = Integer.valueOf(sc.nextLine());
+                System.out.print("Type word amount: ");
+                int amount = Integer.parseInt(sc.nextLine());
                 for (int i = 0; i < amount; i++) {
-                    System.out.printf("Type target: ");
+                    System.out.print("Type target: ");
                     String target = sc.nextLine();
-                    System.out.printf("Type explain: ");
+                    System.out.print("Type explain: ");
                     String explain = sc.nextLine();
                     dictionaryCommandLine.insertFromCommandline(target, explain);
                 }
 
             }
             if (cmd.equals("-delete")) {
-                System.out.printf("Type word to delete: ");
+                System.out.print("Type word to delete: ");
                 String find = sc.nextLine();
                 boolean check = dictionaryCommandLine.dictionaryDelete(find);
                 if (check) {
@@ -78,7 +77,7 @@ public class DictionaryCommandLine {
                 }
             }
             if (cmd.equals("-translate")) {
-                System.out.printf("Type word to translate: ");
+                System.out.print("Type word to translate: ");
                 String find = sc.nextLine().trim();
                 String ans = dictionaryCommandLine.dictionaryLookup(find);
                 System.out.println(ans);
@@ -92,7 +91,7 @@ public class DictionaryCommandLine {
             }
 
             if (cmd.equals("-search")) {
-                System.out.printf("Type word to Search: ");
+                System.out.print("Type word to Search: ");
                 String find = sc.nextLine();
                 ArrayList<String> ans = this.dictionarySearcher(find);
                 if (ans.size() < 1) {

@@ -16,7 +16,6 @@ import org.json.JSONObject;
 import java.io.IOException;
 
 public class Popup {
-
     public Popup(String title, String word) {
         try {
             Stage stage = new Stage();
@@ -43,7 +42,6 @@ public class Popup {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     private void loadWordStructure(PopupController popupController) {

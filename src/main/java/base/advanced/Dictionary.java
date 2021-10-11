@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 public class Dictionary {
     private static JSONObject dictionary;
-    private static Trie findTrie = new Trie();
+    private static final Trie findTrie = new Trie();
 
     public static void initialize() {
         try {
@@ -28,7 +28,7 @@ public class Dictionary {
         dictionary.put(word, object);
         findTrie.add(word);
     }
-    
+
     public static ArrayList<String> dictionarySearcher(String input) {
         return findTrie.findAllWord(input);
     }
@@ -37,16 +37,15 @@ public class Dictionary {
         return dictionary.getJSONObject(input);
     }
 
-<<<<<<< HEAD
     public static void dictionaryDelete(String input) {
         dictionary.remove(input);
         findTrie.delete(input);
-=======
+    }
+
     public static void save() throws IOException {
         FileWriter file = new FileWriter("src/main/java/data/output/english-vietnamese.json");
         file.write(String.valueOf(dictionary));
         file.flush();
->>>>>>> be027b89de29d67ec512ce4ae770e727b7ebf86e
     }
 
     public static void main(String[] args) throws IOException {

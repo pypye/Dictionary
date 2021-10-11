@@ -49,7 +49,7 @@ public class OfflineController extends MenuController {
         //add thread make program run continuously.
         new Thread(() -> Platform.runLater(() -> {
             outputDictionary = Dictionary.dictionarySearcher("");
-            addListWordButton();
+            Platform.runLater(this::addListWordButton);
         })).start();
         //lazy load on scroll
         listWordScroll.vvalueProperty().addListener((ObservableValue<? extends Number> observable, Number oldValue, Number newValue) -> {
@@ -118,18 +118,17 @@ public class OfflineController extends MenuController {
         createTree(type, 0);
     }
 
-    //run a recursion to create a tree view
     private void createTree(JSONArray array, int depth) {
         for (int i = 0; i < array.length(); i++) {
             JSONObject child = array.getJSONObject(i);
             String childName = child.keys().next();
             if (child.get(childName) instanceof JSONArray) {
-                Label childLabel = new Label(duplicateStr("\t", depth) + childName);
+                Label childLabel = new Label(duplicateTab(depth) + childName);
                 explainVbox.getChildren().add(setStyleLabelByDepth(childLabel, depth));
                 JSONArray childArray = child.getJSONArray(childName);
                 createTree(childArray, depth + 1);
             } else {
-                Label childLabel = new Label(duplicateStr("\t", depth) + childName + ": " + child.getString(childName));
+                Label childLabel = new Label(duplicateTab(depth) + childName + ": " + child.getString(childName));
                 explainVbox.getChildren().add(setStyleLabelByDepth(childLabel, depth));
             }
 
@@ -148,10 +147,8 @@ public class OfflineController extends MenuController {
         return label;
     }
 
-    private String duplicateStr(String source, int times) {
-        String ans = "";
-        for (int i = 0; i < times; i++) ans += source;
-        return ans;
+    private String duplicateTab(int times) {
+        return "\t".repeat(Math.max(0, times));
     }
 
     @FXML
@@ -166,7 +163,11 @@ public class OfflineController extends MenuController {
         alert.setResizable(false);
         alert.setContentText("Are you sure delete this word?");
         Optional<ButtonType> result = alert.showAndWait();
-        if(result.isPresent() && result.get() == ButtonType.OK){
+        if (result.isPresent() && result.get() == ButtonType.OK) {
+            Dictionary.dictionaryDelete(currentWord);
+            onTypeSearchInput();
+            explainVbox.getChildren().clear();
+            definitionHBox.setVisible(false);
             OfflineController offlineController = SceneController.getRoot().getController();
             Notifications notifications = Notifications.create().title("Notification").text("Delete word successfully").owner(offlineController.getRootPane()).hideAfter(Duration.seconds(3));
             if (CssConfig.getConfig()) {

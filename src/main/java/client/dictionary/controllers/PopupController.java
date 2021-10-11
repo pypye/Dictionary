@@ -2,7 +2,6 @@ package client.dictionary.controllers;
 
 import base.advanced.Dictionary;
 import client.dictionary.configs.CssConfig;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -17,6 +16,8 @@ import javafx.util.Duration;
 import org.controlsfx.control.Notifications;
 import org.json.JSONArray;
 import org.json.JSONObject;
+
+import java.util.Objects;
 
 public class PopupController {
     private String typeText = null;
@@ -70,15 +71,10 @@ public class PopupController {
         VBox typeParentVBox = new VBox();
         currentTypeParentVBox = typeParentVBox;
         HBox typeHbox = new HBox();
-        ImageView typeImageAddExplain = new ImageView(PopupController.class.getResource("/client/icons/add.png").toExternalForm());
+        ImageView typeImageAddExplain = new ImageView(Objects.requireNonNull(PopupController.class.getResource("/client/icons/add.png")).toExternalForm());
         typeImageAddExplain.setFitHeight(25);
         typeImageAddExplain.setFitWidth(25);
-        typeImageAddExplain.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                onClickAddExplainButton(typeParentVBox);
-            }
-        });
+        typeImageAddExplain.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> onClickAddExplainButton(typeParentVBox));
         TextField typeTextField = new TextField();
         if (typeText != null) {
             typeTextField.setText(typeText);
@@ -86,15 +82,10 @@ public class PopupController {
         }
         typeTextField.setPromptText("danh từ, động từ, tính từ, ...");
         typeTextField.setPrefWidth(489);
-        ImageView typeImageRemove = new ImageView(PopupController.class.getResource("/client/icons/remove.png").toExternalForm());
+        ImageView typeImageRemove = new ImageView(Objects.requireNonNull(PopupController.class.getResource("/client/icons/remove.png")).toExternalForm());
         typeImageRemove.setFitHeight(25);
         typeImageRemove.setFitWidth(25);
-        typeImageRemove.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                editVbox.getChildren().remove(typeParentVBox);
-            }
-        });
+        typeImageRemove.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> editVbox.getChildren().remove(typeParentVBox));
         typeHbox.getChildren().add(typeImageAddExplain);
         typeHbox.getChildren().add(new Label("Loại từ"));
         typeHbox.getChildren().add(typeTextField);
@@ -110,15 +101,10 @@ public class PopupController {
         VBox explainParentVBox = new VBox();
         currentExplainParentVBox = explainParentVBox;
         HBox explainHbox = new HBox();
-        ImageView explainImageAddExample = new ImageView(PopupController.class.getResource("/client/icons/add.png").toExternalForm());
+        ImageView explainImageAddExample = new ImageView(Objects.requireNonNull(PopupController.class.getResource("/client/icons/add.png")).toExternalForm());
         explainImageAddExample.setFitHeight(25);
         explainImageAddExample.setFitWidth(25);
-        explainImageAddExample.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                onClickAddExampleButton(explainParentVBox);
-            }
-        });
+        explainImageAddExample.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> onClickAddExampleButton(explainParentVBox));
         TextField explainTextField = new TextField();
         explainTextField.setPromptText("Giải thích tiếng việt");
         if (explainText != null) {
@@ -126,15 +112,10 @@ public class PopupController {
             explainText = null;
         }
         explainTextField.setPrefWidth(401);
-        ImageView explainImageRemove = new ImageView(PopupController.class.getResource("/client/icons/remove.png").toExternalForm());
+        ImageView explainImageRemove = new ImageView(Objects.requireNonNull(PopupController.class.getResource("/client/icons/remove.png")).toExternalForm());
         explainImageRemove.setFitHeight(25);
         explainImageRemove.setFitWidth(25);
-        explainImageRemove.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                parentVBox.getChildren().remove(explainParentVBox);
-            }
-        });
+        explainImageRemove.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> parentVBox.getChildren().remove(explainParentVBox));
         explainHbox.getChildren().add(explainImageAddExample);
         explainHbox.getChildren().add(new Label("Giải thích"));
         explainHbox.getChildren().add(explainTextField);
@@ -165,15 +146,10 @@ public class PopupController {
             exampleText2 = null;
         }
         exampleField2.setPrefWidth(193);
-        ImageView exampleImageRemove = new ImageView(PopupController.class.getResource("/client/icons/remove.png").toExternalForm());
+        ImageView exampleImageRemove = new ImageView(Objects.requireNonNull(PopupController.class.getResource("/client/icons/remove.png")).toExternalForm());
         exampleImageRemove.setFitHeight(25);
         exampleImageRemove.setFitWidth(25);
-        exampleImageRemove.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                parentVBox.getChildren().remove(exampleParentVbox);
-            }
-        });
+        exampleImageRemove.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> parentVBox.getChildren().remove(exampleParentVbox));
         exampleHbox.getChildren().add(new Label("Ví dụ"));
         exampleHbox.getChildren().add(exampleField1);
         exampleHbox.getChildren().add(exampleField2);

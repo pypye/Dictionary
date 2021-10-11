@@ -146,10 +146,8 @@ public class FetchData {
                 }
                 if (checkStr.charAt(0) == '-' && lastStr.charAt(0) == '@') {
                     outputStreamWriter.write("* others\n");
-                    outputStreamWriter.write(checkStr + '\n');
-                } else {
-                    outputStreamWriter.write(checkStr + '\n');
                 }
+                outputStreamWriter.write(checkStr + '\n');
             }
             lastStr = checkStr;
         }

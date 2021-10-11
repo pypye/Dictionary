@@ -27,7 +27,7 @@ public class CssConfig {
         }
     }
 
-    public static void saveConfig() {
+    public static void save() {
         try {
             FileWriter file = new FileWriter("src/main/java/client/dictionary/configs/settings.json");
             file.write(String.valueOf(config));

@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class DictionaryManagement {
 
-    private Dictionary dictionaryManagement = new Dictionary();
+    private final Dictionary dictionaryManagement = new Dictionary();
 
     public Dictionary getDictionaryManagement() {
         return dictionaryManagement;

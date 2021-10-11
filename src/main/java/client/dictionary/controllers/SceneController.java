@@ -9,14 +9,15 @@ import javafx.scene.SceneAntialiasing;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class SceneController {
     private static Stage stage;
     private static Scene scene;
     private static FXMLLoader root;
     private static Parent parent;
-    public static String DARK_CSS = SceneController.class.getResource("/client/css/application-dark.css").toExternalForm();
-    public static String LIGHT_CSS = SceneController.class.getResource("/client/css/application-light.css").toExternalForm();
+    public static String DARK_CSS = Objects.requireNonNull(SceneController.class.getResource("/client/css/application-dark.css")).toExternalForm();
+    public static String LIGHT_CSS = Objects.requireNonNull(SceneController.class.getResource("/client/css/application-light.css")).toExternalForm();
 
     public static Stage getStage() {
         return stage;

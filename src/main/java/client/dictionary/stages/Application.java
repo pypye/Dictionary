@@ -4,7 +4,6 @@ import base.advanced.Dictionary;
 import client.dictionary.configs.CssConfig;
 import client.dictionary.controllers.SceneController;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -18,7 +17,7 @@ public class Application extends javafx.application.Application {
 
     @Override
     public void stop() throws IOException {
-        CssConfig.saveConfig();
+        CssConfig.save();
         Dictionary.save();
     }
 
