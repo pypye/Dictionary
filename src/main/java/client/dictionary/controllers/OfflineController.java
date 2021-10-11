@@ -1,5 +1,7 @@
 package client.dictionary.controllers;
 
+import api.JavaSoundRecorder;
+import api.SpeechToTextApi;
 import api.TextToSpeechAPI;
 import base.advanced.Dictionary;
 import client.dictionary.configs.CssConfig;
@@ -27,6 +29,9 @@ public class OfflineController extends MenuController {
     private ArrayList<String> outputDictionary;
     private int countLazy = 0;
     private String currentWord;
+    private boolean onTheMic = false;
+    private final JavaSoundRecorder javaSoundRecorder = new JavaSoundRecorder();
+
     @FXML
     private AnchorPane rootPane;
     @FXML
@@ -64,6 +69,24 @@ public class OfflineController extends MenuController {
     @FXML
     public void onPlayAudioButton() {
         new Thread(() -> TextToSpeechAPI.getTextToSpeech(wordLabel.getText())).start();
+    }
+
+    @FXML
+    public void onMicrophoneButtonClick() {
+        if(!onTheMic){
+            new Thread(() -> {
+                javaSoundRecorder.start();
+                String searchResult = SpeechToTextApi.getSpeechToText();
+                Platform.runLater(() -> {
+                    searchInput.setText(searchResult);
+                    onTypeSearchInput();
+                });
+            }).start();
+            onTheMic = true;
+        } else {
+            javaSoundRecorder.finish();
+            onTheMic = false;
+        }
     }
 
     @FXML

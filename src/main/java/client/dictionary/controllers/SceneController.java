@@ -1,6 +1,7 @@
 package client.dictionary.controllers;
 
 import base.advanced.Dictionary;
+import client.dictionary.configs.Config;
 import client.dictionary.configs.CssConfig;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -37,7 +38,7 @@ public class SceneController {
         parent = root.load();
         scene = new Scene(parent, 1280, 720, false, SceneAntialiasing.BALANCED);
         Dictionary.initialize();
-        CssConfig.initialize();
+        Config.initialize();
         if (CssConfig.getConfig()) {
             scene.getStylesheets().add(DARK_CSS);
         } else {
