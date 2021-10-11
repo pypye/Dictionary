@@ -1,7 +1,7 @@
 package client.dictionary.stages;
 
 import base.advanced.Dictionary;
-import client.dictionary.configs.CssConfig;
+import client.dictionary.configs.Config;
 import client.dictionary.controllers.SceneController;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
@@ -17,7 +17,7 @@ public class Application extends javafx.application.Application {
 
     @Override
     public void stop() throws IOException {
-        CssConfig.save();
+        Config.save();
         Dictionary.save();
     }
 

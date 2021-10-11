@@ -59,7 +59,7 @@
                                 <Insets right="10.0" />
                             </HBox.margin>
                         </TextField>
-                        <Button mnemonicParsing="false" styleClass="btn">
+                        <Button fx:id="microphoneButton" mnemonicParsing="false" onAction="#onMicrophoneButtonClick" styleClass="btn">
                             <graphic>
                                 <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                                     <image>

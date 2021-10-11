@@ -9,18 +9,14 @@ import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 
 public class MongoDB {
-    private ConnectionString connectionString;
-    private MongoClientSettings settings;
-    private MongoClient mongoClient;
-    private MongoDatabase database;
-    private MongoCollection<Document> Vietnamese_English;
-    private MongoCollection<Document> English_Vietnamese;
+    private final MongoCollection<Document> Vietnamese_English;
+    private final MongoCollection<Document> English_Vietnamese;
 
     public MongoDB() {
-        connectionString = new ConnectionString("mongodb+srv://pypye22:22062002duc@dictionary.0darc.mongodb.net/Dictionary?retryWrites=true&w=majority");
-        settings = MongoClientSettings.builder().applyConnectionString(connectionString).build();
-        mongoClient = MongoClients.create(settings);
-        database = mongoClient.getDatabase("Dictionary");
+        ConnectionString connectionString = new ConnectionString("mongodb+srv://pypye22:22062002duc@dictionary.0darc.mongodb.net/Dictionary?retryWrites=true&w=majority");
+        MongoClientSettings settings = MongoClientSettings.builder().applyConnectionString(connectionString).build();
+        MongoClient mongoClient = MongoClients.create(settings);
+        MongoDatabase database = mongoClient.getDatabase("Dictionary");
         Vietnamese_English = database.getCollection("Vietnamese_English");
         English_Vietnamese = database.getCollection("English_Vietnamese");
     }

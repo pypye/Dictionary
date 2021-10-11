@@ -13,6 +13,7 @@ module client.dictionary {
     requires validatorfx;
     requires freetts;
     requires mongo.java.driver;
+    requires java.desktop;
 
     opens client.dictionary to javafx.fxml;
     exports client.dictionary.controllers;
