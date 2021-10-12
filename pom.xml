@@ -115,21 +115,23 @@
             <artifactId>mongo-java-driver</artifactId>
             <version>3.12.10</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
             <version>4.5.13</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/com.github.kevinsawicki/http-request -->
         <dependency>
             <groupId>com.github.kevinsawicki</groupId>
             <artifactId>http-request</artifactId>
             <version>5.3</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.restcomm/restcomm-connect.tts.voicerss -->
-
-
+        <dependency>
+            <groupId>voicerss.tts</groupId>
+            <artifactId>voicerss_tts</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/libs/voicerss_tts.jar</systemPath>
+        </dependency>
     </dependencies>
 
     <build>

@@ -2,11 +2,8 @@ package api;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.OutputStream;
 
-import java.net.MalformedURLException;
-import java.net.ProtocolException;
 import org.apache.commons.text.StringEscapeUtils;
 import org.json.JSONObject;
 
@@ -18,7 +15,7 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 
-public class SpeechToTextApi  {
+public class SpeechToTextApi {
     public static String uploadFileSpeech(String wordForm) {
         try {
             URL url = new URL("https://api.assemblyai.com/v2/upload");
@@ -34,7 +31,6 @@ public class SpeechToTextApi  {
             try (OutputStream os = request.getOutputStream()) {
                 FileInputStream fis = new FileInputStream(file);
                 fis.read(bytes);
-                //byte[] input = jsonInputString.getBytes(StandardCharsets.UTF_8);
                 os.write(bytes, 0, bytes.length);
             } catch (Exception e) {
                 e.printStackTrace();
@@ -53,14 +49,13 @@ public class SpeechToTextApi  {
 
             JSONObject url_path = new JSONObject(
                     StringEscapeUtils.unescapeHtml4(response.toString()));
-            //System.out.println(url_path.toString());
             return url_path.getString("upload_url");
-        }
-        catch(IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return "error_upload_file";
     }
+
     public static String postSpeechToTextApi(String wordForm) {
         try {
             URL url = new URL("https://api.assemblyai.com/v2/transcript");
@@ -72,7 +67,6 @@ public class SpeechToTextApi  {
             request.setRequestMethod("POST");
             request.setDoOutput(true);
             String jsonInputString = "{\"audio_url\": " + "\"" + wordForm + "\"}";
-            //System.out.println(jsonInputString);
             try (OutputStream os = request.getOutputStream()) {
                 byte[] input = jsonInputString.getBytes(StandardCharsets.UTF_8);
                 os.write(input, 0, input.length);
@@ -92,7 +86,6 @@ public class SpeechToTextApi  {
             inputStream.close();
 
             JSONObject id = new JSONObject(StringEscapeUtils.unescapeHtml4(response.toString()));
-            //System.out.println(id.getString("id"));
             return id.getString("id");
         } catch (IOException e) {
             return "error: ";
@@ -119,8 +112,7 @@ public class SpeechToTextApi  {
             inputStream.close();
 
             JSONObject textTranslated = new JSONObject(StringEscapeUtils.unescapeHtml4(response.toString()));
-            //System.out.println(textTranslated);
-            if(textTranslated.get("status").equals("error")) {
+            if (textTranslated.get("status").equals("error")) {
                 return "error";
             }
             return textTranslated.get("text").toString();
@@ -130,9 +122,8 @@ public class SpeechToTextApi  {
         }
         return "error";
     }
-    public static String getSpeechToText(){
-        //String IdStoredVoice = postSpeechToTextApi("C:/Users/hoang/Downloads/hello.wav");
-        //System.out.println(IdStoredVoice);
+
+    public static String getSpeechToText() {
         String url_path = uploadFileSpeech("src/main/java/data/temp.wav");
         String idApiServer = postSpeechToTextApi(url_path);
         String WordTranslate = "";
@@ -143,13 +134,10 @@ public class SpeechToTextApi  {
             }
             break;
         }
-
-        //System.out.println(WordTranslate);
-
-        return WordTranslate;
+        return WordTranslate.substring(0, WordTranslate.length() - 1).toLowerCase();
     }
-    public static void main(String[] args) throws Exception {
 
+    public static void main(String[] args) throws Exception {
         System.out.println(getSpeechToText());
     }
 

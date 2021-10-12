@@ -1,7 +1,7 @@
 package client.dictionary.controllers;
 
 import api.GoogleAPI;
-import api.TextToSpeechAPI;
+import api.TextToSpeechAPIOffline;
 import client.dictionary.configs.CssConfig;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
@@ -98,11 +98,11 @@ public class OnlineController extends MenuController {
 
     @FXML
     public void onPlayAudioInputBtn() {
-        new Thread(() -> TextToSpeechAPI.getTextToSpeech(inputTextArea.getText())).start();
+        new Thread(() -> TextToSpeechAPIOffline.getTextToSpeech(inputTextArea.getText())).start();
     }
 
     @FXML
     public void onPlayAudioOutputBtn() {
-        new Thread(() -> TextToSpeechAPI.getTextToSpeech(outputTextArea.getText())).start();
+        new Thread(() -> TextToSpeechAPIOffline.getTextToSpeech(outputTextArea.getText())).start();
     }
 }

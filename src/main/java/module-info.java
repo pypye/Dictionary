@@ -15,6 +15,7 @@ module client.dictionary {
     requires mongo.java.driver;
     requires java.desktop;
     requires voicerss.tts;
+    requires javafx.media;
 
     opens client.dictionary to javafx.fxml;
     exports client.dictionary.controllers;

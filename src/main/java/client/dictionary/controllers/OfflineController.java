@@ -1,8 +1,8 @@
 package client.dictionary.controllers;
 
-import api.JavaSoundRecorder;
+import api.AudioManager;
 import api.SpeechToTextApi;
-import api.TextToSpeechAPI;
+import api.TextToSpeechAPIOnline;
 import base.advanced.Dictionary;
 import client.dictionary.configs.CssConfig;
 import client.dictionary.stages.Popup;
@@ -29,9 +29,8 @@ public class OfflineController extends MenuController {
     private ArrayList<String> outputDictionary;
     private int countLazy = 0;
     private String currentWord;
-    private boolean onTheMic = false;
-    private final JavaSoundRecorder javaSoundRecorder = new JavaSoundRecorder();
-
+    private Alert alert;
+    private Thread voiceRegThread;
     @FXML
     private AnchorPane rootPane;
     @FXML
@@ -51,6 +50,7 @@ public class OfflineController extends MenuController {
 
     @FXML
     public void initialize() {
+        definitionHBox.setVisible(false);
         //add thread make program run continuously.
         new Thread(() -> Platform.runLater(() -> {
             outputDictionary = Dictionary.dictionarySearcher("");
@@ -63,29 +63,46 @@ public class OfflineController extends MenuController {
                 addListWordButton();
             }
         });
-        definitionHBox.setVisible(false);
+        //voice recognise alert
+        alert = new Alert(Alert.AlertType.NONE);
+        alert.setTitle("Voice Recognition");
+        alert.setResizable(false);
+        alert.getDialogPane().getButtonTypes().add(ButtonType.CANCEL);
+        Button cancel = (Button) alert.getDialogPane().lookupButton(ButtonType.CANCEL);
+        EventHandler<ActionEvent> event = e -> {
+            voiceRegThread.stop();
+            System.out.println("xd");
+        };
+        cancel.setOnAction(event);
+        alert.setContentText("Program is recognising voice...");
     }
 
     @FXML
     public void onPlayAudioButton() {
-        new Thread(() -> TextToSpeechAPI.getTextToSpeech(wordLabel.getText())).start();
+        new Thread(() -> TextToSpeechAPIOnline.getTextToSpeech(wordLabel.getText())).start();
     }
 
     @FXML
     public void onMicrophoneButtonClick() {
-        if(!onTheMic){
-            new Thread(() -> {
-                javaSoundRecorder.start();
+        if (!AudioManager.isRecording()) {
+            Notifications notifications = Notifications.create().title("Notification").text("Start using voice recogniser. Click that button again to stop.").owner(rootPane).hideAfter(Duration.seconds(3));
+            if (CssConfig.getConfig()) {
+                notifications.darkStyle();
+            }
+            notifications.show();
+            voiceRegThread = new Thread(() -> {
+                byte[] recorded = AudioManager.startRecording();
                 String searchResult = SpeechToTextApi.getSpeechToText();
                 Platform.runLater(() -> {
+                    alert.close();
                     searchInput.setText(searchResult);
                     onTypeSearchInput();
                 });
-            }).start();
-            onTheMic = true;
+            });
+            voiceRegThread.start();
         } else {
-            javaSoundRecorder.finish();
-            onTheMic = false;
+            alert.show();
+            AudioManager.stopRecording();
         }
     }
 
@@ -191,8 +208,7 @@ public class OfflineController extends MenuController {
             onTypeSearchInput();
             explainVbox.getChildren().clear();
             definitionHBox.setVisible(false);
-            OfflineController offlineController = SceneController.getRoot().getController();
-            Notifications notifications = Notifications.create().title("Notification").text("Delete word successfully").owner(offlineController.getRootPane()).hideAfter(Duration.seconds(3));
+            Notifications notifications = Notifications.create().title("Notification").text("Delete word successfully").owner(rootPane).hideAfter(Duration.seconds(3));
             if (CssConfig.getConfig()) {
                 notifications.darkStyle();
             }
