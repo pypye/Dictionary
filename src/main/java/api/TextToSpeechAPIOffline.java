@@ -21,8 +21,11 @@ public class TextToSpeechAPIOffline {
     }
 
     public static void main(String[] args) {
+        long start = System.currentTimeMillis();
         getTextToSpeech("hello");
         getTextToSpeech("one");
         getTextToSpeech("world");
+        long end = System.currentTimeMillis();
+        System.out.println("\n" + (end - start));
     }
 }

@@ -16,7 +16,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 
 public class SpeechToTextApi {
-    public static String uploadFileSpeech(String wordForm) {
+    public static String uploadFileSpeech(byte[] recorded) {
         try {
             URL url = new URL("https://api.assemblyai.com/v2/upload");
             HttpURLConnection request = (HttpURLConnection) url.openConnection();
@@ -26,12 +26,8 @@ public class SpeechToTextApi {
             request.setRequestMethod("POST");
             request.setDoOutput(true);
 
-            File file = new File(wordForm);
-            byte[] bytes = new byte[(int) file.length()];
             try (OutputStream os = request.getOutputStream()) {
-                FileInputStream fis = new FileInputStream(file);
-                fis.read(bytes);
-                os.write(bytes, 0, bytes.length);
+                os.write(recorded, 0, recorded.length);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -123,8 +119,8 @@ public class SpeechToTextApi {
         return "error";
     }
 
-    public static String getSpeechToText() {
-        String url_path = uploadFileSpeech("src/main/java/data/temp.wav");
+    public static String getSpeechToText(byte[] recorded) {
+        String url_path = uploadFileSpeech(recorded);
         String idApiServer = postSpeechToTextApi(url_path);
         String WordTranslate = "";
         while (true) {
@@ -138,7 +134,7 @@ public class SpeechToTextApi {
     }
 
     public static void main(String[] args) throws Exception {
-        System.out.println(getSpeechToText());
+        //System.out.println(getSpeechToText(byte));
     }
 
 }

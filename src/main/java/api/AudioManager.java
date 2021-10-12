@@ -16,7 +16,7 @@ public class AudioManager {
     public static byte[] startRecording() {
         try {
             RECORDING = true;
-            AudioFormat format = new AudioFormat(8000.0f, 16, 1, true, true);
+            AudioFormat format = new AudioFormat(44100, 16, 2, true, false);
             DataLine.Info info = new DataLine.Info(TargetDataLine.class, format);
             microphone = AudioSystem.getTargetDataLine(format);
             microphone = (TargetDataLine) AudioSystem.getLine(info);
@@ -32,7 +32,18 @@ public class AudioManager {
                 out.write(data, 0, numBytesRead);
             }
             byte[] ans = out.toByteArray();
-            System.out.println(Arrays.toString(ans));
+            try {
+                FileOutputStream fos = new FileOutputStream("voice.mp3");
+                fos.write(ans, 0, ans.length);
+                fos.flush();
+                fos.close();
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            //startPlaying(ans);
+            //System.out.println(Arrays.toString(ans));
             return ans;
         } catch (LineUnavailableException ex) {
             ex.printStackTrace();

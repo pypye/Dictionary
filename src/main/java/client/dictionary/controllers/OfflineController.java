@@ -92,7 +92,8 @@ public class OfflineController extends MenuController {
             notifications.show();
             voiceRegThread = new Thread(() -> {
                 byte[] recorded = AudioManager.startRecording();
-                String searchResult = SpeechToTextApi.getSpeechToText();
+                //AudioManager.startPlaying(recorded);
+                String searchResult = SpeechToTextApi.getSpeechToText(recorded);
                 Platform.runLater(() -> {
                     alert.close();
                     searchInput.setText(searchResult);
@@ -103,6 +104,7 @@ public class OfflineController extends MenuController {
         } else {
             alert.show();
             AudioManager.stopRecording();
+
         }
     }
 
