@@ -3,6 +3,7 @@ package client.dictionary.controllers;
 import api.GoogleAPI;
 import api.TextToSpeechAPIOffline;
 import client.dictionary.configs.CssConfig;
+import client.dictionary.stages.Notification;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
@@ -10,8 +11,6 @@ import javafx.scene.control.*;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
 import javafx.scene.layout.AnchorPane;
-import javafx.util.Duration;
-import org.controlsfx.control.Notifications;
 
 import java.io.IOException;
 
@@ -89,11 +88,7 @@ public class OnlineController extends MenuController {
         final ClipboardContent content = new ClipboardContent();
         content.putString(text.getText());
         clipboard.setContent(content);
-        Notifications notifications = Notifications.create().title("Notification").text("Copied To Clipboard").owner(rootPane).hideAfter(Duration.seconds(3));
-        if (CssConfig.getConfig()) {
-            notifications.darkStyle();
-        }
-        notifications.show();
+        Notification.show("Copied To Clipboard", rootPane, CssConfig.getConfig());
     }
 
     @FXML

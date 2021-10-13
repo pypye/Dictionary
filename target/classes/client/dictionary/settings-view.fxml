@@ -5,8 +5,10 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" styleClass="pane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.dictionary.controllers.SettingsController">
     <children>
@@ -33,14 +35,58 @@
                 <String fx:value="dropshad" />
             </styleClass>
         </HBox>
-        <HBox alignment="CENTER_LEFT" layoutX="40.0" layoutY="100.0" spacing="10.0" styleClass="container" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="80.0">
-            <children>
-                <Label text="Giao diện" />
-                <ChoiceBox fx:id="switchThemeChoiceBox" onAction="#onSwitchThemeChoiceBox" prefWidth="150.0" />
-            </children>
-            <padding>
-                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-            </padding>
-        </HBox>
+      <ScrollPane layoutX="20.0" layoutY="80.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="80.0">
+         <content>
+            <VBox styleClass="container">
+               <children>
+                    <HBox alignment="CENTER_LEFT" spacing="10.0">
+                        <children>
+                            <Label text="Giao diện" />
+                            <ChoiceBox fx:id="switchThemeChoiceBox" onAction="#onSwitchThemeChoiceBox" prefWidth="150.0" />
+                        </children>
+                        <padding>
+                            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                        </padding>
+                    </HBox>
+                  <HBox alignment="CENTER_LEFT" spacing="10.0">
+                     <children>
+                        <Label text="Phát âm" />
+                        <ChoiceBox fx:id="switchThemeChoiceBox11" onAction="#onSwitchThemeChoiceBox" prefWidth="150.0" />
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" spacing="10.0">
+                     <children>
+                        <Label text="Lấy dữ liệu từ điển từ" />
+                        <ChoiceBox fx:id="switchThemeChoiceBox1" onAction="#onSwitchThemeChoiceBox" prefWidth="150.0" />
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" spacing="10.0">
+                     <children>
+                        <Label text="Input Device   " />
+                        <ChoiceBox fx:id="switchThemeChoiceBox111" onAction="#onSwitchThemeChoiceBox" prefWidth="150.0" />
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" spacing="10.0">
+                     <children>
+                        <Label text="Output Device" />
+                        <ChoiceBox fx:id="switchThemeChoiceBox1111" onAction="#onSwitchThemeChoiceBox" prefWidth="150.0" />
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
     </children>
 </AnchorPane>

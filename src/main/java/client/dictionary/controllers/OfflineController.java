@@ -1,10 +1,11 @@
 package client.dictionary.controllers;
 
 import api.AudioManager;
-import api.SpeechToTextApi;
+import api.SpeechToTextAPI;
 import api.TextToSpeechAPIOnline;
 import base.advanced.Dictionary;
 import client.dictionary.configs.CssConfig;
+import client.dictionary.stages.Notification;
 import client.dictionary.stages.Popup;
 import javafx.application.Platform;
 import javafx.beans.value.ObservableValue;
@@ -20,8 +21,6 @@ import javafx.scene.layout.VBox;
 import java.util.ArrayList;
 import java.util.Optional;
 
-import javafx.util.Duration;
-import org.controlsfx.control.Notifications;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -85,15 +84,10 @@ public class OfflineController extends MenuController {
     @FXML
     public void onMicrophoneButtonClick() {
         if (!AudioManager.isRecording()) {
-            Notifications notifications = Notifications.create().title("Notification").text("Start using voice recogniser. Click that button again to stop.").owner(rootPane).hideAfter(Duration.seconds(3));
-            if (CssConfig.getConfig()) {
-                notifications.darkStyle();
-            }
-            notifications.show();
+            Notification.show("Start recording. Click again to stop", rootPane, CssConfig.getConfig());
             voiceRegThread = new Thread(() -> {
-                byte[] recorded = AudioManager.startRecording();
-                //AudioManager.startPlaying(recorded);
-                String searchResult = SpeechToTextApi.getSpeechToText(recorded);
+                AudioManager.startRecording();
+                String searchResult = SpeechToTextAPI.getSpeechToText();
                 Platform.runLater(() -> {
                     alert.close();
                     searchInput.setText(searchResult);
@@ -210,11 +204,7 @@ public class OfflineController extends MenuController {
             onTypeSearchInput();
             explainVbox.getChildren().clear();
             definitionHBox.setVisible(false);
-            Notifications notifications = Notifications.create().title("Notification").text("Delete word successfully").owner(rootPane).hideAfter(Duration.seconds(3));
-            if (CssConfig.getConfig()) {
-                notifications.darkStyle();
-            }
-            notifications.show();
+            Notification.show("Delete word successfully", rootPane, CssConfig.getConfig());
         }
 
     }

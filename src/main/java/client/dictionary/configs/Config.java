@@ -1,11 +1,12 @@
 package client.dictionary.configs;
 
+import base.advanced.Dictionary;
 import org.json.JSONObject;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 
 public class Config {
     private static JSONObject config;
@@ -16,7 +17,8 @@ public class Config {
 
     public static void initialize() {
         try {
-            String content = new String(Files.readAllBytes(Path.of("src/main/java/client/dictionary/configs/settings.json")));
+            File file = new File(Dictionary.class.getResource("/config/settings.json").getFile());
+            String content = new String(Files.readAllBytes(file.toPath()));
             config = new JSONObject(content);
         } catch (IOException e) {
             e.printStackTrace();
@@ -25,7 +27,7 @@ public class Config {
 
     public static void save() {
         try {
-            FileWriter file = new FileWriter("src/main/java/client/dictionary/configs/settings.json");
+            FileWriter file = new FileWriter(Dictionary.class.getResource("/config/settings.json").getFile());
             file.write(String.valueOf(config));
             file.flush();
         } catch (IOException e) {

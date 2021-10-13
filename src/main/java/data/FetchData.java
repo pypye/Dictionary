@@ -8,7 +8,7 @@ import java.io.*;
 import java.util.Scanner;
 
 public class FetchData {
-    private MongoDB db = new MongoDB();
+    //private MongoDB db = new MongoDB();
     private JSONObject dict = new JSONObject();
     private JSONObject word = new JSONObject();
     private JSONArray type = new JSONArray();
@@ -40,7 +40,7 @@ public class FetchData {
             if (dict.isNull(lastWord)) {
                 word.put("pronoun", lastPronoun);
                 word.put("type", type);
-                Document doc = new Document().append("word", lastWord).append("pronoun", lastPronoun).append("type", type.toString());
+                //Document doc = new Document().append("word", lastWord).append("pronoun", lastPronoun).append("type", type.toString());
                 //if (ev) db.getEnglish_Vietnamese().insertOne(doc);
                 //else db.getVietnamese_English().insertOne(doc);
                 //System.out.println(doc.toJson());
@@ -70,7 +70,7 @@ public class FetchData {
 
     public void fetchData(String inFile, String outFile, boolean ev) throws IOException {
         dict = new JSONObject();
-        FileInputStream fileInputStream = new FileInputStream(inFile);
+        FileInputStream fileInputStream = new FileInputStream(getClass().getResource("/data/" + inFile).getFile());
         Scanner sc = new Scanner(fileInputStream);
         while (sc.hasNextLine()) {
             String WordInput = sc.nextLine();
@@ -122,16 +122,16 @@ public class FetchData {
         addWord(ev);
         reset(true, true, true, true);
         resetLast(true, true, true, true);
-        FileWriter file = new FileWriter(outFile);
+        FileWriter file = new FileWriter(getClass().getResource("/data").getFile() + outFile);
         file.write(String.valueOf(dict));
         file.flush();
     }
 
     public void convert(String inFile, String outFile) throws IOException {
-        FileInputStream fileInputStream = new FileInputStream(inFile);
+        FileInputStream fileInputStream = new FileInputStream(getClass().getResource("/data/" + inFile).getFile());
         Scanner sc = new Scanner(fileInputStream);
         String lastStr = "";
-        FileOutputStream outputStream = new FileOutputStream(outFile);
+        FileOutputStream outputStream = new FileOutputStream(getClass().getResource("/data").getFile() + outFile);
         OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
 
         while (sc.hasNextLine()) {
@@ -155,12 +155,12 @@ public class FetchData {
     }
 
     public static void main(String[] args) throws IOException {
-        //v-e word counts: 23430
-        //e-v word counts: 103871
         FetchData convertToJson = new FetchData();
-        //convertToJson.convert("src/main/java/data/input/english-vietnamese.txt", "src/main/java/data/input_processed/english-vietnamese.txt");
-        //convertToJson.convert("src/main/java/data/input/vietnamese-english.txt", "src/main/java/data/input_processed/vietnamese-english.txt");
-        convertToJson.fetchData("src/main/java/data/input_processed/english-vietnamese.txt", "src/main/java/data/output/english-vietnamese.json", true);
-        convertToJson.fetchData("src/main/java/data/input_processed/vietnamese-english.txt", "src/main/java/data/output/vietnamese-english.json", false);
+        convertToJson.convert("input/english-vietnamese.txt", "input_processed/english-vietnamese.txt");
+        convertToJson.convert("input/vietnamese-english.txt", "input_processed/vietnamese-english.txt");
+        convertToJson.fetchData("input_processed/english-vietnamese.txt", "output/english-vietnamese.json", true);
+        convertToJson.fetchData("input_processed/vietnamese-english.txt", "output/vietnamese-english.json", false);
     }
 }
+//v-e word counts: 23430
+//e-v word counts: 103871

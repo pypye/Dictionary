@@ -1,7 +1,6 @@
 package api;
 
 import java.io.*;
-import java.util.Arrays;
 import javax.sound.sampled.*;
 
 public class AudioManager {
@@ -13,72 +12,49 @@ public class AudioManager {
         return RECORDING;
     }
 
-    public static byte[] startRecording() {
+    public static void startRecording() {
         try {
             RECORDING = true;
-            AudioFormat format = new AudioFormat(44100, 16, 2, true, false);
+            AudioFormat format = new AudioFormat(8000, 8, 1, true, true);
             DataLine.Info info = new DataLine.Info(TargetDataLine.class, format);
             microphone = AudioSystem.getTargetDataLine(format);
             microphone = (TargetDataLine) AudioSystem.getLine(info);
             microphone.open(format);
-            ByteArrayOutputStream out = new ByteArrayOutputStream();
-            byte[] data = new byte[microphone.getBufferSize() / 5];
             microphone.start();
-            int numBytesRead;
-            int bytesRead = 0;
-            while (microphone.isOpen() && bytesRead < 100000) {
-                numBytesRead = microphone.read(data, 0, 1024);
-                bytesRead += numBytesRead;
-                out.write(data, 0, numBytesRead);
-            }
-            byte[] ans = out.toByteArray();
-            try {
-                FileOutputStream fos = new FileOutputStream("voice.mp3");
-                fos.write(ans, 0, ans.length);
-                fos.flush();
-                fos.close();
-            }
-            catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            //startPlaying(ans);
-            //System.out.println(Arrays.toString(ans));
-            return ans;
-        } catch (LineUnavailableException ex) {
+            AudioInputStream ais = new AudioInputStream(microphone);
+            AudioSystem.write(ais, AudioFileFormat.Type.WAVE, new File(AudioManager.class.getResource("/data").getFile() + "$temp.wav"));
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
-        return null;
     }
 
     public static void stopRecording() {
         microphone.stop();
         microphone.close();
         RECORDING = false;
-        System.out.println("Finished");
     }
 
     public static void startPlaying(byte[] audio) {
         try {
-            AudioInputStream audioStream = new AudioInputStream(
+            AudioInputStream ais = new AudioInputStream(
                     new ByteArrayInputStream(audio),
                     new javax.sound.sampled.AudioFormat(44100, 16, 2, true, false),
                     audio.length
             );
-            AudioFormat audioFormat = audioStream.getFormat();
-            DataLine.Info dataLineInfo = new DataLine.Info(SourceDataLine.class, audioFormat);
-            speaker = (SourceDataLine) AudioSystem.getLine(dataLineInfo);
-            speaker.open(audioFormat);
+            AudioFormat format = ais.getFormat();
+            DataLine.Info info = new DataLine.Info(SourceDataLine.class, format);
+            speaker = (SourceDataLine) AudioSystem.getLine(info);
+            speaker.open(format);
             speaker.start();
-            int bytesRead;
-            byte[] bytesBuffer = new byte[4096];
-            while ((bytesRead = audioStream.read(bytesBuffer)) != -1) {
-                speaker.write(bytesBuffer, 0, bytesRead);
+            int buffer;
+            byte[] data = new byte[4096];
+            while ((buffer = ais.read(data)) != -1) {
+                speaker.write(data, 0, buffer);
             }
             speaker.drain();
             speaker.close();
-            audioStream.close();
-        } catch (LineUnavailableException | IOException e) {
+            ais.close();
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

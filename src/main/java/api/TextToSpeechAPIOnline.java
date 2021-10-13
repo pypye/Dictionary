@@ -23,11 +23,4 @@ public class TextToSpeechAPIOnline {
         }
 
     }
-
-    public static void main(String[] args) throws Exception {
-        long start = System.currentTimeMillis();
-        getTextToSpeech("long time");
-        long end = System.currentTimeMillis();
-        System.out.println("\n" + (end - start));
-    }
 }

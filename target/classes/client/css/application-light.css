@@ -91,7 +91,10 @@
 
 .scroll-pane .scroll-bar:vertical .thumb {
     -fx-background-color: #C5C5C5;
+}
 
+.scroll-pane .scroll-bar:horizontal .thumb {
+    -fx-background-color: #C5C5C5;
 }
 
 .scroll-pane .scroll-bar:vertical {

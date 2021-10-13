@@ -2,6 +2,7 @@ package client.dictionary.controllers;
 
 import base.advanced.Dictionary;
 import client.dictionary.configs.CssConfig;
+import client.dictionary.stages.Notification;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -12,8 +13,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import javafx.util.Duration;
-import org.controlsfx.control.Notifications;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -197,10 +196,6 @@ public class PopupController {
         offlineController.onClickResultButton(wordTextField.getText());
         Stage stage = (Stage) editVbox.getScene().getWindow();
         stage.close();
-        Notifications notifications = Notifications.create().title("Notification").text("Add/Edit word successfully").owner(offlineController.getRootPane()).hideAfter(Duration.seconds(3));
-        if (CssConfig.getConfig()) {
-            notifications.darkStyle();
-        }
-        notifications.show();
+        Notification.show("Add/Edit word successfully", offlineController.getRootPane(), CssConfig.getConfig());
     }
 }

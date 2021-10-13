@@ -3,10 +3,10 @@ package base.advanced;
 import base.algorithms.Trie;
 import org.json.JSONObject;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.ArrayList;
 
 public class Dictionary {
@@ -15,7 +15,8 @@ public class Dictionary {
 
     public static void initialize() {
         try {
-            String content = new String(Files.readAllBytes(Path.of("src/main/java/data/output/english-vietnamese.json")));
+            File file = new File(Dictionary.class.getResource("/data/output/english-vietnamese.json").getFile());
+            String content = new String(Files.readAllBytes(file.toPath()));
             dictionary = new JSONObject(content);
             dictionary.keys().forEachRemaining(findTrie::add);
         } catch (IOException e) {
@@ -43,7 +44,7 @@ public class Dictionary {
     }
 
     public static void save() throws IOException {
-        FileWriter file = new FileWriter("src/main/java/data/output/english-vietnamese.json");
+        FileWriter file = new FileWriter(Dictionary.class.getResource("/data/output/english-vietnamese.json").getFile());
         file.write(String.valueOf(dictionary));
         file.flush();
     }
