@@ -12,58 +12,69 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" styleClass="pane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.dictionary.controllers.OfflineController">
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="450.0" prefWidth="800.0" styleClass="pane" xmlns="http://javafx.com/javafx/16"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.dictionary.controllers.OfflineController">
     <children>
-        <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="800.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="800.0" AnchorPane.leftAnchor="0.0"
+              AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <opaqueInsets>
-                <Insets />
+                <Insets/>
             </opaqueInsets>
             <padding>
-                <Insets left="20.0" />
+                <Insets left="20.0"/>
             </padding>
             <children>
-                <Button fx:id="offlineButton" mnemonicParsing="false" onAction="#onOfflineButtonClick" text="Từ điển" textOverrun="WORD_ELLIPSIS">
+                <Button fx:id="offlineButton" mnemonicParsing="false" onAction="#onOfflineButtonClick" text="Từ điển"
+                        textOverrun="WORD_ELLIPSIS">
                     <styleClass>
-                        <String fx:value="menu-btn" />
-                        <String fx:value="btn-selected" />
+                        <String fx:value="menu-btn"/>
+                        <String fx:value="btn-selected"/>
                     </styleClass>
                 </Button>
-                <Button fx:id="onlineButton" mnemonicParsing="false" onAction="#onOnlineButtonClick" styleClass="menu-btn" text="Dịch văn bản" textOverrun="WORD_ELLIPSIS" />
-                <Button fx:id="synonymButton" mnemonicParsing="false" onAction="#onSynonymButtonClick" styleClass="menu-btn" text="Từ đồng nghĩa" textOverrun="WORD_ELLIPSIS" />
-                <Button fx:id="settingsButton" mnemonicParsing="false" onAction="#onSettingsButtonClick" styleClass="menu-btn" text="Cài đặt" textOverrun="CLIP" />
+                <Button fx:id="onlineButton" mnemonicParsing="false" onAction="#onOnlineButtonClick"
+                        styleClass="menu-btn" text="Dịch văn bản" textOverrun="WORD_ELLIPSIS"/>
+                <Button fx:id="synonymButton" mnemonicParsing="false" onAction="#onSynonymButtonClick"
+                        styleClass="menu-btn" text="Từ đồng nghĩa" textOverrun="WORD_ELLIPSIS"/>
+                <Button fx:id="settingsButton" mnemonicParsing="false" onAction="#onSettingsButtonClick"
+                        styleClass="menu-btn" text="Cài đặt" textOverrun="CLIP"/>
             </children>
             <styleClass>
-                <String fx:value="menu-bar" />
-                <String fx:value="dropshad" />
+                <String fx:value="menu-bar"/>
+                <String fx:value="dropshad"/>
             </styleClass>
         </HBox>
-        <HBox alignment="CENTER_LEFT" layoutY="85.0" prefWidth="200.0" spacing="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
+        <HBox alignment="CENTER_LEFT" layoutY="85.0" prefWidth="200.0" spacing="10.0" AnchorPane.leftAnchor="0.0"
+              AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
             <padding>
-                <Insets left="20.0" right="20.0" />
+                <Insets left="20.0" right="20.0"/>
             </padding>
         </HBox>
         <VBox layoutX="40.0" layoutY="84.0" prefWidth="250.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="80.0">
             <children>
                 <Label text="Tìm kiếm" textFill="#fcfcfc">
                     <VBox.margin>
-                        <Insets bottom="10.0" />
+                        <Insets bottom="10.0"/>
                     </VBox.margin>
                 </Label>
                 <HBox alignment="CENTER_LEFT">
                     <children>
-                        <TextField fx:id="searchInput" onKeyTyped="#onTypeSearchInput" prefHeight="45.0" promptText="Nhập gì đó..." styleClass="text-input">
+                        <TextField fx:id="searchInput" onAction="#onPressEnterSearchInput"
+                                   onKeyTyped="#onTypeSearchInput" prefHeight="45.0" promptText="Nhập gì đó..."
+                                   styleClass="text-input">
                             <padding>
-                                <Insets left="10.0" right="10.0" />
+                                <Insets left="10.0" right="10.0"/>
                             </padding>
                             <HBox.margin>
-                                <Insets right="10.0" />
+                                <Insets right="10.0"/>
                             </HBox.margin>
                         </TextField>
-                        <Button fx:id="microphoneButton" mnemonicParsing="false" onAction="#onMicrophoneButtonClick" styleClass="btn">
+                        <Button fx:id="microphoneButton" mnemonicParsing="false" onAction="#onMicrophoneButtonClick"
+                                styleClass="btn">
                             <graphic>
                                 <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../icons/mic.png" />
+                                        <Image url="@../icons/mic.png"/>
                                     </image>
                                 </ImageView>
                             </graphic>
@@ -72,73 +83,82 @@
                 </HBox>
             </children>
             <padding>
-                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
             </padding>
             <styleClass>
-                <String fx:value="container" />
-                <String fx:value="dropshad" />
+                <String fx:value="container"/>
+                <String fx:value="dropshad"/>
             </styleClass>
         </VBox>
-        <AnchorPane layoutX="20.0" layoutY="200.0" prefWidth="250.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="220.0">
+        <AnchorPane layoutX="20.0" layoutY="200.0" prefWidth="250.0" AnchorPane.bottomAnchor="20.0"
+                    AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="220.0">
             <children>
-                <ScrollPane fx:id="listWordScroll" fitToWidth="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <ScrollPane fx:id="listWordScroll" fitToWidth="true" AnchorPane.bottomAnchor="0.0"
+                            AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <content>
                         <VBox fx:id="outputVbox" prefWidth="200.0" styleClass="container">
                             <padding>
-                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
                             </padding>
                         </VBox>
                     </content>
                 </ScrollPane>
             </children>
             <padding>
-                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
             </padding>
             <styleClass>
-                <String fx:value="container" />
-                <String fx:value="dropshad" />
+                <String fx:value="container"/>
+                <String fx:value="dropshad"/>
             </styleClass>
         </AnchorPane>
-        <AnchorPane layoutX="10.0" layoutY="10.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="290.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="80.0">
+        <AnchorPane layoutX="10.0" layoutY="10.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="290.0"
+                    AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="80.0">
             <children>
-                <ScrollPane fitToWidth="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <ScrollPane fitToWidth="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                            AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <content>
                         <VBox styleClass="container">
                             <padding>
-                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
                             </padding>
                             <children>
-                                <HBox fx:id="definitionHBox" alignment="CENTER_LEFT" prefHeight="17.0" prefWidth="500.0" spacing="10.0">
+                                <HBox fx:id="definitionHBox" alignment="CENTER_LEFT" prefHeight="17.0" prefWidth="500.0"
+                                      spacing="10.0">
                                     <children>
                                         <Label fx:id="wordLabel" styleClass="word-definition-label" text="[word]">
                                             <HBox.margin>
-                                                <Insets />
+                                                <Insets/>
                                             </HBox.margin>
                                         </Label>
                                         <Label fx:id="pronounLabel" styleClass="word-pronoun-label" text="[pronoun]">
                                             <HBox.margin>
-                                                <Insets />
+                                                <Insets/>
                                             </HBox.margin>
                                         </Label>
-                                        <Button fx:id="playAudioButton" mnemonicParsing="false" onAction="#onPlayAudioButton" styleClass="btn">
+                                        <Button fx:id="playAudioButton" mnemonicParsing="false"
+                                                onAction="#onPlayAudioButton" styleClass="btn">
                                             <graphic>
-                                                <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true"
+                                                           preserveRatio="true">
                                                     <image>
-                                                        <Image url="@../icons/audio.png" />
+                                                        <Image url="@../icons/audio.png"/>
                                                     </image>
                                                 </ImageView>
                                             </graphic>
                                         </Button>
-                              <Button mnemonicParsing="false" onAction="#onEditWordButton" styleClass="btn" text="Sửa từ..." />
-                              <Button mnemonicParsing="false" onAction="#onDeleteWordButton" styleClass="btn" text="Xoá từ..." />
+                                        <Button mnemonicParsing="false" onAction="#onEditWordButton" styleClass="btn"
+                                                text="Sửa từ..."/>
+                                        <Button mnemonicParsing="false" onAction="#onDeleteWordButton" styleClass="btn"
+                                                text="Xoá từ..."/>
                                     </children>
                                     <VBox.margin>
-                                        <Insets />
+                                        <Insets/>
                                     </VBox.margin>
                                 </HBox>
                                 <VBox fx:id="explainVbox">
                                     <VBox.margin>
-                                        <Insets top="20.0" />
+                                        <Insets top="20.0"/>
                                     </VBox.margin>
                                 </VBox>
                             </children>
@@ -147,11 +167,11 @@
                 </ScrollPane>
             </children>
             <padding>
-                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
             </padding>
             <styleClass>
-                <String fx:value="container" />
-                <String fx:value="dropshad" />
+                <String fx:value="container"/>
+                <String fx:value="dropshad"/>
             </styleClass>
         </AnchorPane>
     </children>

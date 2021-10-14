@@ -30,6 +30,7 @@ public class Config {
             FileWriter file = new FileWriter(Dictionary.class.getResource("/config/settings.json").getFile());
             file.write(String.valueOf(config));
             file.flush();
+            file.close();
         } catch (IOException e) {
             e.printStackTrace();
         }

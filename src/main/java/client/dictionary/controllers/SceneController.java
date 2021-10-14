@@ -36,14 +36,10 @@ public class SceneController {
         stage = _stage;
         root = _root;
         parent = root.load();
-        scene = new Scene(parent, 1280, 720, false, SceneAntialiasing.BALANCED);
         Dictionary.initialize();
         Config.initialize();
-        if (CssConfig.getConfig()) {
-            scene.getStylesheets().add(DARK_CSS);
-        } else {
-            scene.getStylesheets().add(LIGHT_CSS);
-        }
+        scene = new Scene(parent, 1280, 720, false, SceneAntialiasing.BALANCED);
+        scene.getStylesheets().add(CssConfig.getConfig() ? DARK_CSS : LIGHT_CSS);
         renderScene();
     }
 

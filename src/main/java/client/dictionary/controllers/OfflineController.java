@@ -2,9 +2,11 @@ package client.dictionary.controllers;
 
 import api.AudioManager;
 import api.SpeechToTextAPI;
+import api.TextToSpeechAPIOffline;
 import api.TextToSpeechAPIOnline;
 import base.advanced.Dictionary;
 import client.dictionary.configs.CssConfig;
+import client.dictionary.configs.PlayAudioConfig;
 import client.dictionary.stages.Notification;
 import client.dictionary.stages.Popup;
 import javafx.application.Platform;
@@ -51,10 +53,12 @@ public class OfflineController extends MenuController {
     public void initialize() {
         definitionHBox.setVisible(false);
         //add thread make program run continuously.
-        new Thread(() -> Platform.runLater(() -> {
+        Thread thread = new Thread(() -> Platform.runLater(() -> {
             outputDictionary = Dictionary.dictionarySearcher("");
             Platform.runLater(this::addListWordButton);
-        })).start();
+        }));
+        thread.setDaemon(true);
+        thread.start();
         //lazy load on scroll
         listWordScroll.vvalueProperty().addListener((ObservableValue<? extends Number> observable, Number oldValue, Number newValue) -> {
             if (listWordScroll.getVvalue() >= 0.75) {
@@ -65,26 +69,31 @@ public class OfflineController extends MenuController {
         //voice recognise alert
         alert = new Alert(Alert.AlertType.NONE);
         alert.setTitle("Voice Recognition");
+        alert.setContentText("Đang xử lý âm thanh...");
         alert.setResizable(false);
         alert.getDialogPane().getButtonTypes().add(ButtonType.CANCEL);
         Button cancel = (Button) alert.getDialogPane().lookupButton(ButtonType.CANCEL);
-        EventHandler<ActionEvent> event = e -> {
-            voiceRegThread.stop();
-            System.out.println("xd");
-        };
+        EventHandler<ActionEvent> event = e -> voiceRegThread.stop();
         cancel.setOnAction(event);
-        alert.setContentText("Program is recognising voice...");
     }
 
     @FXML
     public void onPlayAudioButton() {
-        new Thread(() -> TextToSpeechAPIOnline.getTextToSpeech(wordLabel.getText())).start();
+        if (PlayAudioConfig.getConfig()) {
+            Thread thread = new Thread(() -> TextToSpeechAPIOnline.getTextToSpeech(wordLabel.getText()));
+            thread.setDaemon(true);
+            thread.start();
+        } else {
+            Thread thread = new Thread(() -> TextToSpeechAPIOffline.getTextToSpeech(wordLabel.getText()));
+            thread.setDaemon(true);
+            thread.start();
+        }
     }
 
     @FXML
     public void onMicrophoneButtonClick() {
         if (!AudioManager.isRecording()) {
-            Notification.show("Start recording. Click again to stop", rootPane, CssConfig.getConfig());
+            Notification.show("Bắt đầu ghi âm. Bấm nút microphone để dừng", rootPane, CssConfig.getConfig());
             voiceRegThread = new Thread(() -> {
                 AudioManager.startRecording();
                 String searchResult = SpeechToTextAPI.getSpeechToText();
@@ -94,25 +103,34 @@ public class OfflineController extends MenuController {
                     onTypeSearchInput();
                 });
             });
+            voiceRegThread.setDaemon(true);
             voiceRegThread.start();
         } else {
             alert.show();
             AudioManager.stopRecording();
-
         }
     }
 
     @FXML
     public void onTypeSearchInput() {
         String input = searchInput.getText();
-        new Thread(() -> {
+        Thread thread = new Thread(() -> {
             outputDictionary = Dictionary.dictionarySearcher(input);
             Platform.runLater(() -> {
                 outputVbox.getChildren().clear();
                 countLazy = 0;
                 addListWordButton();
             });
-        }).start();
+        });
+        thread.setDaemon(true);
+        thread.start();
+    }
+
+    @FXML
+    public void onPressEnterSearchInput() {
+        if (!outputDictionary.get(0).equals("")) {
+            onClickResultButton(outputDictionary.get(0));
+        }
     }
 
     private void addListWordButton() {
@@ -197,16 +215,14 @@ public class OfflineController extends MenuController {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Delete");
         alert.setResizable(false);
-        alert.setContentText("Are you sure delete this word?");
+        alert.setContentText("Bạn chắc chắn muốn xoá từ này?");
         Optional<ButtonType> result = alert.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK) {
             Dictionary.dictionaryDelete(currentWord);
             onTypeSearchInput();
             explainVbox.getChildren().clear();
             definitionHBox.setVisible(false);
-            Notification.show("Delete word successfully", rootPane, CssConfig.getConfig());
+            Notification.show("Xoá từ thành công", rootPane, CssConfig.getConfig());
         }
-
     }
-
 }

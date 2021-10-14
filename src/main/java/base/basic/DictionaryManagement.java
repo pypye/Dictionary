@@ -9,7 +9,6 @@ import java.io.OutputStreamWriter;
 import java.util.Scanner;
 
 public class DictionaryManagement {
-
     private final Dictionary dictionaryManagement = new Dictionary();
 
     public Dictionary getDictionaryManagement() {

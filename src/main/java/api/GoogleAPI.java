@@ -19,9 +19,7 @@ public class GoogleAPI {
         BufferedReader inputStream = new BufferedReader(new InputStreamReader(request.getInputStream()));
         String inputLine;
         StringBuilder response = new StringBuilder();
-        while ((inputLine = inputStream.readLine()) != null) {
-            response.append(inputLine);
-        }
+        while ((inputLine = inputStream.readLine()) != null) response.append(inputLine);
         inputStream.close();
         return StringEscapeUtils.unescapeHtml4(response.toString());
     }

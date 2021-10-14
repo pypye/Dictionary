@@ -4,7 +4,6 @@ module client.dictionary {
     requires javafx.web;
     requires javafx.graphics;
     requires com.dlsc.formsfx;
-    requires eu.hansolo.tilesfx;
     requires org.apache.commons.text;
     requires org.controlsfx.controls;
     requires org.json;

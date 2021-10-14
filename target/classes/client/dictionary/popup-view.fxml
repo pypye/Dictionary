@@ -9,48 +9,52 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="720.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.dictionary.controllers.PopupController">
+<AnchorPane prefHeight="720.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="client.dictionary.controllers.PopupController">
     <children>
-        <VBox layoutX="64.0" layoutY="40.0" prefHeight="200.0" prefWidth="100.0" spacing="10.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+        <VBox layoutX="64.0" layoutY="40.0" prefHeight="200.0" prefWidth="100.0" spacing="10.0"
+              AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0"
+              AnchorPane.topAnchor="20.0">
             <children>
                 <HBox alignment="CENTER_LEFT" spacing="20.0">
                     <children>
                         <VBox alignment="CENTER_LEFT" spacing="10.0">
                             <children>
-                                <Label text="Định nghĩa" />
-                                <TextField fx:id="wordTextField" disable="true" prefWidth="220.0" promptText="Nhập từ" />
+                                <Label text="Định nghĩa"/>
+                                <TextField fx:id="wordTextField" disable="true" prefWidth="220.0" promptText="Nhập từ"/>
                             </children>
                         </VBox>
                         <VBox alignment="CENTER_LEFT" spacing="10.0">
                             <children>
-                        <Label text="Phiên âm" />
-                                <TextField fx:id="pronounTextField" prefWidth="220.0" promptText="Nhập từ" />
+                                <Label text="Phiên âm"/>
+                                <TextField fx:id="pronounTextField" prefWidth="220.0" promptText="Nhập từ"/>
                             </children>
                         </VBox>
                     </children>
                 </HBox>
-                <Label text="Giải thích" />
-            <HBox>
-               <children>
-                  <Button fx:id="addTypeButton" mnemonicParsing="false" onAction="#onClickAddTypeButton" styleClass="btn" text="Thêm loại từ">
-                     <HBox.margin>
-                        <Insets bottom="5.0" />
-                     </HBox.margin>
-                  </Button>
-               </children>
-            </HBox>
+                <Label text="Giải thích"/>
+                <HBox>
+                    <children>
+                        <Button fx:id="addTypeButton" mnemonicParsing="false" onAction="#onClickAddTypeButton"
+                                styleClass="btn" text="Thêm loại từ">
+                            <HBox.margin>
+                                <Insets bottom="5.0"/>
+                            </HBox.margin>
+                        </Button>
+                    </children>
+                </HBox>
                 <ScrollPane prefHeight="545.0" prefWidth="680.0">
                     <content>
                         <VBox fx:id="editVbox" spacing="5.0">
                             <padding>
-                                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
                             </padding>
                         </VBox>
                     </content>
                 </ScrollPane>
                 <HBox alignment="CENTER">
                     <children>
-                        <Button mnemonicParsing="false" onAction="#onClickSaveButton" styleClass="btn" text="Lưu từ" />
+                        <Button mnemonicParsing="false" onAction="#onClickSaveButton" styleClass="btn" text="Lưu từ"/>
                     </children>
                 </HBox>
             </children>

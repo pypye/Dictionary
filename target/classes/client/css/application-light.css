@@ -1,4 +1,3 @@
-
 .pane {
     -fx-background-color: #FFFFFF;
 }
@@ -11,7 +10,6 @@
 .container {
     -fx-background-color: #FFFFFF;
     -fx-background-radius: 10;
-
 }
 
 .container-scroll {
@@ -165,6 +163,7 @@
 }
 
 .word-example-label {
+    -fx-text-fill: purple;
 }
 
 .word-definition-label {
@@ -172,7 +171,8 @@
 }
 
 .word-pronoun-label {
-
+    -fx-font-weight: bold;
+    -fx-text-fill: purple;
 }
 
 .table-view .column-header-background .label {

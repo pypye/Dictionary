@@ -3,9 +3,6 @@ package api;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.OutputStream;
-import org.apache.commons.text.StringEscapeUtils;
-import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -13,6 +10,9 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.Objects;
+
+import org.apache.commons.text.StringEscapeUtils;
+import org.json.JSONObject;
 
 public class SpeechToTextAPI {
     public static String uploadFileSpeech(String recorded) {
@@ -52,7 +52,6 @@ public class SpeechToTextAPI {
         try {
             URL url = new URL("https://api.assemblyai.com/v2/transcript");
             HttpURLConnection request = (HttpURLConnection) url.openConnection();
-
             String authHeaderKey = "16ee3d9d2ee040aa9a63af9ca005a55e";
             request.setRequestProperty("authorization", authHeaderKey);
             request.setRequestProperty("content-type", "application/json; utf-8");
@@ -65,17 +64,13 @@ public class SpeechToTextAPI {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
-            BufferedReader inputStream = new BufferedReader(
-                    new InputStreamReader(request.getInputStream(), StandardCharsets.UTF_8));
+            BufferedReader inputStream = new BufferedReader(new InputStreamReader(request.getInputStream(), StandardCharsets.UTF_8));
             String inputLine;
             StringBuilder response = new StringBuilder();
             while ((inputLine = inputStream.readLine()) != null) {
                 response.append(inputLine.trim());
             }
-
             inputStream.close();
-
             JSONObject id = new JSONObject(StringEscapeUtils.unescapeHtml4(response.toString()));
             return id.getString("id");
         } catch (IOException e) {
@@ -88,26 +83,21 @@ public class SpeechToTextAPI {
             String stringURL = "https://api.assemblyai.com/v2/transcript/" + wordForm;
             URL url = new URL(stringURL);
             HttpURLConnection request = (HttpURLConnection) url.openConnection();
-
             String authHeaderKey = "16ee3d9d2ee040aa9a63af9ca005a55e";
             request.setRequestProperty("authorization", authHeaderKey);
             request.setRequestMethod("GET");
-
             BufferedReader inputStream = new BufferedReader(new InputStreamReader(request.getInputStream()));
             String inputLine;
             StringBuilder response = new StringBuilder();
-
             while ((inputLine = inputStream.readLine()) != null) {
                 response.append(inputLine);
             }
             inputStream.close();
-
             JSONObject textTranslated = new JSONObject(StringEscapeUtils.unescapeHtml4(response.toString()));
             if (textTranslated.get("status").equals("error")) {
                 return "error";
             }
             return textTranslated.get("text").toString();
-
         } catch (IOException e) {
             e.printStackTrace();
         }

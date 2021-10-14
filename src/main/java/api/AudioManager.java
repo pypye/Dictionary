@@ -48,9 +48,7 @@ public class AudioManager {
             speaker.start();
             int buffer;
             byte[] data = new byte[4096];
-            while ((buffer = ais.read(data)) != -1) {
-                speaker.write(data, 0, buffer);
-            }
+            while ((buffer = ais.read(data)) != -1) speaker.write(data, 0, buffer);
             speaker.drain();
             speaker.close();
             ais.close();

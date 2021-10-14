@@ -85,9 +85,9 @@ public class FetchData {
                 resetLast(true, true, true, true);
                 String[] data = WordInput.split("/");
                 if (data[0].charAt(0) == '\uFEFF') {
-                    lastWord = data[0].substring(2).trim();
+                    lastWord = data[0].substring(2).trim().toLowerCase();
                 } else {
-                    lastWord = data[0].substring(1).trim();
+                    lastWord = data[0].substring(1).trim().toLowerCase();
                 }
                 if (data.length > 1) {
                     lastPronoun = data[1].trim();

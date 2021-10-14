@@ -21,11 +21,7 @@ public class Popup {
             Stage stage = new Stage();
             FXMLLoader root = new FXMLLoader(getClass().getResource("/client/dictionary/popup-view.fxml"));
             Scene scene = new Scene(root.load(), 720, 720, false, SceneAntialiasing.BALANCED);
-            if (CssConfig.getConfig()) {
-                scene.getStylesheets().add(SceneController.DARK_CSS);
-            } else {
-                scene.getStylesheets().add(SceneController.LIGHT_CSS);
-            }
+            scene.getStylesheets().add(CssConfig.getConfig() ? SceneController.DARK_CSS : SceneController.LIGHT_CSS);
             stage.setTitle(title);
             stage.initStyle(StageStyle.UTILITY);
             stage.initModality(Modality.APPLICATION_MODAL);
@@ -33,12 +29,9 @@ public class Popup {
             stage.setResizable(false);
             stage.setScene(scene);
             stage.show();
-
             PopupController popupController = root.getController();
             popupController.setWordTextField(word);
-            if (title.equals("Edit")) {
-                loadWordStructure(popupController);
-            }
+            if (title.equals("Edit")) loadWordStructure(popupController);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -54,14 +47,12 @@ public class Popup {
             popupController.setTypeText(typeChildName);
             popupController.onClickAddTypeButton();
             JSONArray explain = typeChild.getJSONArray(typeChildName);
-
             for (int j = 0; j < explain.length(); j++) {
                 JSONObject explainChild = explain.getJSONObject(j);
                 String exampleChildName = explainChild.keys().next();
                 popupController.setExplainText(exampleChildName);
                 popupController.onClickAddExplainButton(popupController.getCurrentTypeParentVBox());
                 JSONArray example = explainChild.getJSONArray(exampleChildName);
-
                 for (int k = 0; k < example.length(); k++) {
                     JSONObject exampleChild = example.getJSONObject(k);
                     String exampleLeft = exampleChild.keys().next();

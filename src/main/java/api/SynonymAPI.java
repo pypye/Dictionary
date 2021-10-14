@@ -1,8 +1,5 @@
 package api;
 
-import org.apache.commons.text.StringEscapeUtils;
-import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -10,6 +7,9 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
+
+import org.apache.commons.text.StringEscapeUtils;
+import org.json.JSONObject;
 
 public class SynonymAPI {
     public static JSONObject getSynonymList(String wordForm) {

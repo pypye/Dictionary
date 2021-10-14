@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class DictionaryCommandLine {
-
     private final DictionaryManagement dictionaryCommandLine = new DictionaryManagement();
 
     public DictionaryManagement getDictionaryCommandLine() {

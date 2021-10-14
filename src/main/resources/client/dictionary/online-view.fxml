@@ -13,83 +13,101 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" styleClass="pane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.dictionary.controllers.OnlineController">
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="450.0" prefWidth="800.0" styleClass="pane" xmlns="http://javafx.com/javafx/16"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.dictionary.controllers.OnlineController">
     <children>
-        <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="800.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="800.0" AnchorPane.leftAnchor="0.0"
+              AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-                <Button fx:id="offlineButton" mnemonicParsing="false" onAction="#onOfflineButtonClick" styleClass="menu-btn" text="Từ điển" textOverrun="WORD_ELLIPSIS">
+                <Button fx:id="offlineButton" mnemonicParsing="false" onAction="#onOfflineButtonClick"
+                        styleClass="menu-btn" text="Từ điển" textOverrun="WORD_ELLIPSIS">
                     <HBox.margin>
-                        <Insets />
+                        <Insets/>
                     </HBox.margin>
                 </Button>
-                <Button fx:id="onlineButton" mnemonicParsing="false" onAction="#onOnlineButtonClick" text="Dịch văn bản" textOverrun="WORD_ELLIPSIS">
+                <Button fx:id="onlineButton" mnemonicParsing="false" onAction="#onOnlineButtonClick" text="Dịch văn bản"
+                        textOverrun="WORD_ELLIPSIS">
                     <HBox.margin>
-                        <Insets />
+                        <Insets/>
                     </HBox.margin>
                     <styleClass>
-                        <String fx:value="menu-btn" />
-                        <String fx:value="btn-selected" />
+                        <String fx:value="menu-btn"/>
+                        <String fx:value="btn-selected"/>
                     </styleClass>
                 </Button>
-                <Button fx:id="synonymButton" mnemonicParsing="false" onAction="#onSynonymButtonClick" styleClass="menu-btn" text="Từ đồng nghĩa" textOverrun="WORD_ELLIPSIS">
+                <Button fx:id="synonymButton" mnemonicParsing="false" onAction="#onSynonymButtonClick"
+                        styleClass="menu-btn" text="Từ đồng nghĩa" textOverrun="WORD_ELLIPSIS">
                     <HBox.margin>
-                        <Insets />
+                        <Insets/>
                     </HBox.margin>
                 </Button>
-                <Button fx:id="settingsButton" mnemonicParsing="false" onAction="#onSettingsButtonClick" styleClass="menu-btn" text="Cài đặt" textOverrun="CLIP">
+                <Button fx:id="settingsButton" mnemonicParsing="false" onAction="#onSettingsButtonClick"
+                        styleClass="menu-btn" text="Cài đặt" textOverrun="CLIP">
                     <HBox.margin>
-                        <Insets />
+                        <Insets/>
                     </HBox.margin>
                 </Button>
             </children>
             <opaqueInsets>
-                <Insets />
+                <Insets/>
             </opaqueInsets>
             <padding>
-                <Insets left="20.0" />
+                <Insets left="20.0"/>
             </padding>
             <styleClass>
-                <String fx:value="menu-bar" />
-                <String fx:value="dropshad" />
+                <String fx:value="menu-bar"/>
+                <String fx:value="dropshad"/>
             </styleClass>
         </HBox>
-        <SplitPane fx:id="translatePane" dividerPositions="0.5" prefHeight="160.0" prefWidth="200.0" styleClass="dropshad" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="80.0">
+        <SplitPane fx:id="translatePane" dividerPositions="0.5" prefHeight="160.0" prefWidth="200.0"
+                   styleClass="dropshad" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="20.0"
+                   AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="80.0">
             <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                     <children>
-                        <HBox alignment="CENTER_LEFT" layoutX="40.0" layoutY="40.0" prefHeight="50.0" prefWidth="335.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <HBox alignment="CENTER_LEFT" layoutX="40.0" layoutY="40.0" prefHeight="50.0" prefWidth="335.0"
+                              AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                             <children>
                                 <Label text="Ngôn ngữ">
                                     <HBox.margin>
-                                        <Insets left="10.0" right="10.0" />
+                                        <Insets left="10.0" right="10.0"/>
                                     </HBox.margin>
                                 </Label>
-                                <ChoiceBox fx:id="inputLangChoiceBox" onAction="#onSwitchInputLanguage" prefWidth="150.0" />
+                                <ChoiceBox fx:id="inputLangChoiceBox" onAction="#onSwitchInputLanguage"
+                                           prefWidth="150.0"/>
                             </children>
                         </HBox>
-                        <TextArea fx:id="inputTextArea" layoutX="26.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" promptText="Type Here..." wrapText="true" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0" />
-                        <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                        <TextArea fx:id="inputTextArea" layoutX="26.0" layoutY="14.0" prefHeight="200.0"
+                                  prefWidth="200.0" promptText="Type Here..." wrapText="true"
+                                  AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0"
+                                  AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0"/>
+                        <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0"
+                              AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                             <children>
                                 <Button mnemonicParsing="false" onAction="#onPlayAudioInputBtn" styleClass="btn">
                                     <HBox.margin>
-                                        <Insets right="10.0" />
+                                        <Insets right="10.0"/>
                                     </HBox.margin>
                                     <graphic>
-                                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true"
+                                                   preserveRatio="true">
                                             <image>
-                                                <Image url="@../icons/audio.png" />
+                                                <Image url="@../icons/audio.png"/>
                                             </image>
                                         </ImageView>
                                     </graphic>
                                 </Button>
-                                <Button fx:id="inputCopyButton" mnemonicParsing="false" onAction="#onInputCopyToClipboard" styleClass="btn">
+                                <Button fx:id="inputCopyButton" mnemonicParsing="false"
+                                        onAction="#onInputCopyToClipboard" styleClass="btn">
                                     <HBox.margin>
-                                        <Insets />
+                                        <Insets/>
                                     </HBox.margin>
                                     <graphic>
-                                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true"
+                                                   preserveRatio="true">
                                             <image>
-                                                <Image url="@../icons/copy.png" />
+                                                <Image url="@../icons/copy.png"/>
                                             </image>
                                         </ImageView>
                                     </graphic>
@@ -98,41 +116,49 @@
                         </HBox>
                     </children>
                     <padding>
-                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
                     </padding>
                 </AnchorPane>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                     <children>
-                        <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="335.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="335.0" AnchorPane.leftAnchor="0.0"
+                              AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                             <children>
                                 <Label text="Ngôn ngữ">
                                     <HBox.margin>
-                                        <Insets left="10.0" right="10.0" />
+                                        <Insets left="10.0" right="10.0"/>
                                     </HBox.margin>
                                 </Label>
-                                <ChoiceBox fx:id="outputLangChoiceBox" onAction="#onSwitchOutputLanguage" prefWidth="150.0" />
+                                <ChoiceBox fx:id="outputLangChoiceBox" onAction="#onSwitchOutputLanguage"
+                                           prefWidth="150.0"/>
                             </children>
                         </HBox>
-                        <TextArea fx:id="outputTextArea" editable="false" layoutX="7.0" prefHeight="200.0" prefWidth="200.0" wrapText="true" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0" />
-                        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                        <TextArea fx:id="outputTextArea" editable="false" layoutX="7.0" prefHeight="200.0"
+                                  prefWidth="200.0" wrapText="true" AnchorPane.bottomAnchor="50.0"
+                                  AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0"/>
+                        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="200.0"
+                              AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                             <children>
                                 <Button mnemonicParsing="false" onAction="#onPlayAudioOutputBtn" styleClass="btn">
                                     <HBox.margin>
-                                        <Insets right="10.0" />
+                                        <Insets right="10.0"/>
                                     </HBox.margin>
                                     <graphic>
-                                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true"
+                                                   preserveRatio="true">
                                             <image>
-                                                <Image url="@../icons/audio.png" />
+                                                <Image url="@../icons/audio.png"/>
                                             </image>
                                         </ImageView>
                                     </graphic>
                                 </Button>
-                                <Button fx:id="outputCopyButton" mnemonicParsing="false" onAction="#onOutputCopyToClipboard" styleClass="btn">
+                                <Button fx:id="outputCopyButton" mnemonicParsing="false"
+                                        onAction="#onOutputCopyToClipboard" styleClass="btn">
                                     <graphic>
-                                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true"
+                                                   preserveRatio="true">
                                             <image>
-                                                <Image url="@../icons/copy.png" />
+                                                <Image url="@../icons/copy.png"/>
                                             </image>
                                         </ImageView>
                                     </graphic>
@@ -141,14 +167,16 @@
                         </HBox>
                     </children>
                     <padding>
-                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
                     </padding>
                 </AnchorPane>
             </items>
         </SplitPane>
-        <VBox alignment="CENTER" layoutY="380.0" prefHeight="70.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <VBox alignment="CENTER" layoutY="380.0" prefHeight="70.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0"
+              AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
             <children>
-                <Button fx:id="translateButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onTranslateButtonClick" prefWidth="68.0" styleClass="btn" text="Dịch" />
+                <Button fx:id="translateButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false"
+                        onAction="#onTranslateButtonClick" prefWidth="68.0" styleClass="btn" text="Dịch"/>
             </children>
         </VBox>
     </children>

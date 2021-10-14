@@ -2,7 +2,9 @@ package client.dictionary.controllers;
 
 import api.GoogleAPI;
 import api.TextToSpeechAPIOffline;
+import api.TextToSpeechAPIOnline;
 import client.dictionary.configs.CssConfig;
+import client.dictionary.configs.PlayAudioConfig;
 import client.dictionary.stages.Notification;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
@@ -39,7 +41,7 @@ public class OnlineController extends MenuController {
     @FXML
     public void onTranslateButtonClick() throws IOException {
         String input = inputTextArea.getText();
-        new Thread(() -> {
+        Thread thread = new Thread(() -> {
             String output = null;
             try {
                 if (inputLangChoiceBox.getValue().equals("English")) {
@@ -52,7 +54,11 @@ public class OnlineController extends MenuController {
             }
             String finalOutput = output;
             Platform.runLater(() -> outputTextArea.setText(finalOutput));
-        }).start();
+        });
+        thread.setDaemon(true);
+        thread.start();
+        outputTextArea.setPromptText("Đang dịch...");
+        outputTextArea.setText(null);
     }
 
     @FXML
@@ -93,11 +99,27 @@ public class OnlineController extends MenuController {
 
     @FXML
     public void onPlayAudioInputBtn() {
-        new Thread(() -> TextToSpeechAPIOffline.getTextToSpeech(inputTextArea.getText())).start();
+        if (PlayAudioConfig.getConfig()) {
+            Thread thread = new Thread(() -> TextToSpeechAPIOnline.getTextToSpeech(inputTextArea.getText()));
+            thread.setDaemon(true);
+            thread.start();
+        } else {
+            Thread thread = new Thread(() -> TextToSpeechAPIOffline.getTextToSpeech(inputTextArea.getText()));
+            thread.setDaemon(true);
+            thread.start();
+        }
     }
 
     @FXML
     public void onPlayAudioOutputBtn() {
-        new Thread(() -> TextToSpeechAPIOffline.getTextToSpeech(outputTextArea.getText())).start();
+        if (PlayAudioConfig.getConfig()) {
+            Thread thread = new Thread(() -> TextToSpeechAPIOnline.getTextToSpeech(outputTextArea.getText()));
+            thread.setDaemon(true);
+            thread.start();
+        } else {
+            Thread thread = new Thread(() -> TextToSpeechAPIOffline.getTextToSpeech(outputTextArea.getText()));
+            thread.setDaemon(true);
+            thread.start();
+        }
     }
 }

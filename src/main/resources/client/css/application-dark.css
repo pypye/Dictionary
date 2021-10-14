@@ -168,7 +168,7 @@
 }
 
 .word-pronoun-label {
-
+    -fx-font-weight: bold;
 }
 
 .table-view .column-header-background .label {

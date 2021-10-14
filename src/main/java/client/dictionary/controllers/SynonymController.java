@@ -21,7 +21,7 @@ public class SynonymController extends MenuController {
 
     @FXML
     public void onSubmitSearchBtn() {
-        new Thread(() -> {
+        Thread thread = new Thread(() -> {
             JSONObject list = SynonymAPI.getSynonymList(searchTextField.getText());
             Platform.runLater(() -> {
                 contentVBox.getChildren().clear();
@@ -30,7 +30,10 @@ public class SynonymController extends MenuController {
                 fetchData(list, "hypernyms");
                 fetchData(list, "hyponyms");
             });
-        }).start();
+        });
+        thread.setDaemon(true);
+        thread.start();
+        contentVBox.getChildren().add(new Label("Đang lấy dữ liệu..."));
     }
 
     private void fetchData(JSONObject list, String type) {
@@ -43,6 +46,7 @@ public class SynonymController extends MenuController {
             Button wordItem = new Button((String) v);
             EventHandler<ActionEvent> event = e -> {
                 searchTextField.setText((String) v);
+                contentVBox.getChildren().clear();
                 onSubmitSearchBtn();
             };
             wordItem.getStyleClass().add("btn-selected");

@@ -1,22 +1,24 @@
 package client.dictionary.controllers;
 
 import client.dictionary.configs.CssConfig;
+import client.dictionary.configs.DatabaseConfig;
+import client.dictionary.configs.PlayAudioConfig;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 
 public class SettingsController extends MenuController {
     @FXML
-    private ChoiceBox<String> switchThemeChoiceBox;
+    private ChoiceBox<String> switchThemeChoiceBox, playSoundChoiceBox, dataChoiceBox;
 
     @FXML
     public void initialize() {
         switchThemeChoiceBox.setItems(FXCollections.observableArrayList("Light", "Dark"));
-        if (CssConfig.getConfig()) {
-            switchThemeChoiceBox.setValue("Dark");
-        } else {
-            switchThemeChoiceBox.setValue("Light");
-        }
+        switchThemeChoiceBox.setValue(CssConfig.getConfig() ? "Dark" : "Light");
+        playSoundChoiceBox.setItems(FXCollections.observableArrayList("Local", "API"));
+        playSoundChoiceBox.setValue(PlayAudioConfig.getConfig() ? "API" : "Local");
+        dataChoiceBox.setItems(FXCollections.observableArrayList("Local", "MongoDB"));
+        dataChoiceBox.setValue(DatabaseConfig.getConfig() ? "MongoDB" : "Local");
     }
 
     @FXML
@@ -32,5 +34,15 @@ public class SettingsController extends MenuController {
                 SceneController.getScene().getStylesheets().add(SceneController.LIGHT_CSS);
             CssConfig.setConfig(false);
         }
+    }
+
+    @FXML
+    public void onSwitchPlayAudioChoiceBox() {
+        PlayAudioConfig.setConfig(!playSoundChoiceBox.getValue().equals("Local"));
+    }
+
+    @FXML
+    public void onSwitchDataChoiceBox() {
+        DatabaseConfig.setConfig(!dataChoiceBox.getValue().equals("Local"));
     }
 }

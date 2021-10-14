@@ -196,6 +196,6 @@ public class PopupController {
         offlineController.onClickResultButton(wordTextField.getText());
         Stage stage = (Stage) editVbox.getScene().getWindow();
         stage.close();
-        Notification.show("Add/Edit word successfully", offlineController.getRootPane(), CssConfig.getConfig());
+        Notification.show("Thêm/Sửa từ thành công", offlineController.getRootPane(), CssConfig.getConfig());
     }
 }

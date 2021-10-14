@@ -22,7 +22,6 @@ public class Dictionary {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     public static void dictionaryInsert(String word, JSONObject object) {
@@ -47,6 +46,7 @@ public class Dictionary {
         FileWriter file = new FileWriter(Dictionary.class.getResource("/data/output/english-vietnamese.json").getFile());
         file.write(String.valueOf(dictionary));
         file.flush();
+        file.close();
     }
 
     public static void main(String[] args) throws IOException {
