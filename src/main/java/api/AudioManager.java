@@ -22,7 +22,7 @@ public class AudioManager {
             microphone.open(format);
             microphone.start();
             AudioInputStream ais = new AudioInputStream(microphone);
-            AudioSystem.write(ais, AudioFileFormat.Type.WAVE, new File(AudioManager.class.getResource("/data").getFile() + "$temp.wav"));
+            AudioSystem.write(ais, AudioFileFormat.Type.WAVE, new File("src/main/java/data/temp.wav"));
         } catch (Exception ex) {
             ex.printStackTrace();
         }

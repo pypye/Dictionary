@@ -105,7 +105,7 @@ public class SpeechToTextAPI {
     }
 
     public static String getSpeechToText() {
-        String url_path = uploadFileSpeech(SpeechToTextAPI.class.getResource("/data/$temp.wav").getFile());
+        String url_path = uploadFileSpeech("src/main/java/data/temp.wav");
         String idApiServer = postSpeechToTextApi(url_path);
         String WordTranslate;
         while (true) {
