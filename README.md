@@ -9,6 +9,9 @@
 ![Imgur Image](https://imgur.com/USPGhfR.png)
 - Add/Edit/Delete feature
 ![Imgur Image](https://imgur.com/DpbRAhV.png)
+# Usages
+- Requirement: Install [JDK17 Environment](https://www.oracle.com/java/technologies/downloads/#jdk17-windows) in order to use this application.
+- Open [/bin](https://github.com/pypye/Dictionary/tree/main/bin) folder and run file **run.bat**
 # References
 - Core
   - [Java Development Kit 17](https://www.oracle.com/java/technologies/downloads/#jdk17-windows) for compiler.
@@ -21,7 +24,6 @@
   - [Freetts](https://freetts.com/) for Text To Speech API.
   - [Google Translate](https://translate.google.com) for Paragraph Translate API.
   - [RapidAPI](https://rapidapi.com) for Synonym API.
-
 # Developers
 - Duc [pypye](https://github.com/pypye) Tran Van
   * Front-end designer
