@@ -51,6 +51,7 @@ public class Dictionary {
             e.printStackTrace();
         }
         dictionary = null;
+        System.gc();
     }
 
     public static void main(String[] args) throws IOException {
