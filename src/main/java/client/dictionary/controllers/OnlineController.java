@@ -20,13 +20,13 @@ public class OnlineController extends MenuController {
     @FXML
     private AnchorPane rootPane;
     @FXML
-    private TextArea inputTextArea, outputTextArea;
-    @FXML
     private ChoiceBox<String> inputLangChoiceBox;
     @FXML
     private ChoiceBox<String> outputLangChoiceBox;
     @FXML
     private SplitPane translatePane;
+    @FXML
+    private TextArea inputTextArea, outputTextArea;
 
     @FXML
     private void initialize() {
@@ -63,20 +63,16 @@ public class OnlineController extends MenuController {
 
     @FXML
     public void onSwitchInputLanguage() {
-        if (inputLangChoiceBox.getValue().equals("English")) {
-            outputLangChoiceBox.setValue("Vietnam");
-        } else {
-            outputLangChoiceBox.setValue("English");
-        }
+        if (inputLangChoiceBox.getValue().equals("English")) outputLangChoiceBox.setValue("Vietnam");
+        else outputLangChoiceBox.setValue("English");
+
     }
 
     @FXML
     public void onSwitchOutputLanguage() {
-        if (outputLangChoiceBox.getValue().equals("English")) {
-            inputLangChoiceBox.setValue("Vietnam");
-        } else {
-            inputLangChoiceBox.setValue("English");
-        }
+        if (outputLangChoiceBox.getValue().equals("English")) inputLangChoiceBox.setValue("Vietnam");
+        else inputLangChoiceBox.setValue("English");
+
     }
 
     @FXML

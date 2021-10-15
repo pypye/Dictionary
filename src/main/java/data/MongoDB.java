@@ -8,24 +8,37 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 
+import java.util.logging.Logger;
+import java.util.logging.Level;
+
 public class MongoDB {
-    private final MongoCollection<Document> Vietnamese_English;
-    private final MongoCollection<Document> English_Vietnamese;
+    private static MongoCollection<Document> dictionaryEV;
+    private static MongoCollection<Document> dictionaryVE;
+    private static MongoClient mongoClient;
 
-    public MongoDB() {
-        ConnectionString connectionString = new ConnectionString("mongodb+srv://pypye22:22062002duc@dictionary.0darc.mongodb.net/Dictionary?retryWrites=true&w=majority");
-        MongoClientSettings settings = MongoClientSettings.builder().applyConnectionString(connectionString).build();
-        MongoClient mongoClient = MongoClients.create(settings);
+    public static void initialize() {
+        mongoClient = MongoClients.create(connect());
         MongoDatabase database = mongoClient.getDatabase("Dictionary");
-        Vietnamese_English = database.getCollection("Vietnamese_English");
-        English_Vietnamese = database.getCollection("English_Vietnamese");
+        dictionaryEV = database.getCollection("English_Vietnamese");
+        dictionaryVE = database.getCollection("Vietnamese_English");
+        Logger mongoLogger = Logger.getLogger("org.mongodb.driver");
+        mongoLogger.setLevel(Level.SEVERE);
     }
 
-    public MongoCollection<Document> getVietnamese_English() {
-        return Vietnamese_English;
+    public static MongoCollection<Document> getDictionaryEV() {
+        return dictionaryEV;
     }
 
-    public MongoCollection<Document> getEnglish_Vietnamese() {
-        return English_Vietnamese;
+    public static MongoCollection<Document> getDictionaryVE() {
+        return dictionaryVE;
+    }
+
+    public static void close() {
+        mongoClient.close();
+    }
+
+    private static MongoClientSettings connect() {
+        ConnectionString connectionString = new ConnectionString("mongodb+srv://pypye22:22062002duc@dictionary.0darc.mongodb.net/Dictionary?retryWrites=true&w=majority");
+        return MongoClientSettings.builder().applyConnectionString(connectionString).build();
     }
 }

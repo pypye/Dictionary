@@ -15,6 +15,7 @@ module client.dictionary {
     requires java.desktop;
     requires voicerss.tts;
     requires javafx.media;
+    requires java.logging;
 
     opens client.dictionary to javafx.fxml;
     exports client.dictionary.controllers;

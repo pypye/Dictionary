@@ -1,9 +1,7 @@
 package base.algorithms;
 
 public class TrieNode {
-
     private static final int alphabetSize = 26;
-
     private TrieNode[] children = new TrieNode[alphabetSize];
     private boolean endOfWord;
     private String dataOfWord;

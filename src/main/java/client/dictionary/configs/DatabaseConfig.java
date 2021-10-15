@@ -2,11 +2,11 @@ package client.dictionary.configs;
 
 public class DatabaseConfig {
     public static boolean getConfig() {
-        return Config.getAllConfigs().getBoolean("online-database");
+        return Config.getAllConfigs().getBoolean("database-online");
     }
 
     public static void setConfig(boolean value) {
-        Config.getAllConfigs().put("online-database", value);
+        Config.getAllConfigs().put("database-online", value);
     }
 
 }

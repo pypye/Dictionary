@@ -5,7 +5,9 @@ import api.SpeechToTextAPI;
 import api.TextToSpeechAPIOffline;
 import api.TextToSpeechAPIOnline;
 import base.advanced.Dictionary;
+import base.advanced.DictionaryOnline;
 import client.dictionary.configs.CssConfig;
+import client.dictionary.configs.DatabaseConfig;
 import client.dictionary.configs.PlayAudioConfig;
 import client.dictionary.stages.Notification;
 import client.dictionary.stages.Popup;
@@ -27,23 +29,26 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class OfflineController extends MenuController {
+    private Alert alert;
     private ArrayList<String> outputDictionary;
     private int countLazy = 0;
     private String currentWord;
-    private Alert alert;
+    private String currentTypeWord = "";
     private Thread voiceRegThread;
     @FXML
     private AnchorPane rootPane;
     @FXML
-    private TextField searchInput;
-    @FXML
-    private VBox outputVbox, explainVbox;
+    private Button editWordButton, deleteWordButton;
     @FXML
     private HBox definitionHBox;
     @FXML
+    private Label wordLabel, pronounLabel;
+    @FXML
     private ScrollPane listWordScroll;
     @FXML
-    private Label wordLabel, pronounLabel;
+    private TextField searchInput;
+    @FXML
+    private VBox outputVbox, explainVbox;
 
     public AnchorPane getRootPane() {
         return rootPane;
@@ -52,9 +57,10 @@ public class OfflineController extends MenuController {
     @FXML
     public void initialize() {
         definitionHBox.setVisible(false);
-        //add thread make program run continuously.
         Thread thread = new Thread(() -> Platform.runLater(() -> {
-            outputDictionary = Dictionary.dictionarySearcher("");
+            if (DatabaseConfig.getConfig())
+                outputDictionary = DictionaryOnline.dictionarySearcher(currentTypeWord, countLazy);
+            else outputDictionary = Dictionary.dictionarySearcher(currentTypeWord);
             Platform.runLater(this::addListWordButton);
         }));
         thread.setDaemon(true);
@@ -63,9 +69,15 @@ public class OfflineController extends MenuController {
         listWordScroll.vvalueProperty().addListener((ObservableValue<? extends Number> observable, Number oldValue, Number newValue) -> {
             if (listWordScroll.getVvalue() >= 0.75) {
                 countLazy += 50;
+                if (DatabaseConfig.getConfig())
+                    outputDictionary.addAll(DictionaryOnline.dictionarySearcher(currentTypeWord, countLazy));
                 addListWordButton();
             }
         });
+        if (DatabaseConfig.getConfig()) {
+            editWordButton.setDisable(true);
+            deleteWordButton.setDisable(true);
+        }
         //voice recognise alert
         alert = new Alert(Alert.AlertType.NONE);
         alert.setTitle("Voice Recognition");
@@ -114,11 +126,13 @@ public class OfflineController extends MenuController {
     @FXML
     public void onTypeSearchInput() {
         String input = searchInput.getText();
+        currentTypeWord = input;
+        countLazy = 0;
         Thread thread = new Thread(() -> {
-            outputDictionary = Dictionary.dictionarySearcher(input);
+            if (DatabaseConfig.getConfig()) outputDictionary = DictionaryOnline.dictionarySearcher(input, countLazy);
+            else outputDictionary = Dictionary.dictionarySearcher(input);
             Platform.runLater(() -> {
                 outputVbox.getChildren().clear();
-                countLazy = 0;
                 addListWordButton();
             });
         });
@@ -134,7 +148,7 @@ public class OfflineController extends MenuController {
     }
 
     private void addListWordButton() {
-        if (outputDictionary.size() <= 1 && outputDictionary.get(0).equals("")) {
+        if (!DatabaseConfig.getConfig() && (outputDictionary.get(0).equals(""))) {
             Label notExist = new Label("Từ này không tồn tại");
             Button addWord = new Button("Thêm từ...");
             EventHandler<ActionEvent> event = e -> new Popup("Add", searchInput.getText());
@@ -159,14 +173,14 @@ public class OfflineController extends MenuController {
 
     public void onClickResultButton(String result) {
         explainVbox.getChildren().clear();
-        JSONObject selectedWord = Dictionary.dictionaryLookup(result);
+        JSONObject selectedWord;
+        if (DatabaseConfig.getConfig()) selectedWord = DictionaryOnline.dictionaryLookup(result);
+        else selectedWord = Dictionary.dictionaryLookup(result);
         currentWord = result;
         wordLabel.setText(result);
-        if (!selectedWord.getString("pronoun").equals("")) {
-            pronounLabel.setText("[" + selectedWord.getString("pronoun") + "]");
-        } else {
-            pronounLabel.setText("");
-        }
+        if (!selectedWord.getString("pronoun").equals(""))
+            pronounLabel.setText(String.format("[%s]", selectedWord.getString("pronoun")));
+        else pronounLabel.setText("");
         definitionHBox.setVisible(true);
         JSONArray type = selectedWord.getJSONArray("type");
         createTree(type, 0);

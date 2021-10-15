@@ -3,10 +3,10 @@ package base.advanced;
 import base.algorithms.Trie;
 import org.json.JSONObject;
 
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 
 public class Dictionary {
@@ -15,8 +15,7 @@ public class Dictionary {
 
     public static void initialize() {
         try {
-            File file = new File(Dictionary.class.getResource("/data/output/english-vietnamese.json").getFile());
-            String content = new String(Files.readAllBytes(file.toPath()));
+            String content = new String(Files.readAllBytes(Path.of("src/main/java/data/output/english-vietnamese.json")));
             dictionary = new JSONObject(content);
             dictionary.keys().forEachRemaining(findTrie::add);
         } catch (IOException e) {
@@ -42,11 +41,16 @@ public class Dictionary {
         findTrie.delete(input);
     }
 
-    public static void save() throws IOException {
-        FileWriter file = new FileWriter(Dictionary.class.getResource("/data/output/english-vietnamese.json").getFile());
-        file.write(String.valueOf(dictionary));
-        file.flush();
-        file.close();
+    public static void save() {
+        try {
+            FileWriter file = new FileWriter("src/main/java/data/output/english-vietnamese.json");
+            file.write(String.valueOf(dictionary));
+            file.flush();
+            file.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        dictionary = null;
     }
 
     public static void main(String[] args) throws IOException {

@@ -33,6 +33,7 @@ public class SynonymController extends MenuController {
         });
         thread.setDaemon(true);
         thread.start();
+        contentVBox.getChildren().clear();
         contentVBox.getChildren().add(new Label("Đang lấy dữ liệu..."));
     }
 

@@ -3,6 +3,8 @@ package client.dictionary.controllers;
 import base.advanced.Dictionary;
 import client.dictionary.configs.Config;
 import client.dictionary.configs.CssConfig;
+import client.dictionary.configs.DatabaseConfig;
+import data.MongoDB;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -33,11 +35,12 @@ public class SceneController {
     }
 
     public static void initializeApplication(Stage _stage, FXMLLoader _root) throws IOException {
+        Config.initialize();
+        if (DatabaseConfig.getConfig()) MongoDB.initialize();
+        else Dictionary.initialize();
         stage = _stage;
         root = _root;
         parent = root.load();
-        Dictionary.initialize();
-        Config.initialize();
         scene = new Scene(parent, 1280, 720, false, SceneAntialiasing.BALANCED);
         scene.getStylesheets().add(CssConfig.getConfig() ? DARK_CSS : LIGHT_CSS);
         renderScene();

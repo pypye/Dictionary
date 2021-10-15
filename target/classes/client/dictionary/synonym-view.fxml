@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0"
-            prefWidth="800.0" styleClass="pane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+            prefWidth="800.0" styleClass="pane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="client.dictionary.controllers.SynonymController">
     <children>
         <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="800.0" AnchorPane.leftAnchor="0.0"

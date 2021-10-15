@@ -2,7 +2,9 @@ package client.dictionary.stages;
 
 import base.advanced.Dictionary;
 import client.dictionary.configs.Config;
+import client.dictionary.configs.DatabaseConfig;
 import client.dictionary.controllers.SceneController;
+import data.MongoDB;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 
@@ -18,7 +20,8 @@ public class Application extends javafx.application.Application {
     @Override
     public void stop() throws IOException {
         Config.save();
-        Dictionary.save();
+        if (DatabaseConfig.getConfig()) MongoDB.close();
+        else Dictionary.save();
     }
 
     public static void main(String[] args) {

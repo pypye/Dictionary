@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Trie {
-
     private static final int alphabetSize = 26;
     public static TrieNode root = new TrieNode();
 
