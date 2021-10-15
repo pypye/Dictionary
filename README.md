@@ -12,6 +12,7 @@
 # Usages
 - Requirement: Install [JDK17 Environment](https://www.oracle.com/java/technologies/downloads/#jdk17-windows) in order to use this application.
 - Open [/bin](https://github.com/pypye/Dictionary/tree/main/bin) folder and run file **run.bat**
+- Note that **DON'T RUN JAR FILE DIRECTLY** due to UTF-8 Encoding Error.
 # References
 - Core
   - [Java Development Kit 17](https://www.oracle.com/java/technologies/downloads/#jdk17-windows) for compiler.
